@@ -1,0 +1,12 @@
+{
+  "campaign_intent": "Spring fragrance launch — drive trial of the new EDP line among customers with prior Beauty affinity in core EU markets",
+  "campaign_type": "new-arrival",
+  "channels": ["Email", "Push Notification", "Paid Social - Meta"],
+  "target_segments": ["Loyal", "High-Value"],
+  "target_countries": ["NL", "DE", "BE"],
+  "product_categories": ["Beauty"],
+  "lifetime_value_eur_min": 800,
+  "last_order_before": null,
+  "recency_days": 730,
+  "account_status_allowed": ["active"]
+}
