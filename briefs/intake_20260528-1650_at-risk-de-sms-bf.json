@@ -1,0 +1,78 @@
+{
+  "intake_id": "intake_20260528-1650_at-risk-de-sms-bf",
+  "created_at": "2026-05-28T16:50:00+02:00",
+  "created_by": "gbonjubolaamuda@gmail.com",
+  "status": "ready",
+  "original_request": "Re-engage lapsed luxury customers in DE via SMS for Black Friday",
+  "recipe_match": {
+    "name": "re-engagement",
+    "fields": ["email", "sms", "segment", "ltv", "last_order_date"],
+    "confidence": "high"
+  },
+  "slots": {
+    "audience": {
+      "segment": ["At-Risk"],
+      "filters": {
+        "country": ["DE"],
+        "lifetime_value_eur_min": 500,
+        "last_order_before": "2025-11-28",
+        "account_status": ["active"]
+      },
+      "estimated_size": null
+    },
+    "channel": {
+      "primary": "SMS",
+      "destination_platform": "Klaviyo",
+      "fallback": null
+    },
+    "geo": {
+      "countries": ["DE"],
+      "languages": ["de-DE"],
+      "jurisdictions": ["GDPR"]
+    },
+    "timing": {
+      "send_window_start": "2026-11-27T09:00:00+01:00",
+      "send_window_end": "2026-11-27T20:00:00+01:00",
+      "frequency_cap": "1 send per customer per 7 days",
+      "lead_time_required_hours": 4
+    },
+    "campaign_purpose": {
+      "label": "Direct marketing — promotional",
+      "lawful_basis": "consent",
+      "required_consents": ["sms_opt_in"],
+      "profiling_used": false
+    }
+  },
+  "optional_slots": {
+    "budget_or_size_cap": null,
+    "suppression_lists": {
+      "always_exclude": ["unsubscribed", "right_to_erasure_requested", "consent_withdrawn"],
+      "additionally": ["contacted_in_last_7_days"]
+    },
+    "success_metric": "clicks",
+    "approver": "Marketing Ops",
+    "prior_brief_reference": null
+  },
+  "compliance_flags_to_check_downstream": [
+    "sms_consent_required",
+    "retention_window_active",
+    "jurisdiction_DE_GDPR",
+    "cross_border_transfer_us_klaviyo_scc_required",
+    "exclude_inactive_and_suspended_accounts"
+  ],
+  "assumptions": [
+    "'Lapsed' → no order since 2025-11-28 (6 months before intake date 2026-05-28). If team measures 'lapsed' from send date (2026-11-27), recompute cutoff to 2026-05-27.",
+    "'Luxury' → lifetime_value_eur >= 500 per user selection.",
+    "Mapped 'lapsed' audience descriptor to At-Risk customer_segment (CRM-native tag).",
+    "Restricted to account_status = active to avoid sending to inactive/suspended accounts.",
+    "Send window defaulted to single-day local-time 09:00-20:00 CET on Black Friday 2026 (2026-11-27).",
+    "Defaulted success_metric to 'clicks' and approver to 'Marketing Ops'.",
+    "Default frequency_cap: 1 send per customer per 7 days; additionally suppress anyone contacted in last 7 days."
+  ],
+  "open_questions": [
+    "Confirm: 'lapsed' window anchored to intake date vs send date? Used intake-date anchor per option label.",
+    "Confirm: include customers in DE whose preferred_channel is not SMS? Recommend yes — preferred is a hint, not a consent gate.",
+    "Confirm: SCC for Klaviyo EU->US transfer already in place, or does DPO need to sign off pre-send?"
+  ],
+  "human_summary": "Re-engage active At-Risk customers in DE with LTV >= 500 EUR and no order since 2025-11-28, via SMS through Klaviyo on Black Friday 2026 (Nov 27, 09:00-20:00 CET). Lawful basis: marketing consent (sms_opt_in required). Always excludes unsubscribed, erasure-requested, consent-withdrawn; additionally suppresses anyone contacted in the last 7 days. Three open questions: lapsed anchor (intake vs send date), include non-SMS-preferred customers, Klaviyo SCC sign-off."
+}
