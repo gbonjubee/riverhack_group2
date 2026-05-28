@@ -19,7 +19,7 @@ Every intake must produce values for these five slots. Without them the downstre
 | Slot | What it means | Why it matters |
 |---|---|---|
 | **audience** | The set of customers, expressed as resolvable segment rules + estimated size | Drives the SQL/filter against the CRM |
-| **channel** | The channel(s) named in the request (Email, SMS, Push Notification, In-App Banner, Display Retargeting, Paid Social - Meta, Paid Social - Google). Destination platform is auto-defaulted, never asked. | Determines identity strategy + which consent flag(s) the deterministic mapping below sets |
+| **channel** | The channel(s) named in the request. **If the user does not name a channel, default to ALL channels** (Email, SMS, Push Notification, In-App Banner, Display Retargeting, Paid Social - Meta, Paid Social - Google). Never ask. Destination platforms are also auto-defaulted. | Determines identity strategy + which consent flag(s) the deterministic mapping below sets |
 | **geo** | Explicit country list (not "Europe") | Determines jurisdiction (GDPR / ePrivacy / CCPA) and language |
 | **timing** | Send window, urgency, frequency caps | Determines lead time for review; conflicts with other campaigns |
 | **campaign_purpose** | The *why* — must map to a lawful basis and consent scope | The compliance linchpin; drives every refusal decision downstream |
@@ -67,6 +67,7 @@ If the user's request is fresh enough that you suspect catalog values may have c
 | Paid Social - Google | `paid_social_opt_in` | Google Ads |
 
 Additional rules (apply deterministically, do not ask):
+- **Channel is never asked.** If the original request names one or more channels, use exactly those. If no channel is named, default to **all** channels in the table above. `required_consents` becomes the union of channel-consents (typically all four: email_marketing_opt_in, sms_opt_in, push_notification_opt_in, paid_social_opt_in). In the JSON artifact, `slots.channel.primary` becomes `"all"`, `slots.channel.destination_platform` becomes `"per-channel-default"`, and add a `slots.channel.channels` array listing every channel used.
 - If the matched recipe includes `profiling_score` (e.g. the `personalized` recipe), append `profiling_consent` to `required_consents` and set `slots.campaign_purpose.profiling_used = true`.
 - If `campaign_purpose.lawful_basis == "legitimate_interest"` (service / transactional), still record the channel-native consent in `required_consents` — downstream decides whether to enforce or skip; the intake just declares it.
 - `destination_platform` is *never* asked. If the user volunteers a non-default platform in their original request, honor it; otherwise use the table.
@@ -76,13 +77,31 @@ Reason for these rules: in earlier intake runs we wasted clarification slots on 
 ## How to ask — the principles
 Read these as hard rules. They are how the team has decided this intake should feel.
 
-1. **Assume-then-confirm, don't interrogate.** Infer defaults from the request + catalog, then surface them as "I'm assuming X — change?" not open-ended prompts.
-2. **Ground every question in the catalog.** Never ask "what audience?" — ask "I see segments {New, Loyal, At-Risk, High-Value, Occasional}; which?" with multi-select.
-3. **Distinguish blockers from refinements.** Missing `campaign_purpose` is a blocker (compliance can't be evaluated). Missing send-window is a refinement (default: "next available business window").
-4. **One batched round.** Collect all gaps, then ask in one structured turn using the AskUserQuestion tool. Do not drift into chat back-and-forth.
-5. **Show your work.** Every assumption ends up in the artifact's `assumptions` section so reviewers can challenge it.
-6. **Refuse, don't hallucinate.** If `campaign_purpose` is missing or can't be mapped to a lawful basis, do not draft. Return a partial intake with `status: blocked_on_purpose` and the specific question for the user.
-7. **Never ask about consent or destination platforms.** Both are deterministic from the channel(s) — see the "Consent is always required" table above.
+1. **Speak like a marketing colleague, not a system.** The user is a non-technical marketer. Every word you put on screen should be plain English. No confidence scores, no slot names, no JSON keys, no jargon like "lawful basis", "recipe match", "compliance flags", "consent axes", "SCC", "blocker". If you must convey such ideas, translate them — e.g. "we need your okay on the reason for this campaign" instead of "campaign_purpose is a blocker requiring lawful basis mapping".
+2. **Don't display the inference table.** Do not show the user a table of "what I inferred" with confidence levels. Just write a one-line natural sentence about what you understood, then go straight to the questions. Internal slot tracking stays internal.
+3. **Assume-then-confirm, don't interrogate.** Infer defaults from the request + catalog, then surface them as "I'll assume X — change?" not open-ended prompts.
+4. **Ground every question in the catalog.** Never ask "what audience?" — offer multi-select among the real options.
+5. **One batched round.** Collect all gaps, then ask in one structured turn using the AskUserQuestion tool. Do not drift into chat back-and-forth.
+6. **Refuse, don't hallucinate.** If the purpose can't be determined, do not draft. Write a blocked intake with the unanswered question recorded — but explain it to the user in one plain sentence, e.g. "I need to know what kind of campaign this is before I can finish."
+7. **Never ask about consent, channel, or destination platforms.** Consent and platform are deterministic from the channel(s). Channel defaults to *all channels* when the request doesn't name one — see the "Consent is always required" table above.
+8. **The audit fields are for the file, not the chat.** Things like `compliance_flags_to_check_downstream`, `required_consents`, recipe names, jurisdiction codes — these all live in the JSON artifact for the next step to consume. They never appear in your chat output to the user.
+
+### Plain-language translation cheatsheet
+Use these phrasings in user-facing text:
+
+| Internal concept | Say to the user |
+|---|---|
+| campaign_purpose / lawful basis | "the reason for this campaign" or "what kind of campaign this is" |
+| required_consents / consent axes | "the customers who've agreed to be contacted this way" |
+| recipe_match | (don't mention — this is internal) |
+| compliance_flags_to_check_downstream | (don't mention — this is internal) |
+| jurisdiction | (just use the country names) |
+| cross_border_transfer / SCC | "data leaving the EU" — only mention if you need a sign-off, in plain words |
+| profiling_consent | "permission to personalize messages from purchase history" |
+| destination_platform | "where the message gets sent from" — and only if user asks; otherwise silent |
+| At-Risk segment | "customers who haven't bought in a while" |
+| confidence: low | (don't say — just ask the question) |
+| status: blocked_on_purpose | "I can't finish this without knowing the campaign type" |
 
 ## Process
 
@@ -102,9 +121,8 @@ For every slot where confidence is **low**, or where the slot is a blocker and m
 - For the purpose slot, options must map to lawful bases (e.g. "Direct marketing — promotional", "Service / transactional (legitimate interest)", "Personalized recommendations").
 - **Never ask about destination_platform** — use the channel→platform table above.
 - **Never ask about consent** — consent is always required; map deterministically from channel.
+- **Never ask about channel.** If the request omits channel, default to all channels (per the rule in the consent table section).
 - Maximum 4 questions in one batch. If you have more than 4 gaps, batch the top 4 blockers first.
-
-If the request omits the channel entirely (e.g. "Send a Black Friday thing to our VIPs"), you may ask which channel(s) — but only the channel, not the platform.
 
 ### Step 4 — Set compliance flags deterministically (do not ask)
 Populate `compliance_flags_to_check_downstream` based on what you already know — do not surface these as questions:
@@ -116,7 +134,9 @@ Populate `compliance_flags_to_check_downstream` based on what you already know �
 These are recorded for the downstream compliance step to enforce. The intake's job is to declare them, not to confirm them with the user.
 
 ### Step 5 — Confirm and write the artifact
-Show the user the resolved intake as a compact summary in chat. On confirmation, write the artifact as a JSON file to `briefs/intake_<YYYYMMDD-HHMM>_<short-slug>.json`. The file is the audit trail — do not overwrite existing ones. Pretty-print with 2-space indentation so it stays diff-friendly and human-readable.
+Show the user a **plain-language recap** in chat — 3–5 short sentences in normal marketing language ("We'll re-engage customers in Germany who haven't bought in 6 months, by email, on Black Friday morning. Anyone who's unsubscribed is left out. Sound right?"). Do **not** show a slot table, JSON, or any technical fields in the chat. The detailed JSON goes to the file only.
+
+On confirmation, write the artifact as a JSON file to `briefs/intake_<YYYYMMDD-HHMM>_<short-slug>.json`. The file is the audit trail — do not overwrite existing ones. Pretty-print with 2-space indentation so it stays diff-friendly and human-readable.
 
 ## Output artifact schema
 
@@ -205,7 +225,7 @@ The `human_summary` field is a single-paragraph plain-language recap so reviewer
 
 ## After writing the artifact
 
-End your turn by:
-1. Printing the absolute path to the artifact file.
-2. A one-sentence handoff: *"Intake ready for `<intake_id>`. Next step: audience resolution."*
-3. Do not start the next step. The user or another skill will pick it up.
+End your turn with:
+1. A friendly one-line confirmation: *"Saved your brief — passing it on for the customer list to be pulled."*
+2. The file path on a separate line, in case the user wants to open it.
+3. Do not start the next step. The user or another skill will pick it up. Do not mention "intake", "audience resolution", "downstream pipeline", or other internal vocabulary.

@@ -1,0 +1,104 @@
+{
+  "intake_id": "intake_20260528-1715_lapsed-luxury-nl-bf",
+  "created_at": "2026-05-28T17:15:00+02:00",
+  "created_by": "gbonjubolaamuda@gmail.com",
+  "status": "ready",
+  "original_request": "Re-engage lapsed luxury customers in NL for Black Friday",
+  "recipe_match": {
+    "name": "re-engagement",
+    "fields": ["email", "sms", "segment", "ltv", "last_order_date"],
+    "confidence": "high"
+  },
+  "slots": {
+    "audience": {
+      "segment": ["At-Risk"],
+      "filters": {
+        "country": ["NL"],
+        "lifetime_value_eur_min": 500,
+        "last_order_before": "2026-05-27",
+        "account_status": ["active"]
+      },
+      "estimated_size": null
+    },
+    "channel": {
+      "primary": "all",
+      "destination_platform": "per-channel-default",
+      "channels": [
+        "Email",
+        "SMS",
+        "Push Notification",
+        "In-App Banner",
+        "Display Retargeting",
+        "Paid Social - Meta",
+        "Paid Social - Google"
+      ],
+      "destination_platforms_per_channel": {
+        "Email": "Klaviyo",
+        "SMS": "Klaviyo",
+        "Push Notification": "Braze",
+        "In-App Banner": "Braze",
+        "Display Retargeting": "Google Ads",
+        "Paid Social - Meta": "Meta Ads Manager",
+        "Paid Social - Google": "Google Ads"
+      },
+      "fallback": null
+    },
+    "geo": {
+      "countries": ["NL"],
+      "languages": ["nl-NL"],
+      "jurisdictions": ["GDPR"]
+    },
+    "timing": {
+      "send_window_start": "2026-11-27T09:00:00+01:00",
+      "send_window_end": "2026-11-27T20:00:00+01:00",
+      "frequency_cap": "1 send per customer per channel per 7 days",
+      "lead_time_required_hours": 4
+    },
+    "campaign_purpose": {
+      "label": "Direct marketing — promotional",
+      "lawful_basis": "consent",
+      "required_consents": [
+        "email_marketing_opt_in",
+        "sms_opt_in",
+        "push_notification_opt_in",
+        "paid_social_opt_in"
+      ],
+      "profiling_used": false
+    }
+  },
+  "optional_slots": {
+    "budget_or_size_cap": null,
+    "suppression_lists": {
+      "always_exclude": ["unsubscribed", "right_to_erasure_requested", "consent_withdrawn"],
+      "additionally": ["contacted_in_last_7_days"]
+    },
+    "success_metric": null,
+    "approver": null,
+    "prior_brief_reference": null
+  },
+  "compliance_flags_to_check_downstream": [
+    "email_consent_required",
+    "sms_consent_required",
+    "push_notification_consent_required",
+    "paid_social_consent_required",
+    "retention_window_active",
+    "jurisdiction_NL_GDPR",
+    "cross_border_transfer_us_scc_required",
+    "exclude_unsubscribed_and_erasure_and_withdrawn",
+    "exclude_inactive_and_suspended_accounts"
+  ],
+  "assumptions": [
+    "Mapped 'lapsed' descriptor to At-Risk customer_segment (CRM-native tag).",
+    "'Luxury' interpreted as lifetime_value_eur >= 500 per user selection.",
+    "'Lapsed' interpreted as no order in the 6 months before Black Friday 2026 (last_order_date before 2026-05-27).",
+    "No channel was named in the request, so the brief targets all available channels; the compliance step will filter each customer to the channels they've opted into.",
+    "Send window defaulted to Black Friday 2026 (2026-11-27), 09:00-20:00 CET local.",
+    "Restricted to account_status = active to avoid sending to inactive or suspended accounts.",
+    "Default frequency_cap: 1 send per customer per channel per 7 days; additionally suppress anyone contacted in the last 7 days."
+  ],
+  "open_questions": [
+    "Confirm the LTV threshold for 'luxury' — used €500 per the selected option; the team may have a stricter internal definition.",
+    "Confirm DPO sign-off for EU→US data transfer to Klaviyo, Braze, Meta Ads Manager, and Google Ads is already in place for NL audiences."
+  ],
+  "human_summary": "Re-engage active luxury customers (LTV ≥ €500) in the Netherlands who haven't bought since late May 2026, with a promotional Black Friday push on 2026-11-27 across all channels (email, SMS, push, in-app, display, Meta and Google ads). Each customer is filtered down to the channels they've agreed to. Unsubscribed, erasure-requested and consent-withdrawn customers are excluded automatically. Two items to confirm: the €500 luxury threshold and the EU→US data-transfer sign-off."
+}
