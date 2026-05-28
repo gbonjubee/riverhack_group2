@@ -1,0 +1,801 @@
+﻿transaction_id,device_or_customer_id,transaction_date,product_name,product_category,quantity,unit_price_eur,total_amount_eur,order_status,payment_method,acquisition_source,discount_applied,discount_pct
+TXN-000001,ANON-615524,2023-04-29,Protein Powder,Food & Drink,1,150.52,150.52,completed,Apple Pay,website,FALSE,0
+TXN-000002,ANON-301814,2024-10-23,Plant Pot Set,Home & Garden,3,331.28,993.84,completed,Debit Card,website,FALSE,0
+TXN-000003,ANON-248407,2023-07-19,Running Jacket,Clothing,2,42.4,84.8,returned,Apple Pay,organic_search,FALSE,11.2
+TXN-000004,CRM-00048,2022-05-07,Green Tea Set,Food & Drink,1,229,229,completed,Debit Card,website,FALSE,11.4
+TXN-000005,ANON-282112,2023-06-12,The Lean Startup,Books,3,496.65,1489.95,completed,Buy Now Pay Later,referral,TRUE,0
+TXN-000006,CRM-00269,2024-03-03,Running Shoes,Sports,1,385.06,385.06,completed,Buy Now Pay Later,paid_social,FALSE,0
+TXN-000007,CRM-00203,2022-03-02,Atomic Habits,Books,4,346.96,1387.84,cancelled,Apple Pay,mobile_app,FALSE,0
+TXN-000008,CRM-00035,2025-02-10,Vitamin C Serum,Beauty,4,334.78,1339.12,completed,PayPal,website,TRUE,0
+TXN-000009,CRM-00223,2023-07-28,USB-C Hub,Electronics,4,385.44,1541.76,completed,Debit Card,paid_social,TRUE,23.5
+TXN-000010,ANON-860206,2023-04-07,Tyre Inflator,Automotive,3,132.12,396.36,completed,Apple Pay,referral,FALSE,0
+TXN-000011,CRM-00258,2022-11-07,Water Bottle,Sports,1,390.68,390.68,completed,Credit Card,paid_social,TRUE,22.2
+TXN-000012,CRM-00004,2023-12-01,Jump Starter,Automotive,4,141.98,567.92,completed,Apple Pay,website,TRUE,0
+TXN-000013,CRM-00014,2024-03-15,Art Kit,Toys,1,35.82,35.82,completed,Debit Card,paid_social,TRUE,0
+TXN-000014,CRM-00110,2022-10-09,Building Blocks,Toys,3,196.96,590.88,completed,Apple Pay,organic_search,FALSE,21.3
+TXN-000015,CRM-00277,2022-06-29,Water Bottle,Sports,4,497,1988,completed,Debit Card,website,FALSE,0
+TXN-000016,CRM-00054,2024-02-22,Merino Wool Sweater,Clothing,4,132.57,530.28,completed,Debit Card,referral,FALSE,0
+TXN-000017,CRM-00289,2024-12-02,Green Tea Set,Food & Drink,3,406.52,1219.56,returned,Debit Card,referral,TRUE,0
+TXN-000018,CRM-00011,2023-04-11,Protein Powder,Food & Drink,1,92.9,92.9,completed,Google Pay,mobile_app,TRUE,11.1
+TXN-000019,CRM-00241,2024-05-04,Probiotic,Health,4,39.28,157.12,completed,Apple Pay,organic_search,FALSE,0
+TXN-000020,CRM-00215,2023-05-08,Green Tea Set,Food & Drink,1,488.83,488.83,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000021,CRM-00197,2025-03-19,Running Jacket,Clothing,2,104.13,208.26,completed,Debit Card,referral,FALSE,0
+TXN-000022,CRM-00068,2022-11-09,Dark Chocolate,Food & Drink,3,198.96,596.88,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000023,CRM-00075,2024-05-23,Organic Coffee,Food & Drink,4,323.87,1295.48,completed,PayPal,mobile_app,FALSE,0
+TXN-000024,CRM-00275,2023-10-02,Deep Work,Books,3,58.56,175.68,completed,Credit Card,mobile_app,FALSE,0
+TXN-000025,CRM-00096,2023-11-06,Slim Fit Jeans,Clothing,2,272.07,544.14,pending,PayPal,referral,FALSE,0
+TXN-000026,CRM-00248,2024-07-08,Green Tea Set,Food & Drink,3,218.04,654.12,cancelled,Debit Card,mobile_app,FALSE,0
+TXN-000027,CRM-00172,2025-01-15,Smart Watch,Electronics,3,308.3,924.9,completed,Debit Card,email_campaign,FALSE,0
+TXN-000028,CRM-00036,2022-09-27,Winter Coat,Clothing,4,57.49,229.96,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000029,CRM-00202,2023-02-28,Puzzle 1000pc,Toys,2,223.14,446.28,returned,Buy Now Pay Later,paid_social,FALSE,0
+TXN-000030,CRM-00016,2022-10-11,Remote Control Car,Toys,4,132.94,531.76,completed,Google Pay,mobile_app,TRUE,22.2
+TXN-000031,CRM-00067,2025-04-04,Smart Watch,Electronics,1,22.22,22.22,completed,Debit Card,referral,FALSE,16.4
+TXN-000032,CRM-00155,2025-01-13,Tyre Inflator,Automotive,2,39.78,79.56,completed,Credit Card,organic_search,FALSE,0
+TXN-000033,CRM-00014,2023-02-19,Dash Cam,Automotive,3,364.41,1093.23,completed,Debit Card,email_campaign,TRUE,0
+TXN-000034,ANON-414815,2022-10-10,Smart Watch,Electronics,3,388.96,1166.88,completed,Credit Card,referral,FALSE,0
+TXN-000035,CRM-00264,2023-09-25,Merino Wool Sweater,Clothing,1,14.27,14.27,completed,Apple Pay,website,FALSE,6
+TXN-000036,CRM-00260,2024-12-08,Sleep Aid,Health,3,250.86,752.58,completed,Debit Card,email_campaign,FALSE,0
+TXN-000037,CRM-00233,2022-10-04,Omega-3 Capsules,Health,4,327.52,1310.08,completed,Apple Pay,website,TRUE,20.2
+TXN-000038,CRM-00094,2024-05-30,Vitamin C Serum,Beauty,2,5.43,10.86,completed,Buy Now Pay Later,mobile_app,FALSE,0
+TXN-000039,CRM-00026,2022-10-25,Dash Cam,Automotive,1,23.69,23.69,completed,Apple Pay,referral,FALSE,0
+TXN-000040,CRM-00138,2025-03-02,Dash Cam,Automotive,1,197.9,197.9,completed,Credit Card,website,FALSE,18.8
+TXN-000041,CRM-00111,2022-11-20,Foam Roller,Sports,3,79.89,239.67,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000042,CRM-00088,2023-10-13,Green Tea Set,Food & Drink,3,167.94,503.82,completed,Google Pay,paid_social,FALSE,7.3
+TXN-000043,ANON-243294,2022-05-19,Atomic Habits,Books,1,198.32,198.32,completed,Debit Card,website,FALSE,0
+TXN-000044,CRM-00222,2025-02-15,The Lean Startup,Books,4,6.83,27.32,cancelled,Buy Now Pay Later,website,TRUE,0
+TXN-000045,CRM-00073,2024-12-27,Wireless Earbuds,Electronics,4,354.56,1418.24,completed,Credit Card,organic_search,FALSE,0
+TXN-000046,CRM-00111,2022-08-31,Yoga Mat,Sports,2,385.87,771.74,cancelled,Google Pay,paid_social,FALSE,0
+TXN-000047,ANON-625021,2023-01-13,Olive Oil,Food & Drink,3,241.2,723.6,completed,Credit Card,website,TRUE,0
+TXN-000048,CRM-00300,2023-10-13,The Pragmatic Programmer,Books,1,204.53,204.53,completed,Apple Pay,website,FALSE,9.8
+TXN-000049,CRM-00233,2022-10-26,Car Phone Mount,Automotive,3,364.52,1093.56,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000050,CRM-00220,2022-03-02,Collagen Powder,Health,3,406.26,1218.78,completed,Credit Card,email_campaign,TRUE,25.8
+TXN-000051,CRM-00164,2023-10-15,Multivitamins,Health,4,39.63,158.52,completed,Credit Card,email_campaign,FALSE,0
+TXN-000052,CRM-00239,2024-04-27,Olive Oil,Food & Drink,3,116.57,349.71,cancelled,Credit Card,mobile_app,FALSE,0
+TXN-000053,CRM-00046,2024-04-22,Sapiens,Books,2,194.91,389.82,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000054,CRM-00280,2023-09-14,Dark Chocolate,Food & Drink,4,345.5,1382,returned,Credit Card,website,FALSE,0
+TXN-000055,CRM-00008,2024-06-26,Slim Fit Jeans,Clothing,4,390.24,1560.96,completed,Debit Card,organic_search,TRUE,0
+TXN-000056,CRM-00163,2023-07-15,Polo Shirt,Clothing,3,64.87,194.61,completed,Debit Card,email_campaign,FALSE,0
+TXN-000057,ANON-140712,2022-11-08,Foam Roller,Sports,4,269.44,1077.76,completed,Credit Card,mobile_app,FALSE,6.6
+TXN-000058,CRM-00209,2023-01-20,USB-C Hub,Electronics,2,494.85,989.7,returned,PayPal,organic_search,FALSE,0
+TXN-000059,ANON-693083,2022-08-07,Deep Work,Books,1,169.72,169.72,completed,Debit Card,website,FALSE,27.6
+TXN-000060,CRM-00101,2022-09-27,Atomic Habits,Books,2,154.6,309.2,completed,Buy Now Pay Later,organic_search,TRUE,0
+TXN-000061,CRM-00228,2023-01-14,Eye Cream,Beauty,4,32.27,129.08,completed,Google Pay,website,FALSE,0
+TXN-000062,CRM-00113,2022-02-23,Car Vacuum,Automotive,2,497.53,995.06,returned,Credit Card,organic_search,FALSE,0
+TXN-000063,CRM-00222,2023-07-01,Tyre Inflator,Automotive,4,324.65,1298.6,completed,Credit Card,website,FALSE,18.1
+TXN-000064,CRM-00093,2025-03-07,Atomic Habits,Books,3,185.49,556.47,completed,Credit Card,organic_search,FALSE,0
+TXN-000065,CRM-00062,2023-04-18,Winter Coat,Clothing,4,426.55,1706.2,completed,Google Pay,referral,FALSE,0
+TXN-000066,CRM-00295,2023-04-21,Smart Watch,Electronics,1,172.99,172.99,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000067,CRM-00126,2023-04-18,Coffee Maker,Home & Garden,2,420.54,841.08,completed,PayPal,mobile_app,FALSE,0
+TXN-000068,CRM-00289,2022-02-23,Dark Chocolate,Food & Drink,3,380.66,1141.98,completed,Buy Now Pay Later,referral,TRUE,0
+TXN-000069,ANON-504051,2024-01-06,Plant Pot Set,Home & Garden,4,148.24,592.96,completed,Credit Card,organic_search,FALSE,6.5
+TXN-000070,CRM-00043,2022-06-12,Board Game,Toys,2,105.34,210.68,completed,Debit Card,organic_search,FALSE,0
+TXN-000071,CRM-00084,2024-09-03,Winter Coat,Clothing,2,278.91,557.82,completed,Debit Card,email_campaign,FALSE,0
+TXN-000072,CRM-00014,2022-10-02,Moisturiser SPF50,Beauty,2,482.95,965.9,completed,Apple Pay,referral,FALSE,10.7
+TXN-000073,ANON-952624,2024-10-25,Collagen Powder,Health,3,331.4,994.2,completed,Google Pay,organic_search,FALSE,0
+TXN-000074,CRM-00254,2024-08-18,Water Bottle,Sports,4,152.64,610.56,completed,Apple Pay,mobile_app,FALSE,19.6
+TXN-000075,CRM-00124,2024-02-05,Running Shoes,Sports,4,197.71,790.84,completed,Debit Card,mobile_app,TRUE,19.5
+TXN-000076,ANON-798011,2023-01-12,Merino Wool Sweater,Clothing,3,57.74,173.22,completed,PayPal,email_campaign,FALSE,0
+TXN-000077,CRM-00138,2024-03-04,Board Game,Toys,1,345.29,345.29,completed,PayPal,website,FALSE,0
+TXN-000078,CRM-00225,2024-10-03,Yoga Mat,Sports,2,245.33,490.66,completed,Apple Pay,mobile_app,FALSE,16.6
+TXN-000079,CRM-00175,2024-08-28,Dark Chocolate,Food & Drink,4,442.3,1769.2,completed,Debit Card,referral,FALSE,0
+TXN-000080,CRM-00152,2022-10-09,Running Shoes,Sports,3,221.36,664.08,completed,Debit Card,paid_social,FALSE,0
+TXN-000081,CRM-00192,2022-12-02,Sapiens,Books,3,98.6,295.8,completed,Credit Card,referral,FALSE,0
+TXN-000082,CRM-00119,2023-01-31,Running Jacket,Clothing,2,22.63,45.26,completed,Google Pay,paid_social,FALSE,18.4
+TXN-000083,CRM-00178,2023-04-09,Building Blocks,Toys,3,17.53,52.59,returned,Buy Now Pay Later,website,FALSE,0
+TXN-000084,CRM-00019,2022-03-08,Smart Watch,Electronics,2,497.21,994.42,completed,PayPal,website,FALSE,24.5
+TXN-000085,ANON-908422,2024-04-16,Probiotic,Health,4,122.81,491.24,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000086,ANON-846176,2022-01-31,Winter Coat,Clothing,2,197.05,394.1,completed,Google Pay,email_campaign,FALSE,0
+TXN-000087,CRM-00088,2023-07-07,Protein Powder,Food & Drink,1,396.61,396.61,completed,Credit Card,organic_search,FALSE,13
+TXN-000088,CRM-00256,2024-04-25,Green Tea Set,Food & Drink,2,322.84,645.68,completed,Credit Card,paid_social,TRUE,0
+TXN-000089,CRM-00278,2023-04-01,Sleep Aid,Health,2,251.84,503.68,completed,Credit Card,paid_social,FALSE,0
+TXN-000090,CRM-00118,2023-02-20,Jump Starter,Automotive,1,481.69,481.69,completed,Credit Card,paid_social,FALSE,20.8
+TXN-000091,CRM-00250,2023-02-23,Desk Lamp,Home & Garden,2,406.02,812.04,completed,Google Pay,website,FALSE,0
+TXN-000092,CRM-00098,2022-05-16,Organic Coffee,Food & Drink,3,482.49,1447.47,completed,PayPal,mobile_app,FALSE,0
+TXN-000093,CRM-00136,2022-12-29,Webcam,Electronics,4,13.11,52.44,completed,Credit Card,paid_social,FALSE,0
+TXN-000094,CRM-00071,2024-06-18,Car Vacuum,Automotive,4,172.61,690.44,completed,Google Pay,referral,TRUE,0
+TXN-000095,CRM-00284,2024-09-30,Smart Watch,Electronics,4,171.83,687.32,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000096,CRM-00041,2023-10-28,Car Vacuum,Automotive,4,361.18,1444.72,completed,Debit Card,website,TRUE,0
+TXN-000097,CRM-00232,2024-07-26,Board Game,Toys,1,205.32,205.32,completed,Credit Card,mobile_app,TRUE,9.9
+TXN-000098,CRM-00033,2023-05-21,Collagen Powder,Health,2,109.57,219.14,cancelled,Debit Card,paid_social,TRUE,0
+TXN-000099,CRM-00032,2024-05-25,Green Tea Set,Food & Drink,2,328,656,completed,Credit Card,website,FALSE,0
+TXN-000100,CRM-00135,2024-04-09,Car Vacuum,Automotive,3,263.42,790.26,pending,Debit Card,paid_social,FALSE,7.9
+TXN-000101,CRM-00095,2022-03-27,Air Purifier,Home & Garden,2,469.4,938.8,completed,Apple Pay,website,FALSE,7.1
+TXN-000102,CRM-00037,2024-02-19,Probiotic,Health,1,434.88,434.88,completed,Apple Pay,paid_social,FALSE,0
+TXN-000103,CRM-00108,2023-10-03,Plant Pot Set,Home & Garden,3,270.06,810.18,completed,Debit Card,paid_social,FALSE,9.9
+TXN-000104,ANON-767083,2024-03-18,Air Purifier,Home & Garden,3,371.08,1113.24,completed,PayPal,mobile_app,FALSE,18.6
+TXN-000105,CRM-00136,2025-03-17,Polo Shirt,Clothing,2,120.09,240.18,completed,Buy Now Pay Later,mobile_app,TRUE,10.4
+TXN-000106,CRM-00140,2025-01-03,Puzzle 1000pc,Toys,1,40.58,40.58,completed,PayPal,email_campaign,FALSE,0
+TXN-000107,CRM-00256,2024-12-11,Sleep Aid,Health,4,368.32,1473.28,completed,Debit Card,website,TRUE,0
+TXN-000108,CRM-00028,2022-03-20,Probiotic,Health,1,246.51,246.51,completed,Buy Now Pay Later,mobile_app,FALSE,0
+TXN-000109,CRM-00243,2024-12-02,Sapiens,Books,1,14.42,14.42,completed,Apple Pay,website,FALSE,0
+TXN-000110,CRM-00092,2022-08-12,Tyre Inflator,Automotive,1,453.15,453.15,pending,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000111,CRM-00212,2024-07-13,Remote Control Car,Toys,3,310.48,931.44,completed,Buy Now Pay Later,mobile_app,TRUE,0
+TXN-000112,ANON-276578,2024-07-24,Art Kit,Toys,3,124.89,374.67,pending,Credit Card,mobile_app,FALSE,17.2
+TXN-000113,CRM-00065,2022-03-28,Omega-3 Capsules,Health,1,325.5,325.5,completed,Apple Pay,website,TRUE,0
+TXN-000114,ANON-173234,2023-05-19,Foam Roller,Sports,4,12.1,48.4,completed,Debit Card,referral,FALSE,0
+TXN-000115,CRM-00045,2024-11-28,Vitamin C Serum,Beauty,3,317.53,952.59,completed,Credit Card,referral,TRUE,0
+TXN-000116,CRM-00214,2025-01-06,Building Blocks,Toys,1,451.9,451.9,cancelled,Debit Card,mobile_app,FALSE,0
+TXN-000117,CRM-00291,2024-03-21,Sapiens,Books,4,410.45,1641.8,completed,Credit Card,email_campaign,FALSE,19.2
+TXN-000118,CRM-00119,2022-03-22,Vitamin C Serum,Beauty,2,53.06,106.12,completed,PayPal,email_campaign,FALSE,0
+TXN-000119,CRM-00015,2025-02-16,Dark Chocolate,Food & Drink,2,306.95,613.9,completed,PayPal,organic_search,FALSE,0
+TXN-000120,CRM-00090,2024-03-04,Plant Pot Set,Home & Garden,1,417.66,417.66,returned,Credit Card,mobile_app,FALSE,19.5
+TXN-000121,CRM-00247,2024-11-23,Plant Pot Set,Home & Garden,1,36.6,36.6,completed,Google Pay,website,FALSE,0
+TXN-000122,ANON-610102,2022-04-11,Remote Control Car,Toys,3,408.83,1226.49,pending,PayPal,email_campaign,FALSE,26.5
+TXN-000123,CRM-00286,2023-01-24,Omega-3 Capsules,Health,4,61.4,245.6,completed,Credit Card,referral,FALSE,7.8
+TXN-000124,CRM-00257,2023-08-20,Dash Cam,Automotive,1,298.92,298.92,cancelled,PayPal,paid_social,FALSE,0
+TXN-000125,CRM-00167,2024-06-19,Lip Balm,Beauty,2,309.12,618.24,completed,Credit Card,referral,TRUE,0
+TXN-000126,CRM-00166,2024-03-26,Car Phone Mount,Automotive,1,36.18,36.18,completed,Credit Card,email_campaign,TRUE,0
+TXN-000127,CRM-00029,2023-09-16,Atomic Habits,Books,3,105.1,315.3,returned,Google Pay,organic_search,FALSE,27.2
+TXN-000128,ANON-291605,2023-08-09,Tyre Inflator,Automotive,3,171.65,514.95,completed,Debit Card,referral,TRUE,0
+TXN-000129,CRM-00239,2024-08-02,Running Shoes,Sports,4,417.93,1671.72,completed,Debit Card,organic_search,TRUE,0
+TXN-000130,CRM-00037,2022-12-07,Resistance Bands,Sports,2,369.54,739.08,completed,Apple Pay,organic_search,TRUE,0
+TXN-000131,CRM-00019,2024-05-15,Foam Roller,Sports,4,203.59,814.36,completed,Google Pay,paid_social,FALSE,0
+TXN-000132,CRM-00235,2023-08-26,Collagen Powder,Health,2,64.68,129.36,completed,PayPal,organic_search,FALSE,0
+TXN-000133,CRM-00067,2022-04-22,Face Mask Set,Beauty,2,342.94,685.88,completed,Google Pay,mobile_app,TRUE,24.4
+TXN-000134,CRM-00060,2024-11-24,Deep Work,Books,1,274.67,274.67,completed,Debit Card,email_campaign,FALSE,0
+TXN-000135,ANON-767349,2022-10-19,Desk Lamp,Home & Garden,2,163.87,327.74,completed,Buy Now Pay Later,mobile_app,FALSE,0
+TXN-000136,CRM-00206,2024-08-07,Desk Lamp,Home & Garden,2,481.56,963.12,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000137,CRM-00282,2024-07-14,Jump Starter,Automotive,3,110.34,331.02,completed,Debit Card,referral,TRUE,0
+TXN-000138,CRM-00026,2022-07-05,Jump Starter,Automotive,4,27.52,110.08,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000139,CRM-00176,2024-10-22,The Lean Startup,Books,4,90.68,362.72,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000140,CRM-00276,2022-08-20,Polo Shirt,Clothing,3,36.23,108.69,completed,PayPal,organic_search,FALSE,0
+TXN-000141,CRM-00023,2023-01-04,The Lean Startup,Books,1,140.3,140.3,completed,Google Pay,website,FALSE,0
+TXN-000142,CRM-00300,2025-04-13,Dash Cam,Automotive,4,379.23,1516.92,completed,PayPal,paid_social,FALSE,0
+TXN-000143,CRM-00060,2025-01-24,Protein Powder,Food & Drink,3,88.02,264.06,completed,PayPal,paid_social,TRUE,0
+TXN-000144,ANON-164022,2022-10-05,Omega-3 Capsules,Health,1,187.74,187.74,pending,Credit Card,email_campaign,TRUE,0
+TXN-000145,CRM-00243,2024-03-16,Sleep Aid,Health,3,86.51,259.53,completed,PayPal,mobile_app,FALSE,0
+TXN-000146,CRM-00028,2024-04-26,Board Game,Toys,4,125.36,501.44,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000147,CRM-00255,2023-10-25,Car Phone Mount,Automotive,4,292.5,1170,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000148,CRM-00243,2024-07-12,Lip Balm,Beauty,2,70.89,141.78,completed,PayPal,organic_search,FALSE,0
+TXN-000149,ANON-321321,2022-02-21,Puzzle 1000pc,Toys,3,395.78,1187.34,completed,PayPal,organic_search,FALSE,0
+TXN-000150,CRM-00283,2023-01-02,USB-C Hub,Electronics,2,317.3,634.6,completed,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000151,ANON-732275,2024-07-18,Car Vacuum,Automotive,3,190.81,572.43,completed,Credit Card,organic_search,FALSE,0
+TXN-000152,CRM-00278,2025-04-23,Slim Fit Jeans,Clothing,4,82.93,331.72,pending,Credit Card,paid_social,FALSE,0
+TXN-000153,CRM-00130,2023-02-18,Webcam,Electronics,3,439.54,1318.62,completed,Debit Card,referral,FALSE,0
+TXN-000154,CRM-00218,2024-07-20,Art Kit,Toys,3,44.88,134.64,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000155,CRM-00149,2022-07-04,Desk Lamp,Home & Garden,1,8.57,8.57,completed,Debit Card,email_campaign,TRUE,9.9
+TXN-000156,CRM-00115,2023-05-28,USB-C Hub,Electronics,1,462.51,462.51,completed,PayPal,paid_social,TRUE,0
+TXN-000157,CRM-00128,2023-10-26,Wireless Earbuds,Electronics,1,354.13,354.13,completed,Debit Card,website,FALSE,0
+TXN-000158,CRM-00107,2022-12-02,Running Shoes,Sports,2,298.3,596.6,completed,Apple Pay,paid_social,FALSE,0
+TXN-000159,CRM-00273,2022-09-11,Moisturiser SPF50,Beauty,3,145.16,435.48,completed,Apple Pay,organic_search,TRUE,0
+TXN-000160,CRM-00083,2022-07-06,Desk Lamp,Home & Garden,4,347.59,1390.36,completed,Buy Now Pay Later,organic_search,TRUE,25.1
+TXN-000161,CRM-00134,2022-08-22,Eye Cream,Beauty,3,396.37,1189.11,cancelled,Apple Pay,mobile_app,FALSE,0
+TXN-000162,CRM-00045,2024-07-09,Vitamin C Serum,Beauty,3,240.15,720.45,completed,Credit Card,paid_social,TRUE,0
+TXN-000163,CRM-00185,2024-01-14,Throw Blanket,Home & Garden,1,67.68,67.68,completed,Credit Card,email_campaign,TRUE,0
+TXN-000164,CRM-00186,2022-06-24,Webcam,Electronics,2,75.69,151.38,cancelled,Google Pay,email_campaign,TRUE,0
+TXN-000165,CRM-00195,2024-12-08,Eye Cream,Beauty,4,138.85,555.4,completed,Apple Pay,referral,FALSE,20.4
+TXN-000166,CRM-00150,2024-02-26,Resistance Bands,Sports,4,227.51,910.04,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000167,CRM-00265,2024-11-13,Car Vacuum,Automotive,1,123.19,123.19,completed,PayPal,organic_search,TRUE,16.4
+TXN-000168,CRM-00144,2022-11-24,USB-C Hub,Electronics,4,91.23,364.92,completed,Debit Card,mobile_app,FALSE,0
+TXN-000169,ANON-832229,2024-02-15,Sapiens,Books,3,346.69,1040.07,completed,Credit Card,website,FALSE,0
+TXN-000170,CRM-00115,2025-02-01,Dark Chocolate,Food & Drink,3,299.56,898.68,completed,PayPal,paid_social,TRUE,5
+TXN-000171,CRM-00126,2024-02-19,Polo Shirt,Clothing,1,359.3,359.3,completed,Debit Card,email_campaign,FALSE,0
+TXN-000172,CRM-00193,2022-03-31,Probiotic,Health,2,307.35,614.7,returned,Debit Card,paid_social,TRUE,23.9
+TXN-000173,ANON-228864,2022-12-16,Car Phone Mount,Automotive,3,48.48,145.44,completed,Apple Pay,organic_search,FALSE,0
+TXN-000174,CRM-00075,2023-11-18,Running Shoes,Sports,2,413.28,826.56,completed,PayPal,email_campaign,FALSE,20
+TXN-000175,CRM-00299,2025-03-04,Jump Starter,Automotive,2,153.79,307.58,completed,PayPal,paid_social,TRUE,0
+TXN-000176,CRM-00164,2022-11-04,Puzzle 1000pc,Toys,4,211.88,847.52,returned,Apple Pay,referral,FALSE,0
+TXN-000177,CRM-00006,2022-11-29,Running Shoes,Sports,3,280.51,841.53,returned,Apple Pay,paid_social,FALSE,17.3
+TXN-000178,CRM-00115,2022-10-24,Dash Cam,Automotive,4,99.8,399.2,completed,Apple Pay,email_campaign,FALSE,9.4
+TXN-000179,CRM-00215,2023-01-02,Vitamin C Serum,Beauty,1,492.38,492.38,completed,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000180,CRM-00144,2022-04-16,USB-C Hub,Electronics,3,487.53,1462.59,completed,Apple Pay,website,FALSE,17.7
+TXN-000181,CRM-00235,2024-05-09,Board Game,Toys,1,310.75,310.75,completed,Google Pay,website,TRUE,0
+TXN-000182,CRM-00104,2023-09-23,Art Kit,Toys,4,431.19,1724.76,completed,Buy Now Pay Later,mobile_app,FALSE,17.9
+TXN-000183,CRM-00170,2023-09-26,Art Kit,Toys,4,492.47,1969.88,completed,PayPal,email_campaign,TRUE,0
+TXN-000184,CRM-00097,2024-07-02,Deep Work,Books,4,255.73,1022.92,cancelled,Debit Card,organic_search,FALSE,0
+TXN-000185,CRM-00082,2023-08-15,Car Phone Mount,Automotive,3,234.32,702.96,completed,Buy Now Pay Later,mobile_app,FALSE,0
+TXN-000186,CRM-00008,2023-01-06,Wireless Earbuds,Electronics,4,314.47,1257.88,completed,Debit Card,email_campaign,TRUE,0
+TXN-000187,ANON-477702,2022-08-29,Smart Watch,Electronics,1,107.81,107.81,completed,Apple Pay,mobile_app,TRUE,0
+TXN-000188,CRM-00009,2022-09-27,Face Mask Set,Beauty,2,31.22,62.44,completed,Apple Pay,website,FALSE,0
+TXN-000189,CRM-00244,2023-02-20,Resistance Bands,Sports,3,60.66,181.98,cancelled,Google Pay,mobile_app,TRUE,0
+TXN-000190,CRM-00085,2022-01-08,Sleep Aid,Health,1,78.71,78.71,completed,Apple Pay,referral,FALSE,0
+TXN-000191,CRM-00243,2023-06-03,Green Tea Set,Food & Drink,3,421.83,1265.49,completed,Google Pay,email_campaign,FALSE,0
+TXN-000192,CRM-00142,2022-01-26,Water Bottle,Sports,4,455.27,1821.08,completed,Google Pay,email_campaign,TRUE,0
+TXN-000193,CRM-00108,2024-07-28,Sapiens,Books,3,250.77,752.31,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000194,CRM-00176,2024-10-16,Collagen Powder,Health,4,83.92,335.68,completed,Google Pay,email_campaign,FALSE,0
+TXN-000195,CRM-00070,2024-10-18,Tyre Inflator,Automotive,1,460.8,460.8,completed,Google Pay,website,FALSE,28.8
+TXN-000196,CRM-00048,2025-01-18,Sleep Aid,Health,1,31.69,31.69,completed,Debit Card,website,FALSE,12.5
+TXN-000197,CRM-00075,2022-01-12,Running Shoes,Sports,2,184.91,369.82,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000198,CRM-00073,2024-10-07,Water Bottle,Sports,4,108.54,434.16,completed,Credit Card,referral,TRUE,26.7
+TXN-000199,CRM-00161,2023-05-03,Eye Cream,Beauty,2,129.18,258.36,cancelled,Google Pay,website,TRUE,0
+TXN-000200,CRM-00238,2023-03-21,Dark Chocolate,Food & Drink,1,309.71,309.71,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000201,CRM-00222,2025-04-20,Plant Pot Set,Home & Garden,4,444.7,1778.8,completed,Apple Pay,email_campaign,FALSE,11.2
+TXN-000202,ANON-503553,2024-09-01,Polo Shirt,Clothing,2,228.85,457.7,completed,Google Pay,mobile_app,FALSE,0
+TXN-000203,CRM-00285,2024-07-18,Air Purifier,Home & Garden,3,56.58,169.74,returned,Google Pay,organic_search,FALSE,0
+TXN-000204,CRM-00173,2024-04-19,Air Purifier,Home & Garden,3,30.91,92.73,completed,Buy Now Pay Later,paid_social,TRUE,11.9
+TXN-000205,ANON-645316,2024-06-23,Car Phone Mount,Automotive,1,270.46,270.46,returned,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000206,CRM-00117,2022-06-12,Merino Wool Sweater,Clothing,1,83.07,83.07,completed,Debit Card,mobile_app,FALSE,19
+TXN-000207,CRM-00281,2022-01-14,Remote Control Car,Toys,2,19.36,38.72,completed,Buy Now Pay Later,paid_social,FALSE,12.7
+TXN-000208,CRM-00298,2023-05-17,USB-C Hub,Electronics,2,259.36,518.72,completed,Credit Card,website,FALSE,0
+TXN-000209,ANON-622112,2025-01-25,Building Blocks,Toys,2,40,80,completed,Debit Card,organic_search,TRUE,0
+TXN-000210,CRM-00071,2023-07-24,Vitamin C Serum,Beauty,4,121.24,484.96,completed,PayPal,email_campaign,FALSE,16
+TXN-000211,CRM-00096,2025-02-15,Dash Cam,Automotive,3,224.74,674.22,completed,Credit Card,paid_social,FALSE,0
+TXN-000212,CRM-00222,2023-03-02,Lip Balm,Beauty,4,291.4,1165.6,completed,Debit Card,mobile_app,TRUE,29.4
+TXN-000213,CRM-00108,2022-04-11,Coffee Maker,Home & Garden,4,212.02,848.08,completed,Credit Card,paid_social,TRUE,0
+TXN-000214,CRM-00178,2023-01-14,Coffee Maker,Home & Garden,2,374.06,748.12,completed,PayPal,mobile_app,TRUE,0
+TXN-000215,CRM-00212,2022-10-31,Multivitamins,Health,3,448.8,1346.4,completed,Google Pay,website,FALSE,0
+TXN-000216,CRM-00106,2022-04-23,Lip Balm,Beauty,2,118.65,237.3,completed,Apple Pay,paid_social,FALSE,0
+TXN-000217,ANON-794830,2023-12-16,Webcam,Electronics,3,59.41,178.23,completed,Debit Card,email_campaign,FALSE,0
+TXN-000218,CRM-00043,2022-03-17,The Lean Startup,Books,3,117.52,352.56,completed,Credit Card,referral,FALSE,0
+TXN-000219,CRM-00285,2022-10-25,Protein Powder,Food & Drink,2,122.14,244.28,completed,Credit Card,paid_social,FALSE,0
+TXN-000220,CRM-00252,2022-03-08,Plant Pot Set,Home & Garden,1,208.82,208.82,completed,PayPal,referral,FALSE,0
+TXN-000221,CRM-00244,2025-03-29,Webcam,Electronics,4,103.78,415.12,completed,PayPal,website,TRUE,0
+TXN-000222,CRM-00292,2023-09-04,Coffee Maker,Home & Garden,3,445.33,1335.99,completed,Debit Card,paid_social,TRUE,0
+TXN-000223,ANON-850534,2023-11-10,The Lean Startup,Books,2,41.32,82.64,pending,PayPal,referral,FALSE,0
+TXN-000224,ANON-442360,2022-06-29,Sleep Aid,Health,4,294.04,1176.16,completed,Apple Pay,organic_search,FALSE,0
+TXN-000225,CRM-00012,2022-04-11,Webcam,Electronics,4,31.84,127.36,completed,Debit Card,referral,FALSE,28.6
+TXN-000226,CRM-00017,2022-08-12,Omega-3 Capsules,Health,2,220.32,440.64,completed,Google Pay,organic_search,FALSE,0
+TXN-000227,CRM-00181,2024-05-03,Moisturiser SPF50,Beauty,1,111.79,111.79,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000228,CRM-00006,2023-01-01,Olive Oil,Food & Drink,1,306.06,306.06,completed,Debit Card,email_campaign,FALSE,0
+TXN-000229,CRM-00144,2022-11-27,Sleep Aid,Health,2,92.96,185.92,cancelled,Debit Card,mobile_app,FALSE,17.2
+TXN-000230,CRM-00100,2023-08-06,Dash Cam,Automotive,1,189.5,189.5,completed,Debit Card,mobile_app,TRUE,0
+TXN-000231,ANON-242350,2025-03-18,Atomic Habits,Books,4,231.12,924.48,cancelled,Credit Card,website,FALSE,13
+TXN-000232,CRM-00242,2025-02-25,Slim Fit Jeans,Clothing,2,100.91,201.82,completed,Buy Now Pay Later,organic_search,FALSE,29.4
+TXN-000233,CRM-00103,2022-12-30,Deep Work,Books,3,182.14,546.42,cancelled,Debit Card,organic_search,FALSE,0
+TXN-000234,CRM-00054,2024-07-21,Dash Cam,Automotive,2,138.23,276.46,completed,Credit Card,website,FALSE,16.8
+TXN-000235,CRM-00241,2025-03-31,Resistance Bands,Sports,1,170.93,170.93,pending,Buy Now Pay Later,email_campaign,TRUE,0
+TXN-000236,CRM-00261,2024-01-08,Throw Blanket,Home & Garden,4,20.85,83.4,completed,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000237,CRM-00018,2022-03-15,Dash Cam,Automotive,4,285.92,1143.68,completed,Debit Card,website,FALSE,9.1
+TXN-000238,CRM-00045,2022-07-10,Running Jacket,Clothing,3,143.62,430.86,completed,Apple Pay,website,FALSE,6.6
+TXN-000239,CRM-00212,2023-09-05,Car Phone Mount,Automotive,2,59.89,119.78,completed,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000240,ANON-459898,2023-10-24,Desk Lamp,Home & Garden,1,234.97,234.97,completed,Credit Card,mobile_app,TRUE,0
+TXN-000241,CRM-00034,2024-01-25,Puzzle 1000pc,Toys,3,211.6,634.8,cancelled,Buy Now Pay Later,paid_social,FALSE,0
+TXN-000242,CRM-00158,2024-02-16,Tyre Inflator,Automotive,2,380.61,761.22,completed,Apple Pay,email_campaign,TRUE,0
+TXN-000243,CRM-00110,2022-05-19,Tyre Inflator,Automotive,1,113.61,113.61,completed,PayPal,paid_social,TRUE,0
+TXN-000244,CRM-00022,2024-05-25,Art Kit,Toys,1,150.81,150.81,completed,Credit Card,organic_search,FALSE,0
+TXN-000245,CRM-00212,2025-02-01,Slim Fit Jeans,Clothing,4,82.45,329.8,completed,Buy Now Pay Later,mobile_app,TRUE,15.8
+TXN-000246,CRM-00199,2022-05-13,The Pragmatic Programmer,Books,4,397.52,1590.08,completed,Credit Card,paid_social,FALSE,12.6
+TXN-000247,CRM-00176,2023-08-23,Running Shoes,Sports,4,475.66,1902.64,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000248,CRM-00101,2024-08-22,Resistance Bands,Sports,1,452.36,452.36,completed,Google Pay,email_campaign,FALSE,28.1
+TXN-000249,CRM-00097,2022-10-03,The Pragmatic Programmer,Books,2,290.59,581.18,completed,Credit Card,website,FALSE,0
+TXN-000250,ANON-191939,2022-09-07,Atomic Habits,Books,2,278.06,556.12,completed,Apple Pay,referral,FALSE,0
+TXN-000251,ANON-456765,2023-07-17,The Pragmatic Programmer,Books,2,118.47,236.94,completed,Google Pay,paid_social,TRUE,0
+TXN-000252,CRM-00132,2023-11-06,Eye Cream,Beauty,3,208.38,625.14,pending,Debit Card,website,FALSE,0
+TXN-000253,CRM-00192,2024-12-15,Running Shoes,Sports,3,262.75,788.25,completed,Credit Card,organic_search,FALSE,16.1
+TXN-000254,CRM-00147,2024-04-27,Collagen Powder,Health,4,430.93,1723.72,completed,Debit Card,email_campaign,TRUE,0
+TXN-000255,ANON-485600,2024-12-10,Tyre Inflator,Automotive,4,111.92,447.68,completed,PayPal,mobile_app,TRUE,20.9
+TXN-000256,ANON-428594,2023-03-06,Dark Chocolate,Food & Drink,2,238.9,477.8,completed,Debit Card,organic_search,TRUE,0
+TXN-000257,CRM-00169,2023-03-05,Jump Starter,Automotive,4,233.6,934.4,completed,Credit Card,website,TRUE,18.5
+TXN-000258,CRM-00267,2022-04-30,USB-C Hub,Electronics,2,12.16,24.32,completed,Debit Card,paid_social,FALSE,0
+TXN-000259,ANON-164891,2022-08-12,Slim Fit Jeans,Clothing,2,216.49,432.98,completed,Credit Card,paid_social,FALSE,0
+TXN-000260,CRM-00108,2025-03-16,Deep Work,Books,3,436.06,1308.18,completed,Credit Card,website,TRUE,0
+TXN-000261,CRM-00200,2024-12-19,Dark Chocolate,Food & Drink,2,127.43,254.86,returned,Google Pay,email_campaign,TRUE,9.6
+TXN-000262,CRM-00245,2022-06-29,Resistance Bands,Sports,4,219.52,878.08,completed,Apple Pay,referral,FALSE,0
+TXN-000263,CRM-00114,2024-09-17,Multivitamins,Health,2,114.87,229.74,completed,Debit Card,website,FALSE,24.5
+TXN-000264,CRM-00221,2023-08-12,Probiotic,Health,4,463.17,1852.68,completed,Debit Card,website,TRUE,24.1
+TXN-000265,CRM-00089,2024-05-24,Water Bottle,Sports,2,472.45,944.9,completed,Apple Pay,organic_search,TRUE,0
+TXN-000266,CRM-00054,2023-10-11,USB-C Hub,Electronics,1,456.39,456.39,completed,Buy Now Pay Later,website,TRUE,10.3
+TXN-000267,ANON-795984,2023-06-16,Deep Work,Books,3,448.74,1346.22,completed,Debit Card,organic_search,FALSE,17.5
+TXN-000268,CRM-00211,2024-12-12,Puzzle 1000pc,Toys,3,211.38,634.14,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000269,CRM-00172,2025-03-23,Merino Wool Sweater,Clothing,2,26.85,53.7,completed,Google Pay,email_campaign,FALSE,13
+TXN-000270,CRM-00256,2023-12-26,Puzzle 1000pc,Toys,4,494.69,1978.76,completed,Buy Now Pay Later,email_campaign,FALSE,18.3
+TXN-000271,CRM-00232,2022-09-23,Moisturiser SPF50,Beauty,2,367.34,734.68,completed,PayPal,email_campaign,FALSE,0
+TXN-000272,CRM-00171,2025-02-26,Car Phone Mount,Automotive,3,254.08,762.24,cancelled,Apple Pay,email_campaign,TRUE,7.6
+TXN-000273,ANON-411242,2024-10-13,Eye Cream,Beauty,4,215.29,861.16,completed,Apple Pay,organic_search,FALSE,12.5
+TXN-000274,CRM-00096,2024-11-30,Smart Watch,Electronics,1,199.79,199.79,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000275,CRM-00243,2024-10-16,Car Vacuum,Automotive,1,405,405,completed,PayPal,paid_social,FALSE,20.2
+TXN-000276,CRM-00184,2024-10-05,Sapiens,Books,4,349.15,1396.6,completed,Apple Pay,email_campaign,TRUE,0
+TXN-000277,CRM-00192,2023-01-04,Tyre Inflator,Automotive,2,53.41,106.82,completed,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000278,ANON-797670,2023-04-22,Jump Starter,Automotive,3,249.67,749.01,completed,Buy Now Pay Later,paid_social,FALSE,0
+TXN-000279,CRM-00149,2023-08-18,Protein Powder,Food & Drink,4,46.05,184.2,completed,Credit Card,website,TRUE,0
+TXN-000280,CRM-00100,2023-02-01,Olive Oil,Food & Drink,2,377.02,754.04,completed,PayPal,organic_search,FALSE,0
+TXN-000281,ANON-435690,2022-01-04,Portable Charger,Electronics,4,347.42,1389.68,completed,Credit Card,email_campaign,FALSE,0
+TXN-000282,CRM-00105,2022-08-31,Face Mask Set,Beauty,4,205.87,823.48,returned,Debit Card,referral,TRUE,0
+TXN-000283,CRM-00096,2022-02-19,Yoga Mat,Sports,3,112.7,338.1,completed,Credit Card,organic_search,FALSE,19.3
+TXN-000284,ANON-988845,2024-08-10,Deep Work,Books,1,182.05,182.05,completed,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000285,CRM-00289,2022-08-30,Car Vacuum,Automotive,1,123.1,123.1,cancelled,Credit Card,referral,FALSE,0
+TXN-000286,CRM-00247,2023-03-01,Winter Coat,Clothing,1,498.48,498.48,completed,Google Pay,website,TRUE,0
+TXN-000287,CRM-00202,2024-04-29,Merino Wool Sweater,Clothing,1,12.87,12.87,completed,Debit Card,email_campaign,TRUE,8.9
+TXN-000288,CRM-00219,2024-04-27,Coffee Maker,Home & Garden,3,335.5,1006.5,completed,Google Pay,paid_social,TRUE,0
+TXN-000289,CRM-00101,2022-04-04,Jump Starter,Automotive,2,84.93,169.86,completed,Debit Card,website,FALSE,0
+TXN-000290,CRM-00004,2023-11-15,Car Vacuum,Automotive,4,231.89,927.56,completed,Credit Card,website,TRUE,0
+TXN-000291,CRM-00063,2023-12-18,Smart Watch,Electronics,3,286.77,860.31,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000292,CRM-00208,2025-02-21,Polo Shirt,Clothing,1,293.33,293.33,completed,Apple Pay,website,TRUE,8.9
+TXN-000293,CRM-00106,2023-03-11,Foam Roller,Sports,1,487.35,487.35,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000294,CRM-00237,2022-01-24,Running Shoes,Sports,3,234.1,702.3,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000295,CRM-00217,2023-02-17,Board Game,Toys,4,73.48,293.92,completed,Google Pay,website,TRUE,0
+TXN-000296,CRM-00015,2023-07-31,Merino Wool Sweater,Clothing,3,352.35,1057.05,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000297,CRM-00132,2023-06-06,Resistance Bands,Sports,4,96.36,385.44,completed,PayPal,referral,FALSE,24.2
+TXN-000298,ANON-913735,2022-05-19,Tyre Inflator,Automotive,3,435.55,1306.65,completed,Google Pay,referral,FALSE,0
+TXN-000299,CRM-00050,2023-09-23,Board Game,Toys,2,314.64,629.28,completed,Google Pay,organic_search,FALSE,24.6
+TXN-000300,CRM-00125,2023-09-07,Merino Wool Sweater,Clothing,1,352.73,352.73,completed,PayPal,mobile_app,TRUE,0
+TXN-000301,CRM-00265,2024-11-03,Desk Lamp,Home & Garden,2,5.67,11.34,completed,Buy Now Pay Later,mobile_app,FALSE,26.3
+TXN-000302,CRM-00106,2025-01-31,Wireless Earbuds,Electronics,3,314.89,944.67,returned,Debit Card,website,TRUE,20.3
+TXN-000303,CRM-00113,2023-10-26,Olive Oil,Food & Drink,2,195.13,390.26,completed,Apple Pay,mobile_app,TRUE,0
+TXN-000304,CRM-00249,2022-01-13,Atomic Habits,Books,4,346.23,1384.92,completed,Debit Card,referral,FALSE,8.9
+TXN-000305,CRM-00237,2022-08-22,Webcam,Electronics,3,267.27,801.81,cancelled,PayPal,email_campaign,FALSE,28.9
+TXN-000306,CRM-00174,2023-11-14,Winter Coat,Clothing,4,151.52,606.08,completed,Credit Card,paid_social,TRUE,0
+TXN-000307,CRM-00228,2023-12-01,Slim Fit Jeans,Clothing,2,376.93,753.86,completed,Google Pay,website,TRUE,0
+TXN-000308,CRM-00068,2024-03-22,USB-C Hub,Electronics,1,349.84,349.84,completed,Apple Pay,referral,FALSE,0
+TXN-000309,CRM-00136,2025-03-11,Throw Blanket,Home & Garden,3,307.58,922.74,completed,Debit Card,website,FALSE,0
+TXN-000310,CRM-00240,2022-03-01,Face Mask Set,Beauty,4,289.16,1156.64,completed,Buy Now Pay Later,email_campaign,FALSE,29.5
+TXN-000311,CRM-00011,2022-12-26,Tyre Inflator,Automotive,2,107.33,214.66,completed,Debit Card,website,FALSE,0
+TXN-000312,CRM-00007,2023-02-02,Merino Wool Sweater,Clothing,3,343.22,1029.66,completed,Apple Pay,website,TRUE,0
+TXN-000313,CRM-00079,2023-11-08,Multivitamins,Health,1,311.5,311.5,completed,Google Pay,website,TRUE,0
+TXN-000314,CRM-00032,2023-11-24,Resistance Bands,Sports,3,170.83,512.49,completed,Credit Card,email_campaign,TRUE,21.3
+TXN-000315,CRM-00103,2024-09-08,Vitamin C Serum,Beauty,1,465.53,465.53,completed,Debit Card,website,FALSE,0
+TXN-000316,CRM-00267,2024-08-29,Puzzle 1000pc,Toys,2,259.28,518.56,completed,Apple Pay,email_campaign,TRUE,0
+TXN-000317,CRM-00049,2022-03-14,Building Blocks,Toys,4,454.54,1818.16,completed,Debit Card,email_campaign,FALSE,0
+TXN-000318,ANON-888808,2022-10-06,Olive Oil,Food & Drink,3,184.81,554.43,completed,Buy Now Pay Later,referral,FALSE,24.7
+TXN-000319,CRM-00283,2024-09-13,Art Kit,Toys,3,30.47,91.41,completed,Google Pay,paid_social,FALSE,0
+TXN-000320,CRM-00294,2022-11-15,Board Game,Toys,4,194.18,776.72,completed,Google Pay,organic_search,TRUE,0
+TXN-000321,ANON-844056,2024-08-01,Sapiens,Books,3,234.88,704.64,completed,Credit Card,email_campaign,FALSE,0
+TXN-000322,CRM-00296,2025-01-04,Webcam,Electronics,3,25.19,75.57,completed,Buy Now Pay Later,referral,FALSE,24.5
+TXN-000323,CRM-00268,2023-11-18,Board Game,Toys,3,186.02,558.06,completed,Apple Pay,mobile_app,FALSE,11.7
+TXN-000324,CRM-00212,2024-08-05,Merino Wool Sweater,Clothing,3,325.2,975.6,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000325,CRM-00130,2024-04-27,Car Vacuum,Automotive,4,353.21,1412.84,completed,PayPal,paid_social,FALSE,0
+TXN-000326,CRM-00197,2022-04-25,Wireless Earbuds,Electronics,2,282.01,564.02,pending,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000327,CRM-00183,2024-12-03,Omega-3 Capsules,Health,3,387.15,1161.45,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000328,CRM-00131,2023-09-06,Running Jacket,Clothing,4,73.37,293.48,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000329,CRM-00017,2025-03-03,Collagen Powder,Health,2,170.46,340.92,cancelled,Apple Pay,email_campaign,FALSE,0
+TXN-000330,CRM-00100,2023-10-09,Wireless Earbuds,Electronics,4,271.58,1086.32,completed,Debit Card,mobile_app,FALSE,28.3
+TXN-000331,CRM-00293,2025-02-11,Merino Wool Sweater,Clothing,1,325.62,325.62,completed,Credit Card,paid_social,FALSE,0
+TXN-000332,CRM-00123,2025-01-02,The Lean Startup,Books,2,369.27,738.54,completed,PayPal,organic_search,FALSE,0
+TXN-000333,CRM-00167,2022-02-08,Car Vacuum,Automotive,2,376.62,753.24,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000334,ANON-923655,2023-03-03,Slim Fit Jeans,Clothing,1,435.34,435.34,completed,Apple Pay,organic_search,TRUE,0
+TXN-000335,CRM-00163,2025-03-28,Vitamin C Serum,Beauty,2,352.2,704.4,completed,Debit Card,referral,TRUE,0
+TXN-000336,ANON-547858,2023-11-11,Lip Balm,Beauty,2,377.07,754.14,completed,PayPal,website,FALSE,0
+TXN-000337,CRM-00090,2023-12-26,Multivitamins,Health,1,380.88,380.88,completed,Credit Card,paid_social,FALSE,0
+TXN-000338,CRM-00029,2022-05-16,Merino Wool Sweater,Clothing,4,163.31,653.24,completed,Credit Card,paid_social,FALSE,0
+TXN-000339,ANON-472856,2022-11-02,Moisturiser SPF50,Beauty,3,448.58,1345.74,completed,Credit Card,mobile_app,FALSE,0
+TXN-000340,CRM-00165,2023-07-29,Organic Coffee,Food & Drink,2,253.76,507.52,returned,PayPal,paid_social,FALSE,0
+TXN-000341,CRM-00148,2022-03-05,Building Blocks,Toys,4,213.93,855.72,returned,Google Pay,organic_search,FALSE,0
+TXN-000342,ANON-640472,2023-11-26,Board Game,Toys,4,31.9,127.6,completed,PayPal,referral,FALSE,0
+TXN-000343,CRM-00002,2024-02-08,Smart Watch,Electronics,1,189.17,189.17,completed,Credit Card,organic_search,FALSE,0
+TXN-000344,CRM-00027,2024-12-30,Green Tea Set,Food & Drink,4,228.49,913.96,completed,Debit Card,email_campaign,FALSE,16.8
+TXN-000345,CRM-00248,2022-12-06,Plant Pot Set,Home & Garden,1,252.72,252.72,cancelled,PayPal,email_campaign,TRUE,0
+TXN-000346,CRM-00188,2025-03-15,Car Vacuum,Automotive,4,414.8,1659.2,completed,Debit Card,referral,FALSE,0
+TXN-000347,CRM-00145,2024-03-08,Running Shoes,Sports,3,237.26,711.78,completed,Google Pay,organic_search,FALSE,0
+TXN-000348,ANON-352555,2023-01-19,Desk Lamp,Home & Garden,4,267.76,1071.04,completed,Credit Card,mobile_app,FALSE,0
+TXN-000349,CRM-00063,2022-08-28,Board Game,Toys,4,412.74,1650.96,completed,Credit Card,website,TRUE,0
+TXN-000350,CRM-00192,2023-09-24,Car Phone Mount,Automotive,4,449.33,1797.32,pending,Debit Card,email_campaign,TRUE,26.4
+TXN-000351,CRM-00294,2023-10-07,Face Mask Set,Beauty,1,228.28,228.28,completed,Google Pay,email_campaign,FALSE,0
+TXN-000352,CRM-00143,2022-03-06,Coffee Maker,Home & Garden,2,186.86,373.72,completed,Credit Card,referral,FALSE,0
+TXN-000353,CRM-00035,2023-07-11,Vitamin C Serum,Beauty,1,337.61,337.61,completed,PayPal,website,TRUE,12.6
+TXN-000354,CRM-00236,2024-04-27,The Lean Startup,Books,3,347.45,1042.35,pending,Debit Card,email_campaign,TRUE,0
+TXN-000355,CRM-00142,2022-06-27,USB-C Hub,Electronics,1,488.17,488.17,completed,Google Pay,paid_social,FALSE,0
+TXN-000356,CRM-00269,2024-10-14,Tyre Inflator,Automotive,2,441.27,882.54,completed,Debit Card,mobile_app,FALSE,0
+TXN-000357,ANON-586197,2023-05-02,Car Phone Mount,Automotive,3,98.05,294.15,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000358,CRM-00193,2024-02-01,Throw Blanket,Home & Garden,2,441.69,883.38,completed,Credit Card,referral,FALSE,0
+TXN-000359,CRM-00117,2024-07-14,Polo Shirt,Clothing,2,48.13,96.26,completed,Debit Card,referral,FALSE,0
+TXN-000360,CRM-00112,2023-09-12,Smart Watch,Electronics,3,198,594,completed,PayPal,mobile_app,FALSE,0
+TXN-000361,CRM-00115,2023-03-19,Smart Watch,Electronics,2,93.33,186.66,completed,Credit Card,referral,FALSE,8.6
+TXN-000362,CRM-00056,2024-12-11,Sleep Aid,Health,1,478.38,478.38,completed,Google Pay,website,FALSE,13.3
+TXN-000363,ANON-186651,2023-09-12,Probiotic,Health,2,43.01,86.02,completed,Google Pay,website,FALSE,13.8
+TXN-000364,ANON-772566,2022-12-25,Building Blocks,Toys,4,86.39,345.56,completed,Credit Card,organic_search,TRUE,0
+TXN-000365,CRM-00080,2022-08-18,Car Phone Mount,Automotive,1,60.34,60.34,completed,Google Pay,website,FALSE,0
+TXN-000366,CRM-00252,2024-02-06,Dash Cam,Automotive,2,78.09,156.18,completed,Apple Pay,mobile_app,FALSE,23.6
+TXN-000367,ANON-700815,2022-03-18,Polo Shirt,Clothing,4,79.35,317.4,completed,Credit Card,website,TRUE,16.2
+TXN-000368,CRM-00046,2023-02-18,Lip Balm,Beauty,1,105.9,105.9,pending,Credit Card,referral,TRUE,15.6
+TXN-000369,CRM-00209,2022-07-09,Resistance Bands,Sports,3,475.34,1426.02,completed,PayPal,mobile_app,FALSE,14.8
+TXN-000370,CRM-00030,2024-06-27,The Lean Startup,Books,1,16.21,16.21,completed,Credit Card,organic_search,FALSE,15.4
+TXN-000371,ANON-721678,2024-11-02,Resistance Bands,Sports,3,210.77,632.31,completed,PayPal,organic_search,FALSE,0
+TXN-000372,CRM-00243,2022-02-21,Board Game,Toys,1,342.11,342.11,completed,Credit Card,mobile_app,FALSE,0
+TXN-000373,CRM-00125,2024-09-15,Car Phone Mount,Automotive,4,465.27,1861.08,pending,PayPal,organic_search,FALSE,0
+TXN-000374,CRM-00227,2024-10-21,Throw Blanket,Home & Garden,3,239.11,717.33,completed,PayPal,website,FALSE,0
+TXN-000375,CRM-00069,2022-11-12,Air Purifier,Home & Garden,1,212.54,212.54,completed,Apple Pay,email_campaign,TRUE,0
+TXN-000376,CRM-00019,2023-01-25,Plant Pot Set,Home & Garden,3,369.43,1108.29,completed,Google Pay,mobile_app,TRUE,0
+TXN-000377,ANON-166582,2023-11-28,Running Shoes,Sports,2,15.61,31.22,completed,Debit Card,paid_social,FALSE,0
+TXN-000378,CRM-00157,2024-09-17,Sleep Aid,Health,1,98.4,98.4,completed,PayPal,paid_social,TRUE,0
+TXN-000379,CRM-00290,2024-12-08,Face Mask Set,Beauty,1,15.89,15.89,completed,Apple Pay,paid_social,FALSE,0
+TXN-000380,CRM-00207,2023-09-28,Resistance Bands,Sports,4,401.18,1604.72,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000381,CRM-00281,2023-11-02,Running Jacket,Clothing,4,417.46,1669.84,completed,PayPal,email_campaign,TRUE,0
+TXN-000382,CRM-00172,2022-10-21,Throw Blanket,Home & Garden,4,261.69,1046.76,completed,Debit Card,referral,TRUE,0
+TXN-000383,CRM-00071,2022-07-21,Collagen Powder,Health,3,170.92,512.76,completed,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000384,CRM-00090,2024-11-23,Wireless Earbuds,Electronics,1,290.88,290.88,completed,Buy Now Pay Later,referral,TRUE,24.1
+TXN-000385,CRM-00119,2022-09-29,Car Vacuum,Automotive,3,328.95,986.85,completed,Credit Card,mobile_app,FALSE,15.1
+TXN-000386,CRM-00257,2023-02-25,Olive Oil,Food & Drink,1,393.69,393.69,cancelled,PayPal,paid_social,TRUE,0
+TXN-000387,ANON-977809,2022-03-16,Car Vacuum,Automotive,4,245.16,980.64,completed,Apple Pay,website,FALSE,29.2
+TXN-000388,CRM-00172,2024-07-29,Merino Wool Sweater,Clothing,3,333.93,1001.79,completed,Buy Now Pay Later,mobile_app,TRUE,0
+TXN-000389,CRM-00156,2024-03-04,Face Mask Set,Beauty,2,266.9,533.8,completed,Google Pay,mobile_app,FALSE,0
+TXN-000390,CRM-00172,2024-12-05,Running Jacket,Clothing,2,275.94,551.88,completed,Credit Card,email_campaign,TRUE,0
+TXN-000391,ANON-889565,2022-08-26,Vitamin C Serum,Beauty,1,231.26,231.26,completed,Google Pay,organic_search,TRUE,0
+TXN-000392,CRM-00045,2022-01-09,Running Jacket,Clothing,3,285.22,855.66,returned,Debit Card,organic_search,TRUE,0
+TXN-000393,CRM-00285,2023-09-29,Resistance Bands,Sports,3,448.75,1346.25,cancelled,Credit Card,paid_social,FALSE,0
+TXN-000394,ANON-728204,2022-04-01,Probiotic,Health,1,156.41,156.41,completed,Google Pay,paid_social,FALSE,13.8
+TXN-000395,CRM-00285,2022-06-28,Green Tea Set,Food & Drink,1,394.9,394.9,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000396,ANON-568957,2023-11-14,The Lean Startup,Books,4,117.03,468.12,completed,Apple Pay,organic_search,TRUE,0
+TXN-000397,CRM-00064,2024-08-14,Atomic Habits,Books,1,188.72,188.72,completed,Google Pay,mobile_app,FALSE,0
+TXN-000398,ANON-235073,2022-04-05,Desk Lamp,Home & Garden,4,147.34,589.36,completed,Credit Card,website,TRUE,25.1
+TXN-000399,CRM-00013,2022-07-31,Foam Roller,Sports,3,422.68,1268.04,cancelled,PayPal,email_campaign,FALSE,0
+TXN-000400,CRM-00024,2024-12-02,Running Jacket,Clothing,2,78.28,156.56,completed,Debit Card,organic_search,TRUE,0
+TXN-000401,ANON-369232,2023-10-02,Lip Balm,Beauty,2,145.48,290.96,completed,Debit Card,mobile_app,TRUE,0
+TXN-000402,CRM-00061,2022-02-16,Omega-3 Capsules,Health,4,477.37,1909.48,returned,Buy Now Pay Later,referral,FALSE,0
+TXN-000403,ANON-230775,2025-03-28,Running Jacket,Clothing,1,310.6,310.6,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000404,CRM-00045,2023-10-02,Yoga Mat,Sports,1,84.43,84.43,cancelled,Credit Card,paid_social,FALSE,0
+TXN-000405,CRM-00179,2023-03-06,The Pragmatic Programmer,Books,2,269.45,538.9,pending,Buy Now Pay Later,referral,FALSE,0
+TXN-000406,CRM-00096,2023-10-20,Olive Oil,Food & Drink,2,95.05,190.1,pending,Credit Card,website,FALSE,0
+TXN-000407,CRM-00219,2023-02-15,Dark Chocolate,Food & Drink,4,91.63,366.52,cancelled,Buy Now Pay Later,mobile_app,FALSE,0
+TXN-000408,CRM-00243,2023-01-30,Atomic Habits,Books,4,354.81,1419.24,returned,Debit Card,organic_search,TRUE,29.4
+TXN-000409,ANON-415201,2023-08-10,Sleep Aid,Health,3,451.93,1355.79,completed,Debit Card,website,FALSE,24.2
+TXN-000410,ANON-644675,2023-07-21,Moisturiser SPF50,Beauty,2,397.46,794.92,completed,Buy Now Pay Later,referral,FALSE,5.5
+TXN-000411,CRM-00166,2024-12-26,Omega-3 Capsules,Health,1,84.66,84.66,cancelled,Buy Now Pay Later,website,TRUE,0
+TXN-000412,CRM-00257,2023-10-16,Air Purifier,Home & Garden,3,62.76,188.28,completed,Debit Card,mobile_app,FALSE,0
+TXN-000413,CRM-00156,2024-06-22,Probiotic,Health,4,495.92,1983.68,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000414,ANON-614266,2022-08-29,Multivitamins,Health,4,288.82,1155.28,completed,Debit Card,organic_search,FALSE,0
+TXN-000415,CRM-00004,2023-07-13,The Pragmatic Programmer,Books,3,222.8,668.4,completed,Google Pay,mobile_app,FALSE,22.6
+TXN-000416,CRM-00211,2022-11-02,Sapiens,Books,2,187.62,375.24,completed,Google Pay,email_campaign,FALSE,0
+TXN-000417,CRM-00177,2022-11-19,Building Blocks,Toys,3,106.35,319.05,pending,Buy Now Pay Later,website,FALSE,0
+TXN-000418,CRM-00235,2023-07-15,Coffee Maker,Home & Garden,1,354.32,354.32,completed,Google Pay,organic_search,TRUE,10.2
+TXN-000419,CRM-00034,2022-08-23,USB-C Hub,Electronics,3,333.78,1001.34,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000420,CRM-00045,2022-02-01,Atomic Habits,Books,2,488.14,976.28,completed,Google Pay,paid_social,FALSE,0
+TXN-000421,ANON-959584,2025-02-20,Foam Roller,Sports,4,78.08,312.32,completed,PayPal,organic_search,FALSE,22.9
+TXN-000422,ANON-138518,2024-11-18,Yoga Mat,Sports,4,226.52,906.08,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000423,CRM-00290,2022-07-29,Remote Control Car,Toys,4,486.88,1947.52,completed,Debit Card,email_campaign,FALSE,0
+TXN-000424,CRM-00031,2023-02-28,Lip Balm,Beauty,4,268.62,1074.48,completed,PayPal,website,FALSE,0
+TXN-000425,CRM-00032,2025-01-16,Atomic Habits,Books,3,65.02,195.06,completed,PayPal,paid_social,FALSE,12.4
+TXN-000426,CRM-00234,2023-12-19,Desk Lamp,Home & Garden,4,17.31,69.24,completed,PayPal,website,FALSE,0
+TXN-000427,CRM-00236,2025-01-30,The Pragmatic Programmer,Books,1,464.95,464.95,returned,Google Pay,email_campaign,TRUE,14.3
+TXN-000428,CRM-00261,2023-10-15,Green Tea Set,Food & Drink,4,384.65,1538.6,returned,Apple Pay,organic_search,TRUE,0
+TXN-000429,CRM-00265,2023-07-10,Olive Oil,Food & Drink,3,473.21,1419.63,pending,Credit Card,mobile_app,FALSE,0
+TXN-000430,ANON-752542,2022-10-17,Organic Coffee,Food & Drink,2,463.34,926.68,cancelled,Buy Now Pay Later,mobile_app,FALSE,13
+TXN-000431,CRM-00080,2023-08-04,The Lean Startup,Books,4,82.09,328.36,completed,Buy Now Pay Later,organic_search,TRUE,0
+TXN-000432,CRM-00197,2025-03-21,Lip Balm,Beauty,4,484.25,1937,completed,Apple Pay,paid_social,FALSE,0
+TXN-000433,CRM-00172,2023-05-17,Green Tea Set,Food & Drink,1,274.8,274.8,completed,Debit Card,organic_search,FALSE,0
+TXN-000434,CRM-00142,2022-12-17,Dash Cam,Automotive,1,255.66,255.66,completed,Debit Card,paid_social,FALSE,0
+TXN-000435,CRM-00052,2022-05-26,Slim Fit Jeans,Clothing,3,324.74,974.22,completed,Google Pay,email_campaign,FALSE,0
+TXN-000436,CRM-00121,2023-09-30,Coffee Maker,Home & Garden,4,151.01,604.04,completed,Google Pay,website,FALSE,0
+TXN-000437,CRM-00186,2023-11-25,Probiotic,Health,2,447.61,895.22,completed,Credit Card,organic_search,FALSE,0
+TXN-000438,CRM-00205,2025-01-12,Polo Shirt,Clothing,2,483.99,967.98,completed,Debit Card,email_campaign,FALSE,0
+TXN-000439,CRM-00121,2024-06-27,Eye Cream,Beauty,4,377.56,1510.24,completed,Google Pay,email_campaign,TRUE,0
+TXN-000440,ANON-313660,2022-04-14,Desk Lamp,Home & Garden,1,496.07,496.07,completed,Buy Now Pay Later,website,FALSE,24.8
+TXN-000441,ANON-868265,2022-09-24,Jump Starter,Automotive,3,334.44,1003.32,completed,Apple Pay,website,TRUE,0
+TXN-000442,CRM-00208,2022-03-01,Running Shoes,Sports,4,399.99,1599.96,completed,Credit Card,referral,FALSE,0
+TXN-000443,CRM-00015,2024-08-22,Vitamin C Serum,Beauty,4,364.9,1459.6,completed,Credit Card,organic_search,FALSE,0
+TXN-000444,CRM-00143,2022-04-14,Winter Coat,Clothing,1,460.61,460.61,completed,Debit Card,referral,FALSE,0
+TXN-000445,CRM-00081,2022-08-05,Merino Wool Sweater,Clothing,4,172.31,689.24,completed,PayPal,organic_search,TRUE,0
+TXN-000446,CRM-00112,2024-02-25,Webcam,Electronics,3,60.48,181.44,completed,Google Pay,mobile_app,TRUE,0
+TXN-000447,CRM-00102,2022-04-21,Car Vacuum,Automotive,2,241.62,483.24,completed,Credit Card,email_campaign,FALSE,0
+TXN-000448,CRM-00239,2022-06-26,USB-C Hub,Electronics,2,24.8,49.6,completed,Apple Pay,mobile_app,TRUE,0
+TXN-000449,CRM-00094,2024-05-23,Probiotic,Health,3,339.94,1019.82,cancelled,Credit Card,organic_search,FALSE,0
+TXN-000450,CRM-00253,2024-03-13,Sleep Aid,Health,2,62.74,125.48,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000451,CRM-00258,2023-01-02,Art Kit,Toys,4,17.25,69,completed,PayPal,paid_social,FALSE,0
+TXN-000452,CRM-00206,2025-04-28,Collagen Powder,Health,3,310.06,930.18,completed,Debit Card,email_campaign,FALSE,0
+TXN-000453,CRM-00292,2024-07-02,Resistance Bands,Sports,1,113.86,113.86,completed,PayPal,paid_social,FALSE,0
+TXN-000454,CRM-00069,2023-12-30,Wireless Earbuds,Electronics,1,181.55,181.55,returned,Debit Card,paid_social,FALSE,0
+TXN-000455,CRM-00091,2023-10-02,Jump Starter,Automotive,1,166.23,166.23,completed,Credit Card,organic_search,FALSE,13.1
+TXN-000456,CRM-00224,2023-11-12,Vitamin C Serum,Beauty,1,305.43,305.43,completed,PayPal,paid_social,TRUE,0
+TXN-000457,CRM-00233,2023-02-10,Tyre Inflator,Automotive,4,101.4,405.6,cancelled,Google Pay,organic_search,FALSE,0
+TXN-000458,CRM-00097,2024-12-28,Car Vacuum,Automotive,4,265.06,1060.24,completed,PayPal,website,FALSE,0
+TXN-000459,CRM-00219,2022-06-10,Green Tea Set,Food & Drink,1,390.95,390.95,cancelled,PayPal,referral,FALSE,19
+TXN-000460,CRM-00182,2024-08-11,Throw Blanket,Home & Garden,4,383.94,1535.76,completed,Credit Card,website,TRUE,0
+TXN-000461,ANON-449718,2025-03-08,Sapiens,Books,3,101.68,305.04,completed,Credit Card,referral,FALSE,0
+TXN-000462,CRM-00133,2022-09-27,Board Game,Toys,3,46.29,138.87,completed,Debit Card,mobile_app,TRUE,0
+TXN-000463,ANON-936865,2022-07-10,Yoga Mat,Sports,3,424.63,1273.89,completed,Buy Now Pay Later,website,TRUE,10
+TXN-000464,CRM-00123,2024-08-17,Collagen Powder,Health,1,339.47,339.47,completed,Apple Pay,mobile_app,TRUE,10.4
+TXN-000465,ANON-495476,2022-07-19,Lip Balm,Beauty,1,478.07,478.07,completed,PayPal,website,FALSE,17.6
+TXN-000466,CRM-00155,2024-07-22,Air Purifier,Home & Garden,1,487.06,487.06,completed,Apple Pay,website,FALSE,0
+TXN-000467,CRM-00113,2023-09-28,Protein Powder,Food & Drink,4,199.85,799.4,completed,PayPal,website,FALSE,0
+TXN-000468,CRM-00017,2024-08-11,Jump Starter,Automotive,2,247.29,494.58,completed,Apple Pay,paid_social,FALSE,0
+TXN-000469,CRM-00238,2024-08-21,Car Vacuum,Automotive,2,302.97,605.94,completed,Buy Now Pay Later,email_campaign,TRUE,0
+TXN-000470,ANON-652049,2023-04-20,Winter Coat,Clothing,4,257.71,1030.84,completed,Debit Card,mobile_app,TRUE,26.4
+TXN-000471,CRM-00213,2023-04-04,Remote Control Car,Toys,1,32.69,32.69,completed,Credit Card,website,FALSE,0
+TXN-000472,CRM-00122,2022-10-22,Sapiens,Books,1,334.38,334.38,returned,Google Pay,paid_social,FALSE,7.7
+TXN-000473,CRM-00235,2023-06-13,Car Phone Mount,Automotive,4,201.39,805.56,completed,Apple Pay,website,FALSE,0
+TXN-000474,CRM-00158,2024-01-15,Webcam,Electronics,3,358.69,1076.07,completed,Credit Card,email_campaign,FALSE,0
+TXN-000475,CRM-00171,2024-03-13,Running Shoes,Sports,3,216.25,648.75,completed,PayPal,mobile_app,FALSE,11.1
+TXN-000476,CRM-00053,2023-01-11,Omega-3 Capsules,Health,4,195.74,782.96,completed,PayPal,paid_social,FALSE,0
+TXN-000477,CRM-00263,2023-11-08,Throw Blanket,Home & Garden,4,11.02,44.08,completed,Apple Pay,referral,FALSE,13.1
+TXN-000478,CRM-00061,2023-10-28,Tyre Inflator,Automotive,3,175.39,526.17,completed,Apple Pay,referral,FALSE,0
+TXN-000479,CRM-00018,2024-07-17,Throw Blanket,Home & Garden,3,157.19,471.57,completed,Google Pay,organic_search,FALSE,0
+TXN-000480,CRM-00010,2024-09-25,Organic Coffee,Food & Drink,2,225.11,450.22,returned,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000481,CRM-00016,2022-03-03,Throw Blanket,Home & Garden,2,282.15,564.3,completed,Debit Card,organic_search,FALSE,0
+TXN-000482,CRM-00109,2022-05-14,Desk Lamp,Home & Garden,2,111.55,223.1,completed,Apple Pay,website,FALSE,17
+TXN-000483,CRM-00060,2024-08-31,Sleep Aid,Health,1,443.58,443.58,completed,PayPal,mobile_app,TRUE,0
+TXN-000484,CRM-00111,2022-08-20,Probiotic,Health,3,371.31,1113.93,cancelled,Google Pay,referral,FALSE,23
+TXN-000485,CRM-00140,2023-12-21,Desk Lamp,Home & Garden,1,210.31,210.31,completed,Google Pay,referral,FALSE,16.7
+TXN-000486,CRM-00120,2024-09-07,Protein Powder,Food & Drink,4,223.6,894.4,completed,PayPal,email_campaign,FALSE,29.3
+TXN-000487,CRM-00277,2024-08-02,The Lean Startup,Books,1,85.91,85.91,completed,PayPal,organic_search,FALSE,0
+TXN-000488,CRM-00205,2022-12-16,Webcam,Electronics,1,364.63,364.63,completed,Credit Card,mobile_app,TRUE,0
+TXN-000489,CRM-00073,2023-08-02,Yoga Mat,Sports,4,448.48,1793.92,completed,Buy Now Pay Later,mobile_app,TRUE,0
+TXN-000490,CRM-00147,2023-12-15,Protein Powder,Food & Drink,1,364.93,364.93,completed,Apple Pay,mobile_app,TRUE,6.1
+TXN-000491,ANON-109958,2025-03-22,Resistance Bands,Sports,1,209.61,209.61,completed,Google Pay,email_campaign,FALSE,0
+TXN-000492,CRM-00289,2022-09-18,Merino Wool Sweater,Clothing,2,417.74,835.48,returned,Apple Pay,referral,TRUE,0
+TXN-000493,CRM-00143,2024-11-06,Moisturiser SPF50,Beauty,4,300.38,1201.52,completed,PayPal,email_campaign,FALSE,21.5
+TXN-000494,CRM-00166,2022-07-30,Atomic Habits,Books,4,75.96,303.84,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000495,ANON-695130,2024-04-10,Yoga Mat,Sports,4,154.8,619.2,completed,Credit Card,paid_social,FALSE,0
+TXN-000496,CRM-00252,2022-08-08,Portable Charger,Electronics,4,493.26,1973.04,pending,Google Pay,email_campaign,FALSE,0
+TXN-000497,ANON-860657,2023-10-30,Resistance Bands,Sports,3,264.5,793.5,pending,Buy Now Pay Later,referral,FALSE,0
+TXN-000498,CRM-00250,2025-02-12,Car Phone Mount,Automotive,3,170.7,512.1,completed,Credit Card,website,FALSE,0
+TXN-000499,CRM-00028,2022-05-26,The Lean Startup,Books,4,465.98,1863.92,completed,Buy Now Pay Later,website,FALSE,22.2
+TXN-000500,CRM-00009,2023-09-11,Art Kit,Toys,3,296.8,890.4,cancelled,Debit Card,mobile_app,TRUE,0
+TXN-000501,CRM-00015,2024-12-27,Olive Oil,Food & Drink,1,190.63,190.63,completed,Buy Now Pay Later,paid_social,TRUE,27.7
+TXN-000502,CRM-00257,2024-08-02,Olive Oil,Food & Drink,2,8.27,16.54,completed,Google Pay,referral,TRUE,0
+TXN-000503,CRM-00234,2024-03-31,Webcam,Electronics,2,320.57,641.14,returned,Credit Card,paid_social,FALSE,0
+TXN-000504,CRM-00065,2025-04-24,Webcam,Electronics,1,140.02,140.02,completed,Debit Card,organic_search,FALSE,0
+TXN-000505,CRM-00067,2024-04-26,The Pragmatic Programmer,Books,2,91.4,182.8,completed,Credit Card,referral,FALSE,0
+TXN-000506,CRM-00068,2023-05-04,Slim Fit Jeans,Clothing,1,233.29,233.29,completed,PayPal,email_campaign,TRUE,0
+TXN-000507,CRM-00063,2023-05-15,Car Phone Mount,Automotive,1,285.55,285.55,completed,Apple Pay,referral,TRUE,17.2
+TXN-000508,CRM-00196,2025-01-27,Face Mask Set,Beauty,2,456.95,913.9,completed,Debit Card,mobile_app,FALSE,0
+TXN-000509,CRM-00154,2022-11-22,Vitamin C Serum,Beauty,1,103.43,103.43,completed,Google Pay,mobile_app,FALSE,0
+TXN-000510,CRM-00260,2024-09-14,Collagen Powder,Health,2,416.15,832.3,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000511,CRM-00291,2024-02-26,Car Phone Mount,Automotive,4,147.99,591.96,completed,Credit Card,referral,TRUE,12
+TXN-000512,CRM-00205,2022-05-16,Multivitamins,Health,2,247.35,494.7,completed,Debit Card,website,FALSE,0
+TXN-000513,CRM-00143,2023-11-29,Air Purifier,Home & Garden,2,411.46,822.92,completed,Apple Pay,mobile_app,FALSE,20.2
+TXN-000514,ANON-420509,2023-03-03,Board Game,Toys,4,154.18,616.72,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000515,CRM-00052,2025-04-25,Building Blocks,Toys,2,294.09,588.18,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000516,CRM-00241,2024-06-01,Deep Work,Books,1,249.09,249.09,completed,Credit Card,organic_search,FALSE,0
+TXN-000517,ANON-183335,2024-06-10,Multivitamins,Health,3,370.49,1111.47,completed,PayPal,mobile_app,FALSE,0
+TXN-000518,ANON-351696,2025-03-07,Slim Fit Jeans,Clothing,4,115.91,463.64,completed,Apple Pay,website,FALSE,14.4
+TXN-000519,CRM-00283,2023-12-02,Jump Starter,Automotive,2,395.86,791.72,completed,Apple Pay,referral,TRUE,7.5
+TXN-000520,CRM-00214,2025-01-20,Lip Balm,Beauty,4,81.09,324.36,completed,Buy Now Pay Later,organic_search,FALSE,21
+TXN-000521,ANON-879521,2023-04-29,Puzzle 1000pc,Toys,4,153.28,613.12,completed,Google Pay,organic_search,FALSE,0
+TXN-000522,CRM-00083,2022-12-21,Yoga Mat,Sports,1,321.43,321.43,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000523,CRM-00269,2022-06-09,Jump Starter,Automotive,1,319.46,319.46,completed,Credit Card,website,FALSE,0
+TXN-000524,CRM-00256,2025-03-21,Puzzle 1000pc,Toys,2,66.34,132.68,completed,Credit Card,mobile_app,FALSE,11.9
+TXN-000525,ANON-544579,2024-09-23,The Pragmatic Programmer,Books,2,333.96,667.92,completed,Debit Card,email_campaign,TRUE,0
+TXN-000526,CRM-00066,2022-08-23,The Lean Startup,Books,4,147.12,588.48,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000527,CRM-00091,2025-04-27,Protein Powder,Food & Drink,4,93.61,374.44,completed,Credit Card,mobile_app,FALSE,0
+TXN-000528,ANON-621986,2024-08-06,Green Tea Set,Food & Drink,4,452.96,1811.84,completed,Apple Pay,referral,FALSE,0
+TXN-000529,CRM-00188,2023-10-29,Multivitamins,Health,1,323.52,323.52,completed,Apple Pay,website,FALSE,0
+TXN-000530,CRM-00176,2025-02-10,Smart Watch,Electronics,4,19.05,76.2,completed,Debit Card,paid_social,FALSE,0
+TXN-000531,CRM-00003,2022-07-19,Jump Starter,Automotive,2,382.77,765.54,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000532,CRM-00300,2024-06-30,Coffee Maker,Home & Garden,2,248.57,497.14,completed,PayPal,organic_search,TRUE,14.2
+TXN-000533,CRM-00290,2022-12-27,Protein Powder,Food & Drink,3,484.49,1453.47,cancelled,Credit Card,paid_social,FALSE,0
+TXN-000534,CRM-00252,2023-09-23,Air Purifier,Home & Garden,4,300.85,1203.4,completed,PayPal,website,TRUE,0
+TXN-000535,CRM-00169,2024-04-11,Foam Roller,Sports,1,183.71,183.71,returned,PayPal,organic_search,TRUE,0
+TXN-000536,CRM-00179,2022-05-23,Polo Shirt,Clothing,3,242.36,727.08,returned,Google Pay,mobile_app,FALSE,0
+TXN-000537,CRM-00085,2022-08-11,Dash Cam,Automotive,1,220.42,220.42,completed,Apple Pay,organic_search,FALSE,28.1
+TXN-000538,CRM-00206,2024-02-16,Vitamin C Serum,Beauty,1,132.41,132.41,completed,Debit Card,website,FALSE,0
+TXN-000539,CRM-00145,2023-11-02,Foam Roller,Sports,4,343.84,1375.36,completed,Buy Now Pay Later,website,TRUE,7.8
+TXN-000540,CRM-00101,2024-10-09,Air Purifier,Home & Garden,4,486.28,1945.12,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000541,CRM-00083,2022-05-06,Throw Blanket,Home & Garden,4,409.23,1636.92,completed,Apple Pay,paid_social,FALSE,8.4
+TXN-000542,CRM-00098,2022-07-05,Air Purifier,Home & Garden,3,189.36,568.08,completed,Credit Card,referral,FALSE,23.7
+TXN-000543,CRM-00084,2023-03-22,The Pragmatic Programmer,Books,1,367.08,367.08,completed,PayPal,email_campaign,FALSE,0
+TXN-000544,CRM-00197,2022-10-12,Collagen Powder,Health,4,13.67,54.68,completed,Apple Pay,mobile_app,FALSE,0
+TXN-000545,CRM-00286,2025-04-04,Polo Shirt,Clothing,4,133.21,532.84,completed,Credit Card,paid_social,FALSE,0
+TXN-000546,CRM-00196,2022-01-01,Yoga Mat,Sports,4,292.34,1169.36,cancelled,Google Pay,paid_social,FALSE,13.1
+TXN-000547,CRM-00057,2022-10-28,Art Kit,Toys,4,77.19,308.76,completed,Debit Card,mobile_app,FALSE,24.4
+TXN-000548,CRM-00156,2022-11-02,Sapiens,Books,2,232.76,465.52,pending,Apple Pay,mobile_app,FALSE,0
+TXN-000549,CRM-00073,2024-07-16,Polo Shirt,Clothing,1,347.48,347.48,completed,Debit Card,website,TRUE,15.3
+TXN-000550,CRM-00018,2024-12-24,Olive Oil,Food & Drink,1,181.55,181.55,completed,Buy Now Pay Later,website,TRUE,8.8
+TXN-000551,CRM-00258,2023-08-20,Protein Powder,Food & Drink,4,31.13,124.52,completed,Debit Card,email_campaign,FALSE,0
+TXN-000552,CRM-00244,2024-03-09,Organic Coffee,Food & Drink,3,183.41,550.23,completed,PayPal,referral,FALSE,0
+TXN-000553,ANON-980184,2025-03-29,Resistance Bands,Sports,1,319.31,319.31,returned,Google Pay,email_campaign,FALSE,0
+TXN-000554,ANON-470453,2024-07-04,Collagen Powder,Health,3,476.85,1430.55,pending,Credit Card,organic_search,FALSE,0
+TXN-000555,CRM-00042,2023-02-05,Plant Pot Set,Home & Garden,4,29.07,116.28,completed,Google Pay,organic_search,FALSE,0
+TXN-000556,CRM-00008,2023-02-26,Art Kit,Toys,4,149.08,596.32,completed,Apple Pay,referral,FALSE,0
+TXN-000557,CRM-00150,2023-10-11,USB-C Hub,Electronics,1,320.64,320.64,completed,Credit Card,email_campaign,FALSE,0
+TXN-000558,CRM-00089,2023-09-06,Resistance Bands,Sports,4,42.95,171.8,completed,PayPal,paid_social,FALSE,8.8
+TXN-000559,ANON-812049,2025-03-13,Webcam,Electronics,3,100.74,302.22,completed,Apple Pay,email_campaign,TRUE,0
+TXN-000560,CRM-00122,2023-09-16,Throw Blanket,Home & Garden,4,315.25,1261,completed,Apple Pay,referral,TRUE,0
+TXN-000561,CRM-00222,2024-06-09,Probiotic,Health,4,382.76,1531.04,completed,Debit Card,organic_search,FALSE,0
+TXN-000562,CRM-00175,2023-12-07,Sleep Aid,Health,1,300.79,300.79,cancelled,Credit Card,email_campaign,FALSE,0
+TXN-000563,ANON-413710,2022-07-02,Desk Lamp,Home & Garden,2,87.57,175.14,completed,Debit Card,email_campaign,FALSE,0
+TXN-000564,CRM-00245,2025-04-08,Throw Blanket,Home & Garden,3,164.37,493.11,completed,Credit Card,organic_search,TRUE,12.5
+TXN-000565,CRM-00103,2022-01-17,Car Vacuum,Automotive,2,161.21,322.42,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000566,ANON-761836,2024-11-11,USB-C Hub,Electronics,4,422.43,1689.72,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000567,CRM-00206,2024-04-07,Probiotic,Health,3,400.14,1200.42,completed,PayPal,email_campaign,FALSE,10
+TXN-000568,CRM-00192,2022-09-19,Plant Pot Set,Home & Garden,4,139.1,556.4,completed,PayPal,referral,TRUE,7.2
+TXN-000569,CRM-00143,2023-08-26,USB-C Hub,Electronics,2,349.8,699.6,completed,Buy Now Pay Later,email_campaign,TRUE,0
+TXN-000570,CRM-00283,2022-05-08,Throw Blanket,Home & Garden,2,184.09,368.18,completed,Debit Card,paid_social,TRUE,0
+TXN-000571,CRM-00108,2024-01-27,Vitamin C Serum,Beauty,3,269,807,pending,Credit Card,referral,TRUE,0
+TXN-000572,CRM-00091,2025-01-29,Throw Blanket,Home & Garden,4,178.7,714.8,completed,Debit Card,paid_social,FALSE,0
+TXN-000573,ANON-585550,2022-04-19,Jump Starter,Automotive,2,76,152,completed,Credit Card,organic_search,FALSE,0
+TXN-000574,CRM-00198,2022-01-02,Remote Control Car,Toys,3,72.65,217.95,completed,PayPal,website,TRUE,11.1
+TXN-000575,CRM-00168,2025-02-20,Probiotic,Health,4,144.02,576.08,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000576,ANON-106177,2024-01-06,Collagen Powder,Health,4,389.73,1558.92,completed,Credit Card,referral,FALSE,0
+TXN-000577,CRM-00142,2022-08-13,USB-C Hub,Electronics,3,208.53,625.59,completed,PayPal,paid_social,FALSE,19.3
+TXN-000578,CRM-00223,2023-08-01,Face Mask Set,Beauty,4,459.93,1839.72,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000579,CRM-00218,2022-03-05,Polo Shirt,Clothing,2,85.54,171.08,returned,Apple Pay,referral,FALSE,0
+TXN-000580,ANON-857526,2023-04-27,Running Shoes,Sports,2,112.63,225.26,completed,Apple Pay,website,TRUE,24.1
+TXN-000581,CRM-00274,2024-06-03,Olive Oil,Food & Drink,3,253.67,761.01,completed,Google Pay,mobile_app,TRUE,0
+TXN-000582,CRM-00285,2025-04-23,Multivitamins,Health,1,415.8,415.8,completed,Debit Card,organic_search,FALSE,11.5
+TXN-000583,ANON-615947,2024-03-18,Protein Powder,Food & Drink,4,397.78,1591.12,completed,Buy Now Pay Later,mobile_app,FALSE,0
+TXN-000584,CRM-00197,2023-10-14,Green Tea Set,Food & Drink,2,280.98,561.96,completed,PayPal,referral,TRUE,0
+TXN-000585,CRM-00067,2024-02-23,Throw Blanket,Home & Garden,2,345.69,691.38,completed,Debit Card,mobile_app,FALSE,0
+TXN-000586,CRM-00067,2024-04-11,Yoga Mat,Sports,2,475.53,951.06,pending,Credit Card,email_campaign,FALSE,18.3
+TXN-000587,CRM-00262,2024-02-21,Art Kit,Toys,2,422.96,845.92,returned,Credit Card,organic_search,FALSE,0
+TXN-000588,CRM-00127,2024-06-10,Omega-3 Capsules,Health,4,357,1428,completed,Apple Pay,website,FALSE,0
+TXN-000589,ANON-906824,2025-01-21,Desk Lamp,Home & Garden,1,351.92,351.92,completed,PayPal,mobile_app,TRUE,0
+TXN-000590,CRM-00112,2023-03-09,Multivitamins,Health,4,401.47,1605.88,completed,PayPal,paid_social,FALSE,12.3
+TXN-000591,CRM-00176,2022-12-22,Desk Lamp,Home & Garden,4,211.17,844.68,completed,Debit Card,referral,TRUE,0
+TXN-000592,CRM-00140,2024-08-30,Omega-3 Capsules,Health,3,457.52,1372.56,completed,Debit Card,referral,TRUE,5.5
+TXN-000593,CRM-00036,2022-10-12,Dash Cam,Automotive,2,62.58,125.16,completed,PayPal,organic_search,FALSE,0
+TXN-000594,CRM-00017,2023-01-21,Face Mask Set,Beauty,2,69.83,139.66,cancelled,Apple Pay,email_campaign,FALSE,0
+TXN-000595,CRM-00191,2025-02-11,Coffee Maker,Home & Garden,1,13.59,13.59,completed,Apple Pay,mobile_app,FALSE,24.3
+TXN-000596,CRM-00175,2024-02-27,Sapiens,Books,1,177.02,177.02,completed,Apple Pay,referral,FALSE,6.7
+TXN-000597,ANON-559876,2024-01-08,Dark Chocolate,Food & Drink,3,346.38,1039.14,completed,Google Pay,website,FALSE,0
+TXN-000598,CRM-00142,2024-05-04,Collagen Powder,Health,3,73.67,221.01,completed,Buy Now Pay Later,mobile_app,TRUE,0
+TXN-000599,CRM-00059,2022-11-12,Collagen Powder,Health,3,223.32,669.96,completed,Debit Card,organic_search,TRUE,24.6
+TXN-000600,ANON-883381,2023-08-14,Winter Coat,Clothing,2,492.87,985.74,completed,Buy Now Pay Later,referral,FALSE,22.8
+TXN-000601,CRM-00205,2022-09-15,Foam Roller,Sports,2,263.42,526.84,completed,Apple Pay,website,FALSE,0
+TXN-000602,CRM-00159,2022-10-03,Remote Control Car,Toys,1,484.24,484.24,completed,PayPal,email_campaign,FALSE,0
+TXN-000603,CRM-00124,2022-01-24,Building Blocks,Toys,1,90.07,90.07,returned,Buy Now Pay Later,referral,FALSE,0
+TXN-000604,CRM-00262,2022-05-27,Coffee Maker,Home & Garden,3,155.51,466.53,completed,Google Pay,referral,TRUE,0
+TXN-000605,CRM-00046,2022-02-02,Polo Shirt,Clothing,4,372.76,1491.04,cancelled,Apple Pay,paid_social,FALSE,0
+TXN-000606,ANON-513711,2022-10-22,USB-C Hub,Electronics,1,63.59,63.59,returned,Credit Card,organic_search,FALSE,0
+TXN-000607,CRM-00103,2024-09-23,Resistance Bands,Sports,2,68.58,137.16,completed,Google Pay,paid_social,FALSE,0
+TXN-000608,CRM-00297,2024-06-13,Dash Cam,Automotive,1,347.96,347.96,completed,Google Pay,mobile_app,TRUE,0
+TXN-000609,ANON-798566,2022-10-06,Car Vacuum,Automotive,2,344.9,689.8,completed,Debit Card,email_campaign,FALSE,0
+TXN-000610,CRM-00296,2022-06-23,Puzzle 1000pc,Toys,4,156.87,627.48,completed,Credit Card,referral,TRUE,12.8
+TXN-000611,CRM-00043,2022-10-09,Throw Blanket,Home & Garden,3,108.66,325.98,cancelled,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000612,CRM-00259,2024-05-01,Omega-3 Capsules,Health,3,489.67,1469.01,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000613,CRM-00055,2024-07-22,Merino Wool Sweater,Clothing,3,214.85,644.55,completed,Google Pay,organic_search,FALSE,0
+TXN-000614,CRM-00025,2024-05-21,Desk Lamp,Home & Garden,1,381.93,381.93,completed,Google Pay,paid_social,FALSE,0
+TXN-000615,CRM-00100,2023-01-04,Green Tea Set,Food & Drink,3,60.19,180.57,completed,Debit Card,organic_search,TRUE,0
+TXN-000616,CRM-00296,2024-07-19,Multivitamins,Health,2,14.29,28.58,completed,PayPal,email_campaign,FALSE,0
+TXN-000617,CRM-00095,2024-11-09,Collagen Powder,Health,1,244.22,244.22,returned,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000618,CRM-00018,2024-05-18,Portable Charger,Electronics,1,218.04,218.04,completed,Buy Now Pay Later,mobile_app,FALSE,0
+TXN-000619,CRM-00136,2025-02-04,Jump Starter,Automotive,4,102,408,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000620,CRM-00063,2024-07-10,Dash Cam,Automotive,4,21.2,84.8,cancelled,Buy Now Pay Later,paid_social,FALSE,0
+TXN-000621,CRM-00233,2024-02-27,Running Jacket,Clothing,1,330.94,330.94,completed,Buy Now Pay Later,paid_social,FALSE,0
+TXN-000622,CRM-00173,2023-12-29,Slim Fit Jeans,Clothing,1,298.03,298.03,completed,PayPal,referral,FALSE,0
+TXN-000623,CRM-00048,2023-04-08,Olive Oil,Food & Drink,1,236.73,236.73,cancelled,Credit Card,email_campaign,FALSE,26.3
+TXN-000624,CRM-00236,2023-01-16,Air Purifier,Home & Garden,1,453.81,453.81,completed,Debit Card,paid_social,FALSE,27.6
+TXN-000625,ANON-213119,2024-05-19,Probiotic,Health,1,26.38,26.38,completed,Apple Pay,website,FALSE,0
+TXN-000626,CRM-00039,2022-01-16,Jump Starter,Automotive,2,154.01,308.02,completed,Debit Card,organic_search,FALSE,0
+TXN-000627,ANON-460836,2025-03-29,Wireless Earbuds,Electronics,1,10.07,10.07,cancelled,Apple Pay,organic_search,FALSE,0
+TXN-000628,CRM-00129,2024-10-17,Art Kit,Toys,2,52.67,105.34,completed,PayPal,paid_social,FALSE,16.1
+TXN-000629,CRM-00129,2023-04-30,Car Vacuum,Automotive,3,66.15,198.45,returned,Credit Card,email_campaign,TRUE,0
+TXN-000630,CRM-00144,2024-10-24,Building Blocks,Toys,2,302.29,604.58,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000631,CRM-00002,2023-07-06,The Pragmatic Programmer,Books,3,295.28,885.84,completed,Apple Pay,website,TRUE,0
+TXN-000632,CRM-00161,2024-04-21,Portable Charger,Electronics,4,103.81,415.24,completed,PayPal,website,TRUE,0
+TXN-000633,CRM-00220,2025-01-23,Car Phone Mount,Automotive,4,336.28,1345.12,cancelled,Google Pay,organic_search,FALSE,0
+TXN-000634,CRM-00286,2025-03-26,Building Blocks,Toys,1,19.45,19.45,completed,Buy Now Pay Later,referral,FALSE,0
+TXN-000635,CRM-00268,2024-01-22,Water Bottle,Sports,2,76.91,153.82,completed,Credit Card,mobile_app,FALSE,0
+TXN-000636,CRM-00228,2022-03-10,Green Tea Set,Food & Drink,3,373.62,1120.86,completed,Apple Pay,organic_search,TRUE,27.1
+TXN-000637,CRM-00160,2022-03-19,Board Game,Toys,3,142.02,426.06,completed,Debit Card,referral,TRUE,0
+TXN-000638,CRM-00006,2025-03-09,Deep Work,Books,2,291.4,582.8,pending,Buy Now Pay Later,mobile_app,FALSE,0
+TXN-000639,CRM-00002,2024-09-16,Multivitamins,Health,1,178.99,178.99,completed,Apple Pay,paid_social,FALSE,0
+TXN-000640,CRM-00221,2024-01-25,Omega-3 Capsules,Health,2,427.44,854.88,pending,Buy Now Pay Later,email_campaign,TRUE,0
+TXN-000641,CRM-00068,2022-08-20,Winter Coat,Clothing,4,390.72,1562.88,completed,Google Pay,paid_social,TRUE,0
+TXN-000642,CRM-00264,2025-04-03,Building Blocks,Toys,4,307.8,1231.2,completed,Credit Card,paid_social,FALSE,0
+TXN-000643,CRM-00094,2024-09-13,Plant Pot Set,Home & Garden,1,254.43,254.43,completed,Credit Card,referral,FALSE,9.6
+TXN-000644,CRM-00031,2022-06-13,Moisturiser SPF50,Beauty,2,38.76,77.52,completed,Debit Card,mobile_app,FALSE,0
+TXN-000645,CRM-00152,2022-10-18,Green Tea Set,Food & Drink,4,409.88,1639.52,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000646,CRM-00092,2024-12-14,Foam Roller,Sports,3,382.04,1146.12,completed,Debit Card,organic_search,TRUE,16.7
+TXN-000647,CRM-00020,2023-07-27,Running Jacket,Clothing,3,266.25,798.75,completed,Apple Pay,email_campaign,TRUE,0
+TXN-000648,CRM-00014,2024-08-10,Face Mask Set,Beauty,2,358.61,717.22,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000649,CRM-00285,2024-11-24,Collagen Powder,Health,1,481.35,481.35,completed,Google Pay,email_campaign,TRUE,0
+TXN-000650,CRM-00137,2022-06-10,Jump Starter,Automotive,3,89.86,269.58,completed,Debit Card,website,TRUE,0
+TXN-000651,CRM-00157,2024-12-07,Remote Control Car,Toys,3,377.48,1132.44,completed,Google Pay,organic_search,FALSE,0
+TXN-000652,CRM-00158,2022-07-01,Face Mask Set,Beauty,4,7.14,28.56,completed,Apple Pay,website,TRUE,0
+TXN-000653,CRM-00131,2023-05-18,Foam Roller,Sports,3,363.32,1089.96,completed,Debit Card,mobile_app,FALSE,0
+TXN-000654,CRM-00207,2024-08-25,Smart Watch,Electronics,2,461.57,923.14,returned,PayPal,email_campaign,FALSE,16.5
+TXN-000655,CRM-00041,2022-06-09,Smart Watch,Electronics,2,459.72,919.44,completed,Debit Card,paid_social,FALSE,0
+TXN-000656,CRM-00299,2025-01-09,Multivitamins,Health,4,425.54,1702.16,completed,Debit Card,website,FALSE,0
+TXN-000657,CRM-00148,2025-04-02,Tyre Inflator,Automotive,2,239.51,479.02,completed,Buy Now Pay Later,website,FALSE,13.3
+TXN-000658,ANON-140230,2023-10-02,Polo Shirt,Clothing,2,349.88,699.76,cancelled,Google Pay,organic_search,TRUE,0
+TXN-000659,CRM-00050,2022-04-19,Jump Starter,Automotive,4,96.45,385.8,completed,Credit Card,email_campaign,FALSE,0
+TXN-000660,CRM-00273,2023-12-05,Webcam,Electronics,4,337.72,1350.88,completed,PayPal,website,TRUE,0
+TXN-000661,ANON-118519,2024-12-31,Art Kit,Toys,4,58.02,232.08,completed,PayPal,organic_search,TRUE,21.9
+TXN-000662,CRM-00006,2022-01-23,Yoga Mat,Sports,4,417.36,1669.44,completed,Credit Card,email_campaign,FALSE,0
+TXN-000663,ANON-153430,2024-08-18,Atomic Habits,Books,3,489.76,1469.28,completed,PayPal,referral,FALSE,22.6
+TXN-000664,CRM-00296,2024-07-18,Board Game,Toys,1,214.5,214.5,completed,PayPal,website,FALSE,0
+TXN-000665,CRM-00064,2024-11-15,Sapiens,Books,4,259.04,1036.16,pending,Google Pay,website,FALSE,11.4
+TXN-000666,CRM-00007,2024-08-18,Polo Shirt,Clothing,2,206.34,412.68,completed,Credit Card,email_campaign,FALSE,0
+TXN-000667,CRM-00152,2025-03-21,Air Purifier,Home & Garden,1,381.14,381.14,returned,Buy Now Pay Later,mobile_app,TRUE,0
+TXN-000668,CRM-00037,2023-11-10,Remote Control Car,Toys,1,160.25,160.25,returned,Apple Pay,email_campaign,TRUE,0
+TXN-000669,CRM-00214,2024-05-12,Sleep Aid,Health,1,235.16,235.16,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000670,ANON-547818,2023-12-24,Moisturiser SPF50,Beauty,3,261.75,785.25,completed,Apple Pay,paid_social,FALSE,0
+TXN-000671,CRM-00113,2023-08-27,Lip Balm,Beauty,3,249.93,749.79,completed,Apple Pay,referral,TRUE,23.7
+TXN-000672,CRM-00193,2023-08-16,Jump Starter,Automotive,4,183.46,733.84,completed,Apple Pay,paid_social,FALSE,0
+TXN-000673,CRM-00232,2022-12-10,Building Blocks,Toys,2,147.41,294.82,completed,PayPal,mobile_app,FALSE,0
+TXN-000674,CRM-00187,2022-03-14,Collagen Powder,Health,4,361.74,1446.96,completed,PayPal,website,FALSE,0
+TXN-000675,CRM-00179,2023-09-15,Deep Work,Books,1,45.63,45.63,completed,Google Pay,referral,TRUE,5.6
+TXN-000676,CRM-00015,2025-02-28,Sleep Aid,Health,4,248.89,995.56,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000677,CRM-00033,2023-06-18,Moisturiser SPF50,Beauty,1,195.08,195.08,completed,Google Pay,mobile_app,FALSE,0
+TXN-000678,ANON-142875,2022-05-06,Board Game,Toys,2,230.73,461.46,completed,PayPal,referral,TRUE,8
+TXN-000679,ANON-792511,2024-08-27,Foam Roller,Sports,1,368.67,368.67,completed,Credit Card,mobile_app,FALSE,15.3
+TXN-000680,CRM-00035,2025-03-30,Board Game,Toys,3,344.4,1033.2,completed,Debit Card,organic_search,FALSE,0
+TXN-000681,CRM-00134,2022-12-13,Dash Cam,Automotive,4,420.5,1682,completed,Apple Pay,paid_social,FALSE,0
+TXN-000682,CRM-00038,2025-03-19,Dash Cam,Automotive,4,116.58,466.32,completed,Apple Pay,website,FALSE,0
+TXN-000683,CRM-00076,2022-04-16,Olive Oil,Food & Drink,3,206.2,618.6,completed,PayPal,email_campaign,FALSE,0
+TXN-000684,ANON-293818,2023-08-21,Throw Blanket,Home & Garden,3,491.57,1474.71,completed,Debit Card,mobile_app,FALSE,14.9
+TXN-000685,CRM-00062,2022-02-25,Atomic Habits,Books,3,216.41,649.23,returned,Google Pay,website,FALSE,0
+TXN-000686,CRM-00206,2023-08-11,Tyre Inflator,Automotive,1,428.25,428.25,returned,Google Pay,organic_search,TRUE,17.2
+TXN-000687,CRM-00003,2024-09-19,Tyre Inflator,Automotive,3,447.01,1341.03,completed,Debit Card,email_campaign,TRUE,0
+TXN-000688,ANON-801442,2022-06-18,Dark Chocolate,Food & Drink,2,401.4,802.8,completed,Google Pay,mobile_app,FALSE,6.2
+TXN-000689,ANON-678570,2022-09-17,Vitamin C Serum,Beauty,4,468.91,1875.64,cancelled,Apple Pay,referral,FALSE,0
+TXN-000690,CRM-00157,2024-11-01,Eye Cream,Beauty,4,186.52,746.08,completed,Apple Pay,referral,FALSE,0
+TXN-000691,ANON-478083,2022-06-07,Collagen Powder,Health,2,11.32,22.64,completed,PayPal,organic_search,TRUE,0
+TXN-000692,CRM-00211,2023-07-24,The Pragmatic Programmer,Books,4,338.03,1352.12,completed,Buy Now Pay Later,organic_search,FALSE,18.2
+TXN-000693,CRM-00126,2023-06-01,Remote Control Car,Toys,3,337.02,1011.06,completed,Buy Now Pay Later,organic_search,TRUE,0
+TXN-000694,CRM-00270,2022-09-29,Air Purifier,Home & Garden,4,200.81,803.24,completed,Buy Now Pay Later,website,FALSE,0
+TXN-000695,CRM-00154,2023-07-30,Running Jacket,Clothing,2,263.2,526.4,completed,Apple Pay,email_campaign,FALSE,27.8
+TXN-000696,CRM-00186,2023-07-18,Water Bottle,Sports,3,339.2,1017.6,cancelled,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000697,CRM-00085,2023-06-11,Olive Oil,Food & Drink,1,63.89,63.89,completed,PayPal,paid_social,FALSE,0
+TXN-000698,CRM-00236,2022-01-30,Desk Lamp,Home & Garden,1,200.04,200.04,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000699,CRM-00150,2022-08-17,Winter Coat,Clothing,3,348.35,1045.05,completed,Google Pay,mobile_app,TRUE,0
+TXN-000700,CRM-00183,2022-12-24,Yoga Mat,Sports,4,487.92,1951.68,completed,Credit Card,paid_social,FALSE,0
+TXN-000701,ANON-878659,2025-04-26,Car Phone Mount,Automotive,2,371.27,742.54,pending,Credit Card,organic_search,FALSE,0
+TXN-000702,CRM-00250,2022-11-06,Board Game,Toys,3,445.86,1337.58,completed,Credit Card,referral,FALSE,0
+TXN-000703,ANON-786141,2024-07-03,Deep Work,Books,2,88.35,176.7,completed,Credit Card,email_campaign,FALSE,0
+TXN-000704,CRM-00108,2024-01-28,Car Vacuum,Automotive,1,184.67,184.67,completed,Buy Now Pay Later,paid_social,FALSE,17.8
+TXN-000705,CRM-00123,2022-12-26,Sleep Aid,Health,3,103.35,310.05,completed,Credit Card,mobile_app,FALSE,5.4
+TXN-000706,CRM-00049,2023-06-20,Smart Watch,Electronics,3,103.93,311.79,cancelled,Google Pay,referral,TRUE,15.9
+TXN-000707,ANON-673129,2023-04-29,Desk Lamp,Home & Garden,2,421.95,843.9,completed,Apple Pay,mobile_app,TRUE,0
+TXN-000708,CRM-00274,2024-09-20,Puzzle 1000pc,Toys,1,204.72,204.72,returned,Credit Card,email_campaign,FALSE,0
+TXN-000709,CRM-00207,2023-01-06,Webcam,Electronics,1,120.04,120.04,completed,Apple Pay,mobile_app,FALSE,5.8
+TXN-000710,CRM-00145,2024-12-16,Running Jacket,Clothing,3,214.8,644.4,completed,Buy Now Pay Later,organic_search,FALSE,17.6
+TXN-000711,CRM-00071,2022-03-09,Desk Lamp,Home & Garden,2,251.56,503.12,completed,Google Pay,paid_social,FALSE,0
+TXN-000712,CRM-00004,2023-12-04,Organic Coffee,Food & Drink,3,382.82,1148.46,completed,Google Pay,mobile_app,FALSE,0
+TXN-000713,CRM-00027,2022-06-22,Sleep Aid,Health,4,383.39,1533.56,completed,Credit Card,email_campaign,TRUE,0
+TXN-000714,ANON-538527,2022-10-25,Art Kit,Toys,1,298.26,298.26,completed,Buy Now Pay Later,email_campaign,FALSE,0
+TXN-000715,CRM-00173,2022-11-12,Polo Shirt,Clothing,1,378.61,378.61,completed,Apple Pay,website,FALSE,25
+TXN-000716,CRM-00149,2024-10-12,Winter Coat,Clothing,3,400.69,1202.07,completed,Google Pay,email_campaign,TRUE,24.8
+TXN-000717,CRM-00285,2024-04-25,Vitamin C Serum,Beauty,3,470.95,1412.85,completed,Google Pay,paid_social,FALSE,0
+TXN-000718,CRM-00234,2024-02-24,Running Shoes,Sports,3,180.91,542.73,cancelled,Credit Card,referral,FALSE,17.3
+TXN-000719,CRM-00023,2023-05-03,The Lean Startup,Books,1,334.34,334.34,completed,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000720,CRM-00218,2024-06-20,Merino Wool Sweater,Clothing,1,474.37,474.37,completed,PayPal,paid_social,FALSE,0
+TXN-000721,CRM-00272,2022-12-09,Omega-3 Capsules,Health,1,492.84,492.84,completed,Apple Pay,mobile_app,FALSE,19.4
+TXN-000722,CRM-00194,2023-03-08,USB-C Hub,Electronics,4,257.64,1030.56,completed,Debit Card,organic_search,FALSE,20.9
+TXN-000723,CRM-00138,2025-03-29,Remote Control Car,Toys,3,77.8,233.4,completed,Debit Card,organic_search,FALSE,23.4
+TXN-000724,CRM-00294,2023-12-08,Building Blocks,Toys,1,229.59,229.59,completed,Apple Pay,website,TRUE,0
+TXN-000725,ANON-539357,2022-04-22,Multivitamins,Health,4,65.36,261.44,completed,Google Pay,mobile_app,TRUE,0
+TXN-000726,CRM-00016,2023-06-26,Car Phone Mount,Automotive,3,246.73,740.19,completed,Apple Pay,paid_social,FALSE,0
+TXN-000727,CRM-00244,2022-08-26,Vitamin C Serum,Beauty,2,119.03,238.06,completed,Credit Card,organic_search,FALSE,0
+TXN-000728,CRM-00263,2022-04-18,Collagen Powder,Health,2,470.55,941.1,returned,Debit Card,referral,TRUE,0
+TXN-000729,CRM-00256,2022-12-10,Smart Watch,Electronics,3,19.68,59.04,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000730,CRM-00109,2024-08-08,Desk Lamp,Home & Garden,3,369.47,1108.41,completed,Credit Card,paid_social,FALSE,19.1
+TXN-000731,CRM-00204,2024-03-27,Protein Powder,Food & Drink,3,415.17,1245.51,completed,PayPal,referral,FALSE,29.4
+TXN-000732,CRM-00128,2024-09-02,Green Tea Set,Food & Drink,2,251.08,502.16,completed,Apple Pay,referral,TRUE,24.5
+TXN-000733,CRM-00035,2023-09-10,Wireless Earbuds,Electronics,4,18.21,72.84,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000734,ANON-827505,2024-09-02,Water Bottle,Sports,2,93.47,186.94,completed,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000735,CRM-00268,2024-12-26,Tyre Inflator,Automotive,1,303.66,303.66,pending,Buy Now Pay Later,email_campaign,TRUE,18.3
+TXN-000736,CRM-00003,2023-04-24,Lip Balm,Beauty,3,166.52,499.56,completed,Buy Now Pay Later,organic_search,TRUE,0
+TXN-000737,CRM-00042,2024-02-17,Yoga Mat,Sports,2,154.56,309.12,completed,Apple Pay,organic_search,FALSE,25
+TXN-000738,CRM-00195,2024-03-09,USB-C Hub,Electronics,3,312.88,938.64,pending,Credit Card,organic_search,TRUE,0
+TXN-000739,CRM-00099,2024-08-29,Omega-3 Capsules,Health,4,380.52,1522.08,returned,PayPal,organic_search,FALSE,0
+TXN-000740,ANON-559008,2023-06-22,Jump Starter,Automotive,1,331.57,331.57,completed,Debit Card,organic_search,FALSE,0
+TXN-000741,CRM-00287,2022-10-25,Dash Cam,Automotive,2,261.85,523.7,pending,Google Pay,website,TRUE,26.2
+TXN-000742,CRM-00081,2024-12-22,Resistance Bands,Sports,4,248.14,992.56,completed,PayPal,paid_social,FALSE,0
+TXN-000743,CRM-00220,2024-06-09,Collagen Powder,Health,4,235.21,940.84,pending,PayPal,website,TRUE,0
+TXN-000744,CRM-00112,2022-01-25,Throw Blanket,Home & Garden,1,150.02,150.02,completed,Buy Now Pay Later,organic_search,FALSE,7.2
+TXN-000745,CRM-00103,2023-08-15,USB-C Hub,Electronics,1,250.96,250.96,completed,PayPal,website,TRUE,28.1
+TXN-000746,CRM-00035,2024-07-08,The Pragmatic Programmer,Books,1,254.37,254.37,pending,PayPal,mobile_app,TRUE,0
+TXN-000747,CRM-00121,2024-02-22,Running Shoes,Sports,4,272.96,1091.84,completed,Apple Pay,paid_social,TRUE,0
+TXN-000748,CRM-00137,2023-10-09,Webcam,Electronics,2,404.88,809.76,completed,Buy Now Pay Later,email_campaign,FALSE,20.3
+TXN-000749,CRM-00251,2024-12-21,Air Purifier,Home & Garden,4,272.02,1088.08,completed,Debit Card,mobile_app,FALSE,29.8
+TXN-000750,CRM-00207,2022-03-26,Running Jacket,Clothing,2,13.73,27.46,cancelled,Credit Card,paid_social,TRUE,0
+TXN-000751,CRM-00144,2022-07-19,Lip Balm,Beauty,4,382.4,1529.6,completed,Apple Pay,paid_social,FALSE,0
+TXN-000752,CRM-00127,2024-12-24,Art Kit,Toys,1,494.41,494.41,returned,Credit Card,email_campaign,TRUE,23.8
+TXN-000753,CRM-00266,2023-12-26,The Pragmatic Programmer,Books,3,439.78,1319.34,completed,Credit Card,mobile_app,TRUE,0
+TXN-000754,CRM-00051,2024-06-03,Building Blocks,Toys,4,63.85,255.4,completed,Credit Card,paid_social,TRUE,0
+TXN-000755,CRM-00040,2023-07-13,Puzzle 1000pc,Toys,4,227.36,909.44,completed,Debit Card,paid_social,FALSE,0
+TXN-000756,CRM-00218,2023-11-18,Omega-3 Capsules,Health,3,426.32,1278.96,completed,PayPal,paid_social,FALSE,0
+TXN-000757,CRM-00295,2023-07-08,Yoga Mat,Sports,4,223.62,894.48,completed,Google Pay,email_campaign,FALSE,0
+TXN-000758,CRM-00254,2023-07-01,Car Vacuum,Automotive,4,22.77,91.08,completed,Buy Now Pay Later,website,TRUE,24.2
+TXN-000759,CRM-00032,2022-07-21,Smart Watch,Electronics,4,92.37,369.48,completed,Google Pay,organic_search,FALSE,0
+TXN-000760,ANON-349788,2023-06-07,Winter Coat,Clothing,4,330.75,1323,completed,PayPal,mobile_app,FALSE,15.8
+TXN-000761,CRM-00145,2025-04-11,Slim Fit Jeans,Clothing,4,390.01,1560.04,pending,PayPal,organic_search,TRUE,0
+TXN-000762,CRM-00171,2024-03-12,Car Phone Mount,Automotive,2,442.04,884.08,completed,Debit Card,referral,FALSE,0
+TXN-000763,CRM-00132,2024-08-02,Lip Balm,Beauty,2,86.09,172.18,completed,Google Pay,website,FALSE,0
+TXN-000764,CRM-00184,2023-05-11,Car Phone Mount,Automotive,2,217.76,435.52,cancelled,Apple Pay,organic_search,TRUE,0
+TXN-000765,ANON-929026,2025-04-20,Multivitamins,Health,4,159.36,637.44,completed,Debit Card,paid_social,FALSE,0
+TXN-000766,ANON-361103,2023-02-04,Deep Work,Books,4,197.21,788.84,completed,Google Pay,organic_search,FALSE,11.9
+TXN-000767,CRM-00259,2024-11-30,Sapiens,Books,2,382.42,764.84,completed,Apple Pay,website,FALSE,0
+TXN-000768,CRM-00264,2023-11-23,Face Mask Set,Beauty,1,286.01,286.01,completed,Debit Card,website,FALSE,16.3
+TXN-000769,ANON-780154,2023-01-04,Yoga Mat,Sports,2,247.33,494.66,completed,Google Pay,website,TRUE,0
+TXN-000770,CRM-00268,2023-10-04,Multivitamins,Health,4,278.57,1114.28,completed,Buy Now Pay Later,email_campaign,TRUE,27
+TXN-000771,CRM-00145,2025-01-26,Water Bottle,Sports,4,271.46,1085.84,completed,Apple Pay,referral,TRUE,0
+TXN-000772,CRM-00147,2022-01-22,Olive Oil,Food & Drink,1,237.09,237.09,completed,Credit Card,website,TRUE,0
+TXN-000773,ANON-839730,2022-01-18,Remote Control Car,Toys,2,282.75,565.5,completed,Google Pay,email_campaign,FALSE,0
+TXN-000774,CRM-00133,2022-05-20,Probiotic,Health,3,82.22,246.66,completed,Apple Pay,paid_social,FALSE,23.5
+TXN-000775,CRM-00020,2022-01-25,Webcam,Electronics,1,32.53,32.53,cancelled,Debit Card,website,TRUE,21.3
+TXN-000776,ANON-741185,2024-04-22,Moisturiser SPF50,Beauty,4,135.12,540.48,completed,Buy Now Pay Later,email_campaign,TRUE,0
+TXN-000777,CRM-00004,2022-07-20,Desk Lamp,Home & Garden,1,296.98,296.98,cancelled,Apple Pay,paid_social,FALSE,0
+TXN-000778,CRM-00261,2024-12-11,Board Game,Toys,1,191.63,191.63,completed,Buy Now Pay Later,organic_search,FALSE,0
+TXN-000779,CRM-00158,2022-08-01,Jump Starter,Automotive,3,339.18,1017.54,completed,Debit Card,referral,FALSE,0
+TXN-000780,ANON-472751,2024-07-02,Winter Coat,Clothing,3,383.64,1150.92,completed,Apple Pay,email_campaign,FALSE,0
+TXN-000781,CRM-00218,2023-12-21,Car Phone Mount,Automotive,1,145.51,145.51,completed,PayPal,website,FALSE,0
+TXN-000782,CRM-00068,2023-03-26,Merino Wool Sweater,Clothing,2,35.34,70.68,completed,Google Pay,website,TRUE,0
+TXN-000783,CRM-00287,2023-08-04,Dash Cam,Automotive,1,296.69,296.69,completed,Debit Card,referral,TRUE,0
+TXN-000784,CRM-00262,2023-05-31,Eye Cream,Beauty,3,68.33,204.99,pending,Apple Pay,paid_social,FALSE,0
+TXN-000785,CRM-00156,2023-01-31,Deep Work,Books,3,186.01,558.03,completed,Debit Card,referral,FALSE,0
+TXN-000786,CRM-00207,2022-03-11,Winter Coat,Clothing,3,404.92,1214.76,completed,Credit Card,paid_social,FALSE,0
+TXN-000787,CRM-00186,2022-02-18,Car Phone Mount,Automotive,3,293.48,880.44,completed,Buy Now Pay Later,referral,FALSE,6.8
+TXN-000788,CRM-00130,2022-07-08,Moisturiser SPF50,Beauty,3,383.01,1149.03,returned,Debit Card,referral,TRUE,21.2
+TXN-000789,ANON-881996,2022-04-27,Dash Cam,Automotive,4,313.83,1255.32,completed,Google Pay,website,TRUE,0
+TXN-000790,CRM-00145,2023-03-21,Collagen Powder,Health,1,193,193,completed,Credit Card,referral,FALSE,0
+TXN-000791,CRM-00200,2022-09-07,Face Mask Set,Beauty,2,216.51,433.02,completed,Buy Now Pay Later,mobile_app,FALSE,13.5
+TXN-000792,CRM-00193,2022-09-03,Green Tea Set,Food & Drink,2,495.02,990.04,cancelled,Google Pay,paid_social,TRUE,0
+TXN-000793,CRM-00045,2022-06-26,Board Game,Toys,4,208.49,833.96,completed,Apple Pay,mobile_app,FALSE,18.2
+TXN-000794,CRM-00248,2022-09-24,Probiotic,Health,1,32.89,32.89,completed,Buy Now Pay Later,paid_social,FALSE,0
+TXN-000795,CRM-00268,2024-02-09,Organic Coffee,Food & Drink,3,125.65,376.95,completed,PayPal,referral,FALSE,0
+TXN-000796,CRM-00184,2025-03-05,Yoga Mat,Sports,3,120.9,362.7,completed,Google Pay,organic_search,FALSE,0
+TXN-000797,CRM-00004,2023-01-14,Sapiens,Books,2,159.18,318.36,completed,Debit Card,mobile_app,FALSE,0
+TXN-000798,CRM-00281,2022-08-16,Green Tea Set,Food & Drink,2,46.96,93.92,completed,PayPal,mobile_app,FALSE,0
+TXN-000799,CRM-00152,2023-01-13,Green Tea Set,Food & Drink,4,344.87,1379.48,completed,Debit Card,referral,TRUE,22.3
+TXN-000800,CRM-00141,2023-06-03,Sleep Aid,Health,1,434.26,434.26,completed,Credit Card,referral,TRUE,0

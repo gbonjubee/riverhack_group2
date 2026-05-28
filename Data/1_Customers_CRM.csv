@@ -1,0 +1,301 @@
+﻿customer_id,first_name,last_name,email,city,country,registration_date,customer_segment,lifetime_value_eur,total_orders,last_order_date,preferred_channel,account_status
+CRM-00001,Uma,Smith,uma.smith5@hotmail.com,Madrid,ES,2021-06-10,Loyal,905.59,34,2023-12-11,In-App,active
+CRM-00002,David,Williams,david.williams29@yahoo.com,Brussels,BE,2022-09-13,New,187.55,40,2024-05-17,In-App,active
+CRM-00003,Alice,Nelson,alice.nelson59@outlook.com,London,GB,2021-08-27,Occasional,617.99,25,2021-12-04,Push Notification,active
+CRM-00004,Xander,Adams,xander.adams40@yahoo.com,Hamburg,DE,2024-03-08,Loyal,1649.62,10,2024-07-11,Display,active
+CRM-00005,Ivan,Jones,ivan.jones29@gmail.com,Utrecht,NL,2021-11-24,Loyal,277.09,16,2022-02-22,Paid Social,active
+CRM-00006,Hannah,Wilson,hannah.wilson85@yahoo.com,The Hague,NL,2020-08-23,High-Value,1463.12,3,2022-11-24,Display,active
+CRM-00007,Hannah,Williams,hannah.williams52@outlook.com,Amsterdam,NL,2022-08-17,New,1896.56,37,2023-11-09,In-App,inactive
+CRM-00008,Emma,Jones,emma.jones36@gmail.com,Antwerp,BE,2020-06-03,High-Value,350.86,8,2021-09-25,Email,inactive
+CRM-00009,Xander,Edwards,xander.edwards99@outlook.com,The Hague,NL,2020-10-15,New,893.7,13,2023-10-25,Paid Social,active
+CRM-00010,David,Johnson,david.johnson45@icloud.com,Rotterdam,NL,2024-03-24,Occasional,859.6,2,2024-07-13,SMS,active
+CRM-00011,Victor,Williams,victor.williams52@icloud.com,Utrecht,NL,2021-04-07,High-Value,1614.13,29,2021-07-31,Push Notification,active
+CRM-00012,Xander,Clarke,xander.clarke43@gmail.com,Amsterdam,NL,2023-10-17,At-Risk,2079.35,21,2024-03-08,Display,active
+CRM-00013,Carlos,Wilson,carlos.wilson15@outlook.com,Paris,FR,2024-01-23,Loyal,1718.01,27,2024-10-06,Email,active
+CRM-00014,Rachel,Thomas,rachel.thomas23@icloud.com,The Hague,NL,2023-10-13,At-Risk,2452.43,10,2024-08-04,Email,active
+CRM-00015,Clara,Baker,clara.baker34@gmail.com,Brussels,BE,2022-03-24,Loyal,1206.76,27,2023-07-16,SMS,active
+CRM-00016,Sam,Jackson,sam.jackson14@icloud.com,Eindhoven,NL,2023-02-15,Loyal,472.05,14,2025-03-05,Push Notification,active
+CRM-00017,Nina,Evans,nina.evans56@outlook.com,Hamburg,DE,2022-01-19,Loyal,354.43,27,2025-04-12,In-App,active
+CRM-00018,Ben,Turner,ben.turner94@outlook.com,Rotterdam,NL,2020-07-03,Occasional,1795.79,33,2022-04-17,Display,active
+CRM-00019,Alice,Taylor,alice.taylor56@icloud.com,Antwerp,BE,2024-06-07,At-Risk,2360.14,40,2025-03-29,Display,active
+CRM-00020,Clara,Carter,clara.carter66@gmail.com,Rotterdam,NL,2022-03-19,Occasional,111.72,31,2024-01-04,Push Notification,active
+CRM-00021,George,Hill,george.hill50@icloud.com,Hamburg,DE,2020-01-29,Loyal,519.95,4,2021-05-28,Display,active
+CRM-00022,Hannah,Hill,hannah.hill25@outlook.com,Amsterdam,NL,2021-06-25,New,1981.95,9,2023-03-05,In-App,inactive
+CRM-00023,Quinn,Jackson,quinn.jackson6@hotmail.com,Paris,FR,2023-01-03,High-Value,2216.76,34,2023-05-29,SMS,inactive
+CRM-00024,Tara,Wilson,tara.wilson1@icloud.com,Madrid,ES,2020-09-10,High-Value,802.68,14,2024-05-24,SMS,active
+CRM-00025,Alice,Parker,alice.parker69@yahoo.com,The Hague,NL,2022-07-20,At-Risk,788.99,36,2024-01-04,Email,active
+CRM-00026,Rachel,Jackson,rachel.jackson47@hotmail.com,Berlin,DE,2022-01-24,At-Risk,1007.6,21,2023-04-21,Email,active
+CRM-00027,George,Parker,george.parker9@outlook.com,Madrid,ES,2023-10-09,New,2042.21,31,2024-12-05,Email,active
+CRM-00028,Wendy,Hall,wendy.hall80@outlook.com,Rotterdam,NL,2024-03-13,At-Risk,1194.03,34,2024-08-13,SMS,inactive
+CRM-00029,Uma,Evans,uma.evans85@gmail.com,Munich,DE,2023-10-08,Loyal,110.82,25,2024-07-15,In-App,active
+CRM-00030,Wendy,Brown,wendy.brown93@outlook.com,Rotterdam,NL,2021-06-20,At-Risk,1624.31,21,2021-10-22,SMS,inactive
+CRM-00031,Rachel,Brown,rachel.brown65@outlook.com,London,GB,2023-04-12,Loyal,729.56,12,2024-11-02,SMS,suspended
+CRM-00032,Nina,Baker,nina.baker86@hotmail.com,Amsterdam,NL,2022-02-19,High-Value,2158.1,30,2023-02-12,Email,active
+CRM-00033,Hannah,Hall,hannah.hall42@hotmail.com,Antwerp,BE,2023-07-31,New,138.55,35,2024-10-10,Push Notification,active
+CRM-00034,Oliver,White,oliver.white90@outlook.com,Eindhoven,NL,2022-01-30,At-Risk,1646.21,22,2025-03-13,Email,active
+CRM-00035,Sam,Hall,sam.hall71@yahoo.com,Hamburg,DE,2020-08-09,At-Risk,697.58,35,2023-05-21,Push Notification,active
+CRM-00036,Ivan,Hall,ivan.hall25@hotmail.com,Paris,FR,2023-10-14,Loyal,2002.37,23,2023-12-01,In-App,active
+CRM-00037,Zoe,Wood,zoe.wood86@hotmail.com,Munich,DE,2021-04-23,Loyal,1103.64,17,2023-03-29,In-App,active
+CRM-00038,Bella,Edwards,bella.edwards87@yahoo.com,Berlin,DE,2022-08-23,Occasional,1012.05,40,2025-04-13,Paid Social,active
+CRM-00039,Alice,Carter,alice.carter79@icloud.com,Madrid,ES,2020-02-21,High-Value,1110.55,31,2023-09-30,Paid Social,active
+CRM-00040,Yasmine,Jones,yasmine.jones39@hotmail.com,The Hague,NL,2023-06-22,Loyal,2392.07,13,2024-07-16,Paid Social,active
+CRM-00041,Zoe,Baker,zoe.baker71@gmail.com,Amsterdam,NL,2023-02-23,Occasional,860.81,16,2024-08-13,In-App,active
+CRM-00042,Fiona,Adams,fiona.adams39@outlook.com,The Hague,NL,2021-11-02,New,483.31,18,2023-08-16,Email,active
+CRM-00043,Wendy,Adams,wendy.adams27@hotmail.com,Utrecht,NL,2023-06-03,New,1736.33,36,2024-08-02,Email,active
+CRM-00044,Nina,Brown,nina.brown75@icloud.com,London,GB,2021-03-29,Loyal,931.02,20,2023-07-13,Email,active
+CRM-00045,Kevin,Jones,kevin.jones84@outlook.com,Paris,FR,2023-08-19,High-Value,1997.28,15,2024-01-18,SMS,active
+CRM-00046,Ivan,Martin,ivan.martin60@hotmail.com,London,GB,2020-05-09,At-Risk,681.47,20,2022-01-13,Paid Social,active
+CRM-00047,Emma,Carter,emma.carter57@yahoo.com,Rotterdam,NL,2023-07-25,At-Risk,224.88,19,2024-08-13,Email,active
+CRM-00048,George,Johnson,george.johnson66@hotmail.com,London,GB,2022-08-08,High-Value,1072.76,14,2023-02-12,Paid Social,active
+CRM-00049,Yasmine,Parker,yasmine.parker95@yahoo.com,Antwerp,BE,2023-12-06,At-Risk,1087.91,32,2025-04-03,Paid Social,active
+CRM-00050,Kevin,Edwards,kevin.edwards85@gmail.com,Berlin,DE,2021-09-10,Loyal,2487.84,21,2023-01-16,SMS,active
+CRM-00051,David,Brown,david.brown37@icloud.com,Rotterdam,NL,2023-08-22,At-Risk,467.53,31,2024-04-08,In-App,active
+CRM-00052,Clara,Wilson,clara.wilson85@icloud.com,Munich,DE,2022-04-16,New,748.54,23,2023-12-22,Email,active
+CRM-00053,Mark,Evans,mark.evans43@gmail.com,Madrid,ES,2020-08-26,Loyal,274.44,36,2024-08-14,SMS,active
+CRM-00054,David,Evans,david.evans97@yahoo.com,The Hague,NL,2020-10-13,Loyal,833.24,18,2021-08-04,In-App,active
+CRM-00055,Laura,Turner,laura.turner87@outlook.com,Munich,DE,2020-04-02,New,753.19,19,2024-10-08,In-App,active
+CRM-00056,Bella,Wood,bella.wood29@yahoo.com,Madrid,ES,2020-03-17,At-Risk,1125.87,8,2022-10-21,Email,suspended
+CRM-00057,Laura,Taylor,laura.taylor19@gmail.com,Utrecht,NL,2021-09-15,At-Risk,1799.8,37,2022-01-11,Display,active
+CRM-00058,Tara,Hall,tara.hall6@yahoo.com,Rotterdam,NL,2022-10-05,High-Value,433.28,35,2024-05-02,Paid Social,active
+CRM-00059,Ivan,Davies,ivan.davies61@icloud.com,Rotterdam,NL,2020-08-25,Loyal,1120.89,25,2022-12-18,Push Notification,active
+CRM-00060,Zoe,Thomas,zoe.thomas99@gmail.com,Paris,FR,2020-07-18,At-Risk,1128.88,26,2022-11-18,Paid Social,active
+CRM-00061,Ben,Wood,ben.wood59@hotmail.com,Rotterdam,NL,2021-04-25,At-Risk,1822.5,23,2024-06-09,Paid Social,active
+CRM-00062,Xander,Wilson,xander.wilson81@icloud.com,The Hague,NL,2023-01-05,New,2280.79,10,2024-06-30,Push Notification,active
+CRM-00063,Oliver,Edwards,oliver.edwards25@hotmail.com,Berlin,DE,2020-10-04,Loyal,1544.83,19,2021-07-05,Display,active
+CRM-00064,Rachel,Williams,rachel.williams64@hotmail.com,Utrecht,NL,2022-03-06,At-Risk,1098.65,3,2024-05-09,In-App,active
+CRM-00065,David,Wood,david.wood32@yahoo.com,Paris,FR,2022-07-18,Occasional,1605.88,19,2023-03-23,Push Notification,active
+CRM-00066,Diana,Parker,diana.parker84@gmail.com,Eindhoven,NL,2022-01-29,Loyal,1982.87,6,2023-07-05,Push Notification,inactive
+CRM-00067,Mark,Edwards,mark.edwards97@gmail.com,The Hague,NL,2023-10-05,Occasional,162.25,23,2024-04-30,SMS,active
+CRM-00068,Clara,Edwards,clara.edwards55@yahoo.com,Munich,DE,2024-03-01,At-Risk,1684.54,29,2024-08-17,SMS,active
+CRM-00069,Rachel,Turner,rachel.turner23@icloud.com,Berlin,DE,2023-11-27,New,1027.4,17,2024-02-15,SMS,inactive
+CRM-00070,Julia,Brown,julia.brown60@gmail.com,London,GB,2023-01-11,Loyal,1292.45,31,2024-04-15,In-App,active
+CRM-00071,Aaron,Jones,aaron.jones72@yahoo.com,Madrid,ES,2022-05-08,At-Risk,1879.75,14,2024-06-05,Push Notification,inactive
+CRM-00072,Uma,Adams,uma.adams16@hotmail.com,Hamburg,DE,2023-04-17,High-Value,416.77,13,2023-07-20,Email,active
+CRM-00073,Tara,Turner,tara.turner18@hotmail.com,Hamburg,DE,2024-02-29,At-Risk,97.23,35,2024-11-29,Push Notification,inactive
+CRM-00074,Carlos,Collins,carlos.collins86@icloud.com,Utrecht,NL,2024-01-28,At-Risk,2124.7,18,2025-02-01,In-App,active
+CRM-00075,Bella,Smith,bella.smith72@icloud.com,Brussels,BE,2020-11-12,High-Value,1701.66,36,2021-12-07,SMS,active
+CRM-00076,Laura,Williams,laura.williams41@hotmail.com,Hamburg,DE,2022-04-29,Occasional,1106.67,18,2022-08-12,In-App,active
+CRM-00077,Sam,Mitchell,sam.mitchell79@icloud.com,The Hague,NL,2023-09-03,New,333.05,9,2024-06-03,SMS,inactive
+CRM-00078,George,Edwards,george.edwards55@icloud.com,Madrid,ES,2020-07-21,Loyal,605.27,7,2022-09-01,In-App,active
+CRM-00079,Wendy,Wilson,wendy.wilson58@yahoo.com,Amsterdam,NL,2022-09-29,New,1620,40,2024-08-18,Email,active
+CRM-00080,Clara,Davies,clara.davies96@hotmail.com,Madrid,ES,2023-06-14,High-Value,918.13,38,2025-02-22,SMS,active
+CRM-00081,Ben,Hall,ben.hall58@outlook.com,Munich,DE,2022-04-15,New,2374.68,16,2022-07-04,SMS,active
+CRM-00082,Victor,Jackson,victor.jackson97@yahoo.com,Madrid,ES,2021-07-26,At-Risk,100.32,16,2021-12-22,Push Notification,inactive
+CRM-00083,Hannah,Jackson,hannah.jackson82@outlook.com,Eindhoven,NL,2020-03-08,Loyal,400.53,4,2021-03-28,Display,inactive
+CRM-00084,Yasmine,Evans,yasmine.evans99@icloud.com,Eindhoven,NL,2023-11-14,New,1135.81,34,2024-06-23,Display,active
+CRM-00085,Julia,Edwards,julia.edwards63@yahoo.com,Antwerp,BE,2022-01-28,Loyal,939.99,15,2024-10-05,In-App,active
+CRM-00086,Clara,Martin,clara.martin36@hotmail.com,Rotterdam,NL,2021-03-20,Occasional,1120.97,15,2022-05-21,Paid Social,active
+CRM-00087,Bella,Jones,bella.jones10@outlook.com,Berlin,DE,2022-06-27,New,210.68,4,2024-05-08,Paid Social,active
+CRM-00088,Hannah,Davies,hannah.davies31@outlook.com,Rotterdam,NL,2022-06-29,High-Value,361.48,7,2024-03-10,Push Notification,suspended
+CRM-00089,Bella,Martin,bella.martin43@outlook.com,The Hague,NL,2021-04-28,High-Value,930.04,27,2021-05-29,In-App,active
+CRM-00090,David,Smith,david.smith70@gmail.com,Rotterdam,NL,2022-01-12,Loyal,799.68,22,2023-03-21,Email,active
+CRM-00091,Mark,Martin,mark.martin18@yahoo.com,Brussels,BE,2020-07-22,Loyal,711.15,31,2021-08-15,Push Notification,suspended
+CRM-00092,Ivan,Thomas,ivan.thomas30@hotmail.com,Brussels,BE,2023-11-05,Loyal,2402.09,7,2024-03-04,SMS,active
+CRM-00093,Oliver,Parker,oliver.parker89@yahoo.com,The Hague,NL,2022-01-22,New,84.27,9,2024-09-28,Email,inactive
+CRM-00094,Uma,Parker,uma.parker91@yahoo.com,Hamburg,DE,2023-01-20,High-Value,481.4,1,2023-09-25,In-App,inactive
+CRM-00095,Aaron,Wood,aaron.wood9@hotmail.com,The Hague,NL,2023-08-13,Occasional,1304.01,36,2025-04-22,SMS,active
+CRM-00096,Laura,Roberts,laura.roberts53@outlook.com,Utrecht,NL,2022-01-04,New,2285.59,11,2023-02-26,Paid Social,active
+CRM-00097,Fiona,Hall,fiona.hall70@hotmail.com,Rotterdam,NL,2020-05-04,At-Risk,312.05,27,2022-07-25,In-App,active
+CRM-00098,Laura,Nelson,laura.nelson54@gmail.com,Brussels,BE,2022-03-26,At-Risk,1941.91,31,2023-07-29,SMS,active
+CRM-00099,Laura,Carter,laura.carter27@hotmail.com,Paris,FR,2021-07-19,At-Risk,1766.01,31,2024-08-22,In-App,active
+CRM-00100,George,Parker,george.parker50@icloud.com,Munich,DE,2021-01-23,New,552.13,13,2022-11-12,SMS,active
+CRM-00101,Victor,Turner,victor.turner90@gmail.com,Paris,FR,2020-09-07,Occasional,1537.46,19,2025-01-12,In-App,active
+CRM-00102,Ivan,Baker,ivan.baker98@icloud.com,Eindhoven,NL,2022-07-20,New,1741.07,21,2023-05-05,Display,active
+CRM-00103,Wendy,Nelson,wendy.nelson49@hotmail.com,Utrecht,NL,2020-07-06,Occasional,2496.6,19,2022-08-24,Paid Social,active
+CRM-00104,Diana,Jackson,diana.jackson1@outlook.com,Paris,FR,2023-09-19,Loyal,516.44,4,2025-01-08,Push Notification,active
+CRM-00105,Victor,Taylor,victor.taylor39@hotmail.com,Hamburg,DE,2021-03-10,Occasional,356.61,6,2024-03-06,SMS,active
+CRM-00106,Uma,Evans,uma.evans54@icloud.com,Utrecht,NL,2023-08-07,Loyal,203.65,37,2024-08-08,SMS,inactive
+CRM-00107,Clara,Roberts,clara.roberts96@icloud.com,Amsterdam,NL,2023-08-02,At-Risk,448.19,15,2024-06-12,Paid Social,active
+CRM-00108,Tara,Evans,tara.evans78@yahoo.com,Brussels,BE,2023-05-07,At-Risk,1789.16,35,2024-01-29,Display,active
+CRM-00109,Uma,Jones,uma.jones63@yahoo.com,Munich,DE,2020-02-13,New,2493.21,3,2022-02-18,Push Notification,active
+CRM-00110,Fiona,Hill,fiona.hill35@hotmail.com,Rotterdam,NL,2020-04-13,New,2030.07,12,2023-02-27,In-App,active
+CRM-00111,Rachel,Carter,rachel.carter63@gmail.com,Munich,DE,2024-05-30,At-Risk,2419.55,27,2025-02-08,SMS,active
+CRM-00112,Xander,Turner,xander.turner50@outlook.com,Hamburg,DE,2021-11-14,Loyal,2466.71,12,2024-06-25,Push Notification,active
+CRM-00113,Hannah,Jones,hannah.jones86@hotmail.com,Utrecht,NL,2021-05-13,High-Value,1676.24,3,2021-11-30,In-App,active
+CRM-00114,Fiona,Carter,fiona.carter93@yahoo.com,Utrecht,NL,2020-09-14,At-Risk,1779.66,26,2025-03-16,SMS,active
+CRM-00115,Oliver,Johnson,oliver.johnson60@yahoo.com,Antwerp,BE,2024-05-30,High-Value,1383.99,32,2025-01-25,SMS,active
+CRM-00116,Mark,Jones,mark.jones80@icloud.com,Hamburg,DE,2023-03-02,Loyal,740.1,12,2025-04-19,Display,active
+CRM-00117,Ivan,Jones,ivan.jones4@hotmail.com,Antwerp,BE,2021-02-24,Loyal,763.89,19,2022-12-11,Display,active
+CRM-00118,Diana,Hill,diana.hill76@icloud.com,Berlin,DE,2020-05-20,New,410.61,3,2021-07-10,Display,inactive
+CRM-00119,Uma,Jackson,uma.jackson85@gmail.com,Rotterdam,NL,2024-04-16,Occasional,1779.72,1,2024-10-22,In-App,active
+CRM-00120,Wendy,Clarke,wendy.clarke11@hotmail.com,Amsterdam,NL,2023-02-09,High-Value,1756.54,20,2023-12-26,Paid Social,active
+CRM-00121,Rachel,Edwards,rachel.edwards18@hotmail.com,Berlin,DE,2021-02-28,At-Risk,451.75,37,2023-06-25,Push Notification,active
+CRM-00122,Hannah,Clarke,hannah.clarke24@gmail.com,The Hague,NL,2023-04-15,Loyal,916.5,39,2023-05-31,SMS,inactive
+CRM-00123,Victor,Davies,victor.davies34@hotmail.com,Eindhoven,NL,2021-03-18,At-Risk,576.12,7,2024-05-13,In-App,inactive
+CRM-00124,Kevin,Jones,kevin.jones42@yahoo.com,Brussels,BE,2021-04-22,Occasional,2463.13,22,2022-07-19,SMS,active
+CRM-00125,Aaron,Clarke,aaron.clarke59@outlook.com,London,GB,2021-11-03,New,1984.32,19,2022-08-28,In-App,suspended
+CRM-00126,Yasmine,Williams,yasmine.williams44@hotmail.com,Rotterdam,NL,2024-05-04,High-Value,607.11,30,2024-05-12,SMS,active
+CRM-00127,Yasmine,Edwards,yasmine.edwards36@hotmail.com,London,GB,2020-10-29,Occasional,1245.17,35,2022-04-16,Email,active
+CRM-00128,Ben,Davies,ben.davies33@gmail.com,The Hague,NL,2024-06-03,At-Risk,915.02,34,2025-03-13,Paid Social,inactive
+CRM-00129,Hannah,Williams,hannah.williams61@gmail.com,Rotterdam,NL,2023-05-05,Loyal,1439.25,32,2024-12-23,Push Notification,active
+CRM-00130,Aaron,Green,aaron.green96@icloud.com,Amsterdam,NL,2020-01-06,New,1179.17,9,2023-04-06,Paid Social,active
+CRM-00131,Ben,Williams,ben.williams7@outlook.com,Munich,DE,2021-07-21,At-Risk,2457.87,33,2023-11-23,Paid Social,suspended
+CRM-00132,Zoe,Baker,zoe.baker29@gmail.com,Berlin,DE,2020-10-23,Occasional,341.83,30,2022-06-19,Push Notification,inactive
+CRM-00133,Kevin,Edwards,kevin.edwards84@gmail.com,Utrecht,NL,2020-09-23,At-Risk,2212.93,18,2021-08-01,Display,active
+CRM-00134,Mark,Wilson,mark.wilson97@gmail.com,Antwerp,BE,2023-01-11,New,183.06,13,2023-07-30,Paid Social,active
+CRM-00135,Ivan,Martin,ivan.martin32@yahoo.com,Berlin,DE,2021-05-28,New,1007.44,8,2023-04-03,Email,active
+CRM-00136,Clara,Brown,clara.brown3@icloud.com,London,GB,2024-06-23,Occasional,1798,22,2024-10-18,Display,active
+CRM-00137,George,Hill,george.hill20@yahoo.com,Rotterdam,NL,2020-12-23,High-Value,1207.09,11,2023-02-08,In-App,active
+CRM-00138,Diana,Wilson,diana.wilson17@hotmail.com,Hamburg,DE,2020-08-13,New,1038.77,30,2023-10-23,Display,inactive
+CRM-00139,Sam,Hill,sam.hill86@gmail.com,Madrid,ES,2023-09-15,High-Value,1035.4,17,2024-05-23,Push Notification,active
+CRM-00140,Carlos,Green,carlos.green73@yahoo.com,Brussels,BE,2020-02-22,New,1445.75,12,2022-12-10,In-App,inactive
+CRM-00141,Wendy,Jones,wendy.jones60@outlook.com,Eindhoven,NL,2020-09-26,Occasional,330.81,1,2023-10-28,SMS,active
+CRM-00142,Kevin,Green,kevin.green99@outlook.com,Munich,DE,2020-01-31,At-Risk,806.23,22,2023-10-02,Display,active
+CRM-00143,George,Williams,george.williams22@icloud.com,Utrecht,NL,2022-01-03,New,203.93,19,2023-11-25,Email,active
+CRM-00144,Uma,Hall,uma.hall78@gmail.com,Antwerp,BE,2024-06-05,Loyal,1175.27,37,2024-10-14,In-App,inactive
+CRM-00145,Paula,Baker,paula.baker21@outlook.com,London,GB,2024-06-02,Occasional,1303.05,13,2025-02-07,Display,active
+CRM-00146,Mark,Hill,mark.hill14@icloud.com,Brussels,BE,2021-05-02,Loyal,338.27,12,2024-12-06,In-App,inactive
+CRM-00147,Carlos,Hill,carlos.hill4@outlook.com,Antwerp,BE,2023-04-20,New,2076.05,40,2024-09-03,Push Notification,active
+CRM-00148,Diana,Clarke,diana.clarke74@hotmail.com,The Hague,NL,2021-10-25,New,1387.23,26,2024-05-25,Display,active
+CRM-00149,Uma,Johnson,uma.johnson51@yahoo.com,Utrecht,NL,2020-02-02,High-Value,1477.71,28,2021-01-11,SMS,suspended
+CRM-00150,Oliver,Thomas,oliver.thomas10@icloud.com,Brussels,BE,2020-12-22,New,1924.1,33,2025-01-30,Push Notification,active
+CRM-00151,Emma,Evans,emma.evans89@yahoo.com,Antwerp,BE,2021-06-27,Loyal,340,21,2023-06-18,SMS,suspended
+CRM-00152,Ivan,Baker,ivan.baker14@outlook.com,Munich,DE,2020-04-17,Loyal,1267.1,6,2021-03-29,Display,inactive
+CRM-00153,Emma,Nelson,emma.nelson88@icloud.com,Hamburg,DE,2020-09-16,At-Risk,2173.16,26,2021-06-29,Push Notification,inactive
+CRM-00154,Hannah,Johnson,hannah.johnson16@icloud.com,Rotterdam,NL,2024-02-28,Loyal,2081.85,7,2025-03-02,Display,active
+CRM-00155,Xander,Wilson,xander.wilson6@outlook.com,The Hague,NL,2022-05-12,Loyal,1304.89,12,2025-02-05,In-App,inactive
+CRM-00156,Rachel,Thomas,rachel.thomas69@hotmail.com,Amsterdam,NL,2022-12-13,Occasional,774.23,9,2023-06-19,In-App,inactive
+CRM-00157,Rachel,Martin,rachel.martin85@outlook.com,Eindhoven,NL,2020-08-20,Occasional,421.68,31,2023-09-04,Email,active
+CRM-00158,Ivan,Taylor,ivan.taylor9@icloud.com,London,GB,2024-03-07,New,2338.15,21,2025-01-29,In-App,active
+CRM-00159,Xander,Baker,xander.baker83@outlook.com,Paris,FR,2020-05-10,Loyal,579.17,16,2020-09-07,Paid Social,active
+CRM-00160,Sam,Adams,sam.adams2@hotmail.com,Antwerp,BE,2022-09-02,High-Value,2369.76,1,2024-02-20,In-App,active
+CRM-00161,Nina,Roberts,nina.roberts63@gmail.com,Antwerp,BE,2022-07-07,New,1306.87,17,2022-09-14,Paid Social,active
+CRM-00162,Carlos,Wood,carlos.wood56@outlook.com,Madrid,ES,2024-05-12,Occasional,724.44,25,2024-06-19,In-App,active
+CRM-00163,Sam,Johnson,sam.johnson82@hotmail.com,Paris,FR,2022-01-11,Loyal,215.57,16,2022-04-20,Paid Social,active
+CRM-00164,Mark,Mitchell,mark.mitchell91@yahoo.com,Munich,DE,2022-11-17,New,506.83,29,2025-01-07,Paid Social,active
+CRM-00165,Laura,Williams,laura.williams56@yahoo.com,London,GB,2023-04-30,New,2391.75,18,2023-05-06,Display,active
+CRM-00166,Hannah,Smith,hannah.smith94@icloud.com,Utrecht,NL,2020-08-11,High-Value,700.64,22,2022-12-03,In-App,active
+CRM-00167,Emma,Wood,emma.wood84@outlook.com,London,GB,2022-07-14,New,1570.06,20,2022-12-01,Paid Social,active
+CRM-00168,Quinn,Green,quinn.green79@icloud.com,Hamburg,DE,2022-10-28,High-Value,1543.78,38,2025-03-08,Email,active
+CRM-00169,Paula,Hill,paula.hill62@hotmail.com,Antwerp,BE,2021-03-29,At-Risk,251.7,37,2024-10-10,SMS,active
+CRM-00170,Clara,Brown,clara.brown56@icloud.com,Munich,DE,2023-06-13,New,1609.65,1,2024-02-04,Display,active
+CRM-00171,Yasmine,Williams,yasmine.williams35@outlook.com,London,GB,2020-03-29,Loyal,1487.68,17,2020-08-15,Paid Social,active
+CRM-00172,Ben,Turner,ben.turner32@gmail.com,Rotterdam,NL,2024-01-29,High-Value,1460,24,2025-01-25,Paid Social,active
+CRM-00173,Bella,Evans,bella.evans36@hotmail.com,Berlin,DE,2024-05-23,New,444.58,16,2024-08-08,Display,active
+CRM-00174,David,Clarke,david.clarke32@hotmail.com,Munich,DE,2023-09-11,Occasional,1568.71,4,2023-09-20,Email,active
+CRM-00175,Emma,Thomas,emma.thomas73@icloud.com,Madrid,ES,2022-12-03,Occasional,2256.96,8,2023-07-14,Email,active
+CRM-00176,Uma,Taylor,uma.taylor86@hotmail.com,Amsterdam,NL,2021-09-09,Occasional,857.3,30,2024-07-10,Push Notification,active
+CRM-00177,Fiona,White,fiona.white44@gmail.com,Amsterdam,NL,2022-07-27,High-Value,2311.35,20,2023-11-05,Display,inactive
+CRM-00178,Zoe,Williams,zoe.williams64@outlook.com,Brussels,BE,2023-08-10,New,122.16,11,2024-08-26,Display,active
+CRM-00179,Victor,Wilson,victor.wilson24@hotmail.com,Hamburg,DE,2020-03-04,At-Risk,2162.18,26,2020-07-05,SMS,active
+CRM-00180,Nina,White,nina.white28@outlook.com,Amsterdam,NL,2020-05-04,High-Value,221.43,33,2023-10-21,Push Notification,active
+CRM-00181,Tara,Roberts,tara.roberts34@outlook.com,Madrid,ES,2022-09-07,Loyal,2372.4,20,2024-06-21,Display,active
+CRM-00182,Clara,Davies,clara.davies36@icloud.com,Brussels,BE,2022-04-02,Occasional,1932.14,8,2024-12-16,Paid Social,inactive
+CRM-00183,Mark,Wood,mark.wood90@outlook.com,Brussels,BE,2022-05-23,Loyal,676.35,19,2025-02-15,Email,active
+CRM-00184,Mark,Collins,mark.collins72@gmail.com,Utrecht,NL,2023-11-06,New,542.8,24,2023-11-22,Paid Social,active
+CRM-00185,Tara,Turner,tara.turner67@yahoo.com,Berlin,DE,2020-08-09,Loyal,1438.9,40,2020-08-22,Display,active
+CRM-00186,Oliver,Nelson,oliver.nelson11@yahoo.com,Paris,FR,2022-10-01,Occasional,1552.91,15,2024-03-28,Display,active
+CRM-00187,Quinn,Roberts,quinn.roberts93@hotmail.com,The Hague,NL,2023-12-29,Loyal,95.11,15,2024-10-06,Display,inactive
+CRM-00188,Ivan,Green,ivan.green63@icloud.com,Utrecht,NL,2022-06-27,Loyal,2224.71,9,2024-10-16,In-App,inactive
+CRM-00189,Rachel,Parker,rachel.parker98@yahoo.com,Eindhoven,NL,2020-05-30,New,1373.03,31,2020-06-23,SMS,active
+CRM-00190,Bella,Adams,bella.adams89@hotmail.com,Antwerp,BE,2020-06-14,At-Risk,1611.93,10,2020-07-18,In-App,active
+CRM-00191,Alice,Clarke,alice.clarke83@hotmail.com,Hamburg,DE,2021-10-21,At-Risk,769.19,30,2024-10-09,Email,active
+CRM-00192,Victor,Smith,victor.smith58@gmail.com,Berlin,DE,2023-05-30,New,627.3,39,2024-03-06,Email,active
+CRM-00193,Xander,Baker,xander.baker12@outlook.com,Berlin,DE,2020-10-30,At-Risk,2022.23,24,2023-11-01,Email,active
+CRM-00194,David,Collins,david.collins29@hotmail.com,Berlin,DE,2020-05-14,New,1027.11,27,2021-12-22,SMS,active
+CRM-00195,Victor,Turner,victor.turner89@yahoo.com,London,GB,2020-09-15,Occasional,1144.79,36,2020-10-20,Push Notification,active
+CRM-00196,Carlos,Roberts,carlos.roberts40@icloud.com,Eindhoven,NL,2021-07-17,New,1727.76,31,2024-05-10,Paid Social,active
+CRM-00197,Rachel,Baker,rachel.baker48@hotmail.com,Utrecht,NL,2023-07-02,At-Risk,412.04,35,2024-09-14,Display,active
+CRM-00198,Yasmine,Brown,yasmine.brown71@icloud.com,Eindhoven,NL,2023-07-20,Loyal,1050.74,14,2024-01-19,Paid Social,inactive
+CRM-00199,Ivan,Taylor,ivan.taylor45@hotmail.com,Antwerp,BE,2023-04-13,Loyal,1171.82,16,2023-07-31,Paid Social,active
+CRM-00200,Yasmine,Thomas,yasmine.thomas96@icloud.com,Paris,FR,2023-01-28,New,863.68,39,2023-05-06,Paid Social,active
+CRM-00201,Uma,Brown,uma.brown43@outlook.com,Rotterdam,NL,2023-12-29,New,376.3,6,2024-09-22,Display,active
+CRM-00202,Kevin,Brown,kevin.brown90@hotmail.com,Eindhoven,NL,2021-10-27,Occasional,2156.48,34,2022-08-27,Paid Social,inactive
+CRM-00203,David,Carter,david.carter35@outlook.com,Berlin,DE,2022-02-19,New,811.9,29,2023-06-27,Push Notification,active
+CRM-00204,Julia,Turner,julia.turner33@yahoo.com,Paris,FR,2023-05-08,High-Value,2470.3,34,2023-11-20,In-App,active
+CRM-00205,Nina,Taylor,nina.taylor16@yahoo.com,Rotterdam,NL,2022-12-22,Loyal,876.52,24,2024-09-16,SMS,active
+CRM-00206,Fiona,Thomas,fiona.thomas41@gmail.com,Antwerp,BE,2021-08-26,New,1008.82,5,2024-08-08,In-App,active
+CRM-00207,Oliver,Roberts,oliver.roberts96@icloud.com,Madrid,ES,2022-07-18,Occasional,1906.45,37,2023-04-02,In-App,active
+CRM-00208,Alice,Green,alice.green98@yahoo.com,Rotterdam,NL,2022-11-01,New,1297.15,8,2025-02-12,Display,active
+CRM-00209,Xander,Evans,xander.evans25@yahoo.com,Madrid,ES,2023-05-24,New,283.34,4,2024-05-20,Paid Social,active
+CRM-00210,Carlos,Nelson,carlos.nelson95@hotmail.com,Antwerp,BE,2022-05-31,New,619.51,36,2023-11-29,Display,active
+CRM-00211,Xander,Johnson,xander.johnson36@icloud.com,Amsterdam,NL,2020-07-22,Loyal,323.85,33,2025-01-05,Paid Social,active
+CRM-00212,Ivan,Evans,ivan.evans98@icloud.com,Hamburg,DE,2024-06-12,Loyal,1135,13,2025-01-01,Push Notification,active
+CRM-00213,Quinn,Baker,quinn.baker77@outlook.com,Rotterdam,NL,2023-12-08,Occasional,369.38,37,2024-01-17,SMS,active
+CRM-00214,Yasmine,Adams,yasmine.adams13@yahoo.com,Madrid,ES,2020-08-22,New,145.5,35,2022-09-25,Email,active
+CRM-00215,Fiona,Edwards,fiona.edwards38@yahoo.com,Antwerp,BE,2023-09-02,Occasional,2364.55,10,2024-10-21,In-App,inactive
+CRM-00216,Quinn,Thomas,quinn.thomas47@yahoo.com,The Hague,NL,2023-08-26,Loyal,2163.13,11,2024-12-08,Email,active
+CRM-00217,Diana,Clarke,diana.clarke39@gmail.com,Berlin,DE,2024-04-23,New,1056.97,21,2025-02-06,SMS,inactive
+CRM-00218,David,Jackson,david.jackson91@icloud.com,London,GB,2023-02-03,At-Risk,2407.46,34,2023-10-10,In-App,inactive
+CRM-00219,Bella,Thomas,bella.thomas17@outlook.com,Rotterdam,NL,2024-01-16,At-Risk,2257.73,29,2025-01-06,Email,active
+CRM-00220,Uma,Edwards,uma.edwards6@gmail.com,Brussels,BE,2021-03-16,New,2037.43,8,2022-06-21,Email,active
+CRM-00221,Julia,Jones,julia.jones71@outlook.com,Eindhoven,NL,2022-05-30,New,2335.7,14,2024-02-03,Display,active
+CRM-00222,Aaron,Williams,aaron.williams90@yahoo.com,Madrid,ES,2022-07-13,At-Risk,1808.4,38,2024-06-12,Push Notification,active
+CRM-00223,Uma,Adams,uma.adams82@hotmail.com,Antwerp,BE,2021-04-12,At-Risk,490.79,32,2021-09-24,SMS,active
+CRM-00224,Quinn,Hall,quinn.hall14@gmail.com,Utrecht,NL,2022-04-27,Loyal,415.17,6,2022-06-30,SMS,active
+CRM-00225,Tara,Collins,tara.collins74@outlook.com,Munich,DE,2021-11-25,Loyal,2490,33,2022-06-04,SMS,active
+CRM-00226,George,Thomas,george.thomas61@hotmail.com,Madrid,ES,2022-07-17,New,1177.7,29,2023-09-05,In-App,active
+CRM-00227,Emma,Jones,emma.jones57@outlook.com,Rotterdam,NL,2022-03-27,Occasional,2200.11,4,2024-05-11,Push Notification,active
+CRM-00228,Laura,Smith,laura.smith24@gmail.com,Madrid,ES,2022-05-01,High-Value,1253.48,30,2024-06-11,Paid Social,active
+CRM-00229,Yasmine,Johnson,yasmine.johnson33@hotmail.com,Paris,FR,2024-02-03,At-Risk,243.32,9,2024-11-11,In-App,active
+CRM-00230,Fiona,Mitchell,fiona.mitchell15@gmail.com,Utrecht,NL,2020-07-13,Loyal,995.24,33,2023-03-14,SMS,active
+CRM-00231,Rachel,Taylor,rachel.taylor52@hotmail.com,Rotterdam,NL,2021-10-02,Occasional,1153.93,27,2022-01-24,In-App,inactive
+CRM-00232,Yasmine,Adams,yasmine.adams10@icloud.com,London,GB,2022-05-24,New,617.01,30,2022-06-12,Email,active
+CRM-00233,Diana,Thomas,diana.thomas81@gmail.com,Paris,FR,2021-10-02,At-Risk,1466.69,37,2022-09-17,In-App,active
+CRM-00234,Quinn,Davies,quinn.davies20@yahoo.com,Utrecht,NL,2023-09-24,High-Value,140.67,4,2023-12-17,Display,active
+CRM-00235,Diana,Carter,diana.carter73@outlook.com,Eindhoven,NL,2021-06-06,High-Value,717.76,36,2024-03-25,Display,active
+CRM-00236,Alice,Wood,alice.wood11@yahoo.com,Brussels,BE,2022-02-05,Loyal,1501.85,30,2024-07-12,In-App,inactive
+CRM-00237,Tara,Turner,tara.turner16@icloud.com,Eindhoven,NL,2020-11-08,At-Risk,2110.27,20,2024-06-20,SMS,active
+CRM-00238,Kevin,Nelson,kevin.nelson98@hotmail.com,Madrid,ES,2023-11-07,At-Risk,1687.85,2,2024-10-11,Email,active
+CRM-00239,Paula,Hall,paula.hall78@icloud.com,Munich,DE,2022-08-29,New,728.66,26,2024-03-30,SMS,active
+CRM-00240,Alice,Turner,alice.turner80@yahoo.com,Madrid,ES,2020-05-17,High-Value,40.28,17,2025-03-09,Email,active
+CRM-00241,David,Smith,david.smith67@hotmail.com,Amsterdam,NL,2020-07-05,Occasional,286.59,1,2021-01-16,Display,suspended
+CRM-00242,Diana,Brown,diana.brown58@hotmail.com,Antwerp,BE,2020-06-23,New,352.16,14,2023-06-09,Email,active
+CRM-00243,Laura,Williams,laura.williams39@icloud.com,Utrecht,NL,2020-07-09,Occasional,675.89,38,2020-10-04,Email,active
+CRM-00244,Carlos,Nelson,carlos.nelson55@outlook.com,Madrid,ES,2022-06-03,Occasional,927.13,5,2023-09-16,SMS,active
+CRM-00245,Aaron,Taylor,aaron.taylor73@icloud.com,Amsterdam,NL,2020-07-16,At-Risk,1020.07,3,2021-09-21,Display,active
+CRM-00246,Zoe,Turner,zoe.turner8@icloud.com,Eindhoven,NL,2024-03-04,Loyal,132.2,28,2025-02-21,Email,inactive
+CRM-00247,Julia,Jones,julia.jones95@gmail.com,Antwerp,BE,2024-02-22,Loyal,146.87,23,2024-12-08,Display,inactive
+CRM-00248,Hannah,Collins,hannah.collins98@yahoo.com,Hamburg,DE,2022-02-02,Loyal,1413.31,5,2024-10-02,Push Notification,active
+CRM-00249,Ben,White,ben.white81@yahoo.com,Munich,DE,2020-09-23,High-Value,919.06,35,2022-04-01,Display,active
+CRM-00250,Hannah,Hill,hannah.hill34@gmail.com,Amsterdam,NL,2023-02-13,Loyal,735.73,4,2023-04-01,Push Notification,active
+CRM-00251,Carlos,Turner,carlos.turner21@yahoo.com,Eindhoven,NL,2020-05-02,Loyal,978.15,5,2020-10-01,Paid Social,active
+CRM-00252,Sam,Taylor,sam.taylor23@icloud.com,Munich,DE,2023-04-16,High-Value,1136.88,31,2025-03-16,Push Notification,active
+CRM-00253,Clara,Hall,clara.hall10@yahoo.com,Rotterdam,NL,2023-02-24,New,1383.65,3,2023-12-08,Paid Social,active
+CRM-00254,Clara,Taylor,clara.taylor1@hotmail.com,Madrid,ES,2023-02-24,Loyal,2066.77,19,2024-09-02,Push Notification,active
+CRM-00255,Xander,Jones,xander.jones58@icloud.com,Hamburg,DE,2021-11-06,High-Value,1565.64,27,2025-01-03,SMS,active
+CRM-00256,Paula,Roberts,paula.roberts61@outlook.com,Hamburg,DE,2023-10-04,High-Value,1535.39,12,2023-11-06,Paid Social,active
+CRM-00257,Aaron,White,aaron.white5@yahoo.com,Paris,FR,2020-09-07,Occasional,339.09,9,2021-09-09,In-App,active
+CRM-00258,Clara,Parker,clara.parker37@outlook.com,Eindhoven,NL,2022-04-21,At-Risk,259.77,27,2024-01-25,In-App,active
+CRM-00259,Yasmine,Edwards,yasmine.edwards90@hotmail.com,Hamburg,DE,2021-12-25,New,945.53,24,2022-01-26,Push Notification,inactive
+CRM-00260,Rachel,Jones,rachel.jones10@yahoo.com,Brussels,BE,2023-09-24,New,2467.23,25,2024-04-23,In-App,suspended
+CRM-00261,Yasmine,White,yasmine.white34@icloud.com,Paris,FR,2024-03-16,At-Risk,1403.42,29,2025-01-10,Display,active
+CRM-00262,Emma,Evans,emma.evans85@yahoo.com,Antwerp,BE,2022-05-16,New,926.7,25,2023-03-07,Push Notification,active
+CRM-00263,Emma,Baker,emma.baker55@gmail.com,Paris,FR,2024-01-16,Occasional,377.78,25,2025-02-04,Push Notification,active
+CRM-00264,Victor,Wilson,victor.wilson70@yahoo.com,Eindhoven,NL,2020-04-15,High-Value,1514.11,6,2024-11-20,Display,active
+CRM-00265,Paula,Baker,paula.baker83@yahoo.com,Madrid,ES,2021-08-12,Loyal,1015.44,35,2023-11-05,Display,active
+CRM-00266,Rachel,Brown,rachel.brown35@yahoo.com,Antwerp,BE,2023-05-14,High-Value,119.83,9,2023-07-31,In-App,active
+CRM-00267,Fiona,White,fiona.white10@gmail.com,Hamburg,DE,2021-10-01,Occasional,116.51,23,2023-06-05,In-App,active
+CRM-00268,Ivan,Mitchell,ivan.mitchell22@outlook.com,Munich,DE,2021-12-21,New,1789.71,8,2022-11-18,Email,active
+CRM-00269,Quinn,Turner,quinn.turner77@icloud.com,Hamburg,DE,2020-07-31,At-Risk,2013.84,12,2023-09-28,Display,suspended
+CRM-00270,Bella,Edwards,bella.edwards37@hotmail.com,Antwerp,BE,2023-03-29,New,1307.95,35,2023-11-30,Paid Social,active
+CRM-00271,Tara,Hall,tara.hall16@hotmail.com,Antwerp,BE,2022-11-05,Loyal,389.37,26,2024-06-07,Push Notification,active
+CRM-00272,Nina,Green,nina.green89@outlook.com,Berlin,DE,2021-03-11,High-Value,2234.97,34,2023-05-16,In-App,inactive
+CRM-00273,George,Carter,george.carter90@hotmail.com,Antwerp,BE,2020-11-12,Loyal,366.66,9,2024-08-29,Paid Social,active
+CRM-00274,Diana,Taylor,diana.taylor35@icloud.com,London,GB,2023-09-06,New,2329.79,15,2025-03-12,In-App,active
+CRM-00275,Rachel,Wilson,rachel.wilson70@hotmail.com,Antwerp,BE,2022-09-14,New,809.95,1,2023-08-19,In-App,active
+CRM-00276,Yasmine,Edwards,yasmine.edwards57@gmail.com,Antwerp,BE,2021-04-04,High-Value,994.53,2,2023-05-30,Email,active
+CRM-00277,Xander,Davies,xander.davies77@gmail.com,Amsterdam,NL,2020-08-09,New,1548.92,20,2024-11-03,Display,active
+CRM-00278,Wendy,Parker,wendy.parker56@outlook.com,Madrid,ES,2021-12-18,At-Risk,2109.65,30,2022-09-30,Push Notification,active
+CRM-00279,George,Parker,george.parker78@outlook.com,Hamburg,DE,2023-02-13,At-Risk,1492.44,35,2025-01-18,Push Notification,active
+CRM-00280,Wendy,Davies,wendy.davies4@gmail.com,Rotterdam,NL,2022-01-22,New,1278.14,28,2022-07-01,SMS,active
+CRM-00281,Julia,Hall,julia.hall30@icloud.com,Amsterdam,NL,2020-08-23,At-Risk,1284.09,35,2023-06-14,Display,active
+CRM-00282,Mark,Smith,mark.smith76@gmail.com,Eindhoven,NL,2024-04-10,New,1234.82,25,2025-04-26,Email,active
+CRM-00283,Victor,Davies,victor.davies98@outlook.com,Brussels,BE,2021-07-24,Loyal,1416.05,15,2023-07-02,Paid Social,active
+CRM-00284,Uma,Carter,uma.carter74@gmail.com,Munich,DE,2023-03-21,High-Value,1197.73,16,2023-05-14,Email,active
+CRM-00285,Laura,Johnson,laura.johnson98@yahoo.com,Berlin,DE,2021-04-08,Loyal,61.26,30,2021-10-25,Paid Social,inactive
+CRM-00286,Oliver,Parker,oliver.parker61@icloud.com,London,GB,2022-05-28,At-Risk,841.47,23,2024-11-08,Push Notification,active
+CRM-00287,Carlos,Hall,carlos.hall84@hotmail.com,Madrid,ES,2023-02-22,Loyal,291.82,10,2023-10-17,SMS,active
+CRM-00288,Quinn,Parker,quinn.parker36@yahoo.com,Brussels,BE,2024-04-20,New,1053.02,18,2024-05-28,SMS,active
+CRM-00289,Oliver,Baker,oliver.baker75@hotmail.com,Munich,DE,2023-06-27,At-Risk,783.04,13,2024-06-09,Push Notification,inactive
+CRM-00290,David,Edwards,david.edwards82@hotmail.com,Utrecht,NL,2023-06-10,Loyal,2248.94,8,2025-02-18,In-App,active
+CRM-00291,Hannah,Carter,hannah.carter12@hotmail.com,Berlin,DE,2023-10-14,Occasional,2182.81,3,2024-11-23,Email,active
+CRM-00292,Hannah,Parker,hannah.parker45@hotmail.com,Paris,FR,2023-08-09,At-Risk,1580.57,27,2024-07-08,SMS,inactive
+CRM-00293,Clara,Wilson,clara.wilson43@outlook.com,Berlin,DE,2023-02-14,New,1500.34,40,2023-03-16,Display,active
+CRM-00294,Kevin,Thomas,kevin.thomas86@gmail.com,Hamburg,DE,2020-02-23,At-Risk,678.52,2,2023-09-13,In-App,active
+CRM-00295,Alice,Davies,alice.davies21@outlook.com,The Hague,NL,2023-06-01,High-Value,1645.87,16,2024-03-06,Paid Social,active
+CRM-00296,Sam,Parker,sam.parker53@hotmail.com,Brussels,BE,2023-09-09,Occasional,2430.7,14,2024-12-13,Display,active
+CRM-00297,Rachel,Nelson,rachel.nelson37@hotmail.com,The Hague,NL,2023-11-21,High-Value,1454.62,5,2025-04-06,SMS,suspended
+CRM-00298,Hannah,Brown,hannah.brown98@icloud.com,The Hague,NL,2021-07-01,Loyal,584.31,7,2022-10-11,Paid Social,active
+CRM-00299,Sam,Martin,sam.martin5@hotmail.com,Madrid,ES,2020-02-29,Loyal,147.36,39,2022-02-26,In-App,active
+CRM-00300,Hannah,Edwards,hannah.edwards12@outlook.com,Berlin,DE,2021-01-04,New,1211.51,3,2024-02-10,Paid Social,active
