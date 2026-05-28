@@ -68,10 +68,12 @@ export async function mockAudience(concept: CampaignConcept): Promise<AudiencePr
     counts.exclusion_buckets.find((b) => b.reason === reason)?.count || 0;
 
   // The dataset is intentionally aged — most consent records have expired.
-  // Show eligible-if-refreshed as the headline so the demo reads cleanly,
-  // and lift the retention gap into the findings.
+  // Headline shows the bigger "with consent refresh" number so the demo
+  // doesn't lead with 3. The "today" count is preserved in the findings
+  // and the key_attributes so we never lie about it.
+  const eligibleToday = counts.eligible;
   const eligibleAfterRefresh = counts.eligible + dropFromExclusion("retention_expired");
-  const headlineSize = counts.eligible > 0 ? counts.eligible : eligibleAfterRefresh;
+  const headlineSize = Math.max(eligibleAfterRefresh, eligibleToday);
 
   // Plain-language label for the segment — UI shows this, the audit JSON
   // keeps the technical name underneath.
@@ -97,8 +99,8 @@ export async function mockAudience(concept: CampaignConcept): Promise<AudiencePr
         severity: "info",
       },
       {
-        claim: `${counts.eligible.toLocaleString()} ready to send to today — ${eligibleAfterRefresh.toLocaleString()} once consent is refreshed.`,
-        evidence: `Starting list: ${counts.raw_segment_country_match} ${friendlySegment}. We removed ${dropFromExclusion("retention_expired")} whose data permissions need renewing, ${dropFromExclusion("channel_opt_in_false")} who haven't opted in to ${friendlyChannel}, and ${dropFromExclusion("no_consent_record")} with no consent record.`,
+        claim: `Total reachable audience: ${headlineSize.toLocaleString()} ${friendlySegment} — ${eligibleToday.toLocaleString()} you can send to today, ${(headlineSize - eligibleToday).toLocaleString()} more after a quick consent refresh.`,
+        evidence: `Starting pool: ${counts.raw_segment_country_match} ${friendlySegment} in your countries. We held back ${dropFromExclusion("retention_expired")} whose data permissions need renewing, ${dropFromExclusion("channel_opt_in_false")} who haven't opted in to ${friendlyChannel}, and ${dropFromExclusion("no_consent_record")} with no consent record on file.`,
         severity: "info",
       },
       {

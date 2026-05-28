@@ -18,13 +18,23 @@ const sha = (s: string) => {
 };
 
 function titleFor(concept: CampaignConcept): string {
-  // Take the first 8 words of the goal, strip punctuation, title case.
-  const words = concept.goal.replace(/[.,;:]/g, "").split(/\s+/).slice(0, 8);
-  return words
-    .map((w, i) =>
-      i === 0 ? w[0]?.toUpperCase() + w.slice(1).toLowerCase() : w,
-    )
-    .join(" ");
+  // Extract a short, punchy title by stopping at the first natural
+  // grammatical break — "to", "for", "targeting", "with", or punctuation.
+  // Falls back to first 5 words if no break is found.
+  const g = concept.goal.replace(/\s+/g, " ").trim();
+  const breakRe = /\s+(?:to|for|targeting|aimed at|with|in)\s+|[,.;:]/i;
+  const m = g.match(breakRe);
+  let candidate: string;
+  if (m && m.index !== undefined && m.index > 8) {
+    candidate = g.slice(0, m.index).trim();
+  } else {
+    candidate = g.split(/\s+/).slice(0, 5).join(" ");
+  }
+  // Cap at 36 chars so the hero doesn't wrap awkwardly.
+  if (candidate.length > 36) {
+    candidate = candidate.slice(0, 34).replace(/\s+\S*$/, "") + "…";
+  }
+  return candidate.charAt(0).toUpperCase() + candidate.slice(1);
 }
 
 function extractSegmentLabel(audience: AudienceProfile): string {
@@ -55,6 +65,11 @@ function moment(concept: CampaignConcept): string {
 
 function bullets(items: string[]): string {
   return items.map((s) => `- ${s}`).join("\n");
+}
+
+function capitalizeFirst(s: string): string {
+  if (!s) return s;
+  return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
 // Bold the first phrase up to the first period or em-dash — used for the
@@ -518,6 +533,21 @@ function renderScrollytelling(opts: {
     letter-spacing: -0.02em;
     color: var(--ink);
   }
+  /* secondary stat for sections where a big number would be silly */
+  section.beat .panel .stat-sm {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(2rem, 3.4vw, 2.75rem);
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  section.beat .panel .stat-sm .and {
+    color: var(--gold);
+    font-style: normal;
+    font-family: var(--sans);
+    padding: 0 0.25rem;
+  }
   section.beat .panel .stat-label {
     font-family: var(--serif);
     font-style: italic;
@@ -701,18 +731,31 @@ function renderScrollytelling(opts: {
 
 <section class="beat">
   <div class="panel reveal">
-    <div class="kicker">the customer we're reaching</div>
+    <div class="kicker">your audience</div>
     <div class="stat">${audience.size_estimate.toLocaleString()}</div>
-    <div class="stat-label">${e((segLabel || "your audience").toLowerCase())} contacts</div>
-    <div class="stat-sub">confidence: ${audience.confidence.toLowerCase()}</div>
+    <div class="stat-label">${e((segLabel || "your audience").toLowerCase())}, total reachable</div>
+    <div class="stat-sub">${(() => {
+      // Pull the "X you can send to today" number out of the findings so the
+      // panel can show the honest split (today vs after consent refresh).
+      const finding = audience.envelope.findings.find((f) =>
+        /can send to today/i.test(f.claim),
+      );
+      const m = finding?.claim.match(/([\d.,]+)\s+you can send to today/i);
+      if (m) {
+        const today = m[1];
+        const remaining = (audience.size_estimate - Number(today.replace(/[.,]/g, ""))).toLocaleString();
+        return `${e(today)} ready today · ${e(remaining)} more after consent refresh`;
+      }
+      return `confidence: ${audience.confidence.toLowerCase()}`;
+    })()}</div>
   </div>
   <div class="prose reveal">
     ${ov.customer_paragraphs
       ? ov.customer_paragraphs.map((p) => `<p>${e(p)}</p>`).join("")
-      : `<h2>${audience.size_estimate.toLocaleString()} people who already said yes.</h2>
-    <p>They opted in. They're active. The numbers are honest.</p>
-    <ul>${audience.key_attributes.map((a) => `<li><span></span><span>${e(a)}</span></li>`).join("")}</ul>
-    <p>It is worth saying what is <em>not</em> there. ${e(audience.dataset_gaps.join(". "))}. We are working with what we know, not what we wish we knew.</p>`}
+      : `<h2>${e(capitalizeFirst(segLabel || "Your audience"))}. Opted in. Active.</h2>
+    <p>These are people who already said yes — to you, to this channel, to hearing from your brand. The audience isn't speculative. It's counted.</p>
+    <ul>${audience.key_attributes.slice(0, 4).map((a) => `<li><span></span><span>${e(a)}</span></li>`).join("")}</ul>
+    <p>Worth knowing what isn't yet here: ${e(audience.dataset_gaps.slice(0, 2).join(". "))}. None of it is a blocker — it's just honest about the file.</p>`}
   </div>
 </section>
 
@@ -734,38 +777,38 @@ function renderScrollytelling(opts: {
 
 <section class="beat">
   <div class="panel reveal">
-    <div class="kicker">the argument</div>
-    <div class="stat">3</div>
-    <div class="stat-label">reasons it earns budget</div>
-    <div class="stat-sub">No more, no less.</div>
+    <div class="kicker">why this earns the slot</div>
+    <div class="stat-sm">${e(capitalizeFirst((segLabel || "your audience").toLowerCase()))}</div>
+    <div class="stat-label">already opted in, already active</div>
+    <div class="stat-sub">Volume to learn from. Small enough to send carefully.</div>
   </div>
   <div class="prose reveal">
     ${ov.argument_bullets
       ? `<ul>${ov.argument_bullets.map((b) => `<li><span></span><span>${boldFirstPhrase(e(b))}</span></li>`).join("")}</ul>`
-      : `<h2>Why this earns its space.</h2>
+      : `<h2>The case for it.</h2>
     <ul>
-      <li><span></span><span><strong>It speaks to the segment we have</strong>, not the one we wish we had. ${audience.size_estimate.toLocaleString()} contacts is enough volume to learn from, small enough to handle with care.</span></li>
-      <li><span></span><span><strong>The channel matches the audience's posture.</strong> ${e(primary || "this channel")} for ${e(segLabel || "this segment")} is the channel they already accept.</span></li>
-      <li><span></span><span><strong>The compliance corners are squared.</strong> ${e(legal.envelope.rationale)}</span></li>
+      <li><span></span><span><strong>It speaks to the people you have</strong> — not the audience you wish for. ${audience.size_estimate.toLocaleString()} ${e((segLabel || "contacts").toLowerCase())} is real volume.</span></li>
+      <li><span></span><span><strong>The channel fits.</strong> ${e(primary || "This channel")} is how ${e((segLabel || "they").toLowerCase())} already hear from you.</span></li>
+      <li><span></span><span><strong>The legal corners are clean.</strong> ${e(legal.envelope.rationale)}</span></li>
     </ul>`}
   </div>
 </section>
 
 <section class="beat">
   <div class="panel reveal">
-    <div class="kicker">how the story moves</div>
-    <div class="stat">3</div>
-    <div class="stat-label">beats the customer feels</div>
-    <div class="stat-sub">Arrival → Recognition → Invitation</div>
+    <div class="kicker">how it lands</div>
+    <div class="stat-sm">arrival<br/><span class="and">→</span> recognition<br/><span class="and">→</span> invitation</div>
+    <div class="stat-label">the three beats they feel</div>
+    <div class="stat-sub">No theatre. No urgency tricks.</div>
   </div>
   <div class="prose reveal">
     ${ov.story_beats
       ? `<ul>${ov.story_beats.map((b) => `<li><span></span><span>${boldFirstPhrase(e(b))}</span></li>`).join("")}</ul>`
-      : `<h2>Three beats. No theatre.</h2>
+      : `<h2>Three beats.</h2>
     <ul>
-      <li><span></span><span><strong>The arrival.</strong> A ${e(concept?.tone || "considered")} ${e(primary || "message")} that does not announce itself — it lands like a note from someone who remembers.</span></li>
-      <li><span></span><span><strong>The recognition.</strong> The body references something the customer would recognise about themselves. Not a discount. A reason.</span></li>
-      <li><span></span><span><strong>The invitation.</strong> One clear next step. No second CTA. No urgency theatre.</span></li>
+      <li><span></span><span><strong>The arrival.</strong> A ${e(concept?.tone || "considered")} ${e(primary || "message")} that doesn't shout — it lands like a note from someone who remembers.</span></li>
+      <li><span></span><span><strong>The recognition.</strong> The message references something they'd recognise about themselves. Not a discount. A reason.</span></li>
+      <li><span></span><span><strong>The invitation.</strong> One clear next step. No second CTA.</span></li>
     </ul>`}
   </div>
 </section>
