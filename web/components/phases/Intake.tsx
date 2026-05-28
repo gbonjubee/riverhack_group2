@@ -7,28 +7,39 @@ import { Chip } from "@/components/ui/Chip";
 import { TextArea } from "@/components/ui/Field";
 import type { CampaignConcept } from "@/lib/types";
 
-// Lean three-step intake — matches the brief-intake skill's
-// "assume-then-confirm, batched, max 4 questions" philosophy.
-// Required slots (per brief-intake): audience, channel, geo, timing,
-// campaign_purpose. The free-text idea covers goal + purpose implicitly;
-// tone is defaulted, KPI/constraints are optional.
+// Two-step intake — designed for a senior marketer who wants speed and
+// plain English, not a five-question interview.
+//
+// Step 1: the idea (free text, just say what you want to do)
+// Step 2: the specifics (audience, where, how, when — all on one screen)
+//
+// Display labels are plain language; the underlying values are the real
+// segment names so the audience query against the CSVs still works.
 
 type Props = {
   onComplete: (concept: CampaignConcept) => void;
 };
 
-const STEPS = ["the idea", "the audience", "the shape"] as const;
+const STEPS = ["your idea", "your audience"] as const;
 
-const SEGMENTS = ["At-Risk", "Loyal", "High-Value", "New", "Occasional"];
-const COUNTRIES = ["NL", "DE", "BE", "ES", "FR", "GB"];
-const CHANNELS = [
-  "email",
-  "sms",
-  "push notification",
-  "paid social",
-  "paid search",
+const SEGMENTS: { value: string; label: string; hint: string }[] = [
+  { value: "Loyal", label: "Loyal regulars", hint: "buy from us regularly" },
+  { value: "High-Value", label: "Top spenders", hint: "highest lifetime value" },
+  { value: "At-Risk", label: "Lapsed buyers", hint: "used to buy, haven't lately" },
+  { value: "New", label: "New arrivals", hint: "joined recently" },
+  { value: "Occasional", label: "Occasional", hint: "buy now and then" },
 ];
-const TIMINGS = ["this week", "this month", "this quarter", "no rush"];
+
+const COUNTRIES = ["NL", "DE", "BE", "ES", "FR", "GB"];
+
+const CHANNELS: { value: string; label: string }[] = [
+  { value: "email", label: "Email" },
+  { value: "sms", label: "SMS" },
+  { value: "push notification", label: "Push" },
+  { value: "paid social", label: "Paid social" },
+];
+
+const TIMINGS = ["this week", "this month", "this quarter"];
 
 const empty: CampaignConcept = {
   goal: "",
@@ -58,16 +69,21 @@ export function Intake({ onComplete }: Props) {
     );
 
   const toggleCountry = (g: string) =>
-    setCountries((cs) => (cs.includes(g) ? cs.filter((x) => x !== g) : [...cs, g]));
+    setCountries((cs) =>
+      cs.includes(g) ? cs.filter((x) => x !== g) : [...cs, g],
+    );
 
   const canAdvance = () => {
     switch (step) {
       case 0:
         return concept.goal.trim().length > 8;
       case 1:
-        return concept.audience_hint.length > 0 && countries.length > 0;
-      case 2:
-        return concept.channels.length > 0 && concept.timing.length > 0;
+        return (
+          concept.audience_hint.length > 0 &&
+          countries.length > 0 &&
+          concept.channels.length > 0 &&
+          concept.timing.length > 0
+        );
       default:
         return false;
     }
@@ -76,8 +92,10 @@ export function Intake({ onComplete }: Props) {
   const next = () => {
     if (step < STEPS.length - 1) setStep(step + 1);
     else {
-      // Bake countries into the constraints field so they reach the brief.
-      onComplete({ ...concept, constraints: `countries: ${countries.join(", ")}` });
+      onComplete({
+        ...concept,
+        constraints: `countries: ${countries.join(", ")}`,
+      });
     }
   };
 
@@ -86,22 +104,16 @@ export function Intake({ onComplete }: Props) {
       <header className="mb-5 flex items-end justify-between">
         <div>
           <div className="text-[11px] uppercase tracking-[0.32em] text-gold">
-            intake — {STEPS[step]}
+            {STEPS[step]}
           </div>
           <h2 className="font-serif text-3xl lg:text-4xl mt-1 text-ink leading-tight">
-            {step === 0 && (
+            {step === 0 ? (
               <>
-                tell us, <span className="italic">unhurried</span>, what we&apos;re making.
+                What do you <span className="italic">want to do</span>?
               </>
-            )}
-            {step === 1 && (
+            ) : (
               <>
-                who is this <span className="italic">really</span> for?
-              </>
-            )}
-            {step === 2 && (
-              <>
-                the shape <span className="italic">of it</span>.
+                A few <span className="italic">specifics</span>.
               </>
             )}
           </h2>
@@ -123,31 +135,32 @@ export function Intake({ onComplete }: Props) {
             <div className="max-w-2xl">
               <TextArea
                 rows={4}
-                placeholder="A Black Friday push to re-engage lapsed luxury customers in Germany via SMS…"
+                placeholder="A Black Friday SMS to re-engage our lapsed German customers…"
                 value={concept.goal}
                 onChange={(e) => update("goal", e.target.value)}
               />
-              <p className="mt-4 font-serif italic text-taupe-dark text-sm">
-                One or two sentences. The idea, the moment, the reason.
+              <p className="mt-3 text-sm text-taupe-dark">
+                One or two sentences in your own words. Goal, audience, when —
+                whatever you already know.
               </p>
             </div>
           )}
 
           {step === 1 && (
             <div className="max-w-3xl space-y-5">
-              <Group label="segment">
+              <Group label="Who do you want to reach?">
                 <div className="flex flex-wrap gap-2">
                   {SEGMENTS.map((s) => (
                     <Chip
-                      key={s}
-                      label={s}
-                      selected={concept.audience_hint === s}
-                      onToggle={() => update("audience_hint", s)}
+                      key={s.value}
+                      label={s.label}
+                      selected={concept.audience_hint === s.value}
+                      onToggle={() => update("audience_hint", s.value)}
                     />
                   ))}
                 </div>
               </Group>
-              <Group label="countries">
+              <Group label="Which countries?">
                 <div className="flex flex-wrap gap-2">
                   {COUNTRIES.map((c) => (
                     <Chip
@@ -159,24 +172,19 @@ export function Intake({ onComplete }: Props) {
                   ))}
                 </div>
               </Group>
-            </div>
-          )}
-
-          {step === 2 && (
-            <div className="max-w-3xl space-y-5">
-              <Group label="channel">
+              <Group label="How will you reach them?">
                 <div className="flex flex-wrap gap-2">
                   {CHANNELS.map((c) => (
                     <Chip
-                      key={c}
-                      label={c}
-                      selected={concept.channels.includes(c)}
-                      onToggle={() => toggleChannel(c)}
+                      key={c.value}
+                      label={c.label}
+                      selected={concept.channels.includes(c.value)}
+                      onToggle={() => toggleChannel(c.value)}
                     />
                   ))}
                 </div>
               </Group>
-              <Group label="timing">
+              <Group label="When does it go out?">
                 <div className="flex flex-wrap gap-2">
                   {TIMINGS.map((t) => (
                     <Chip
@@ -188,8 +196,9 @@ export function Intake({ onComplete }: Props) {
                   ))}
                 </div>
               </Group>
-              <p className="mt-2 font-serif italic text-taupe-dark text-sm">
-                Consent flags, destination platforms, and lawful basis are derived deterministically — we don&apos;t ask twice.
+              <p className="mt-2 text-xs text-taupe-dark">
+                We&apos;ll handle consent flags, platform routing, and lawful
+                basis for you — no need to fill those in.
               </p>
             </div>
           )}
@@ -202,10 +211,10 @@ export function Intake({ onComplete }: Props) {
           onClick={() => setStep((s) => Math.max(0, s - 1))}
           disabled={step === 0}
         >
-          ← previous
+          ← back
         </Button>
         <Button onClick={next} disabled={!canAdvance()} size="lg">
-          {step === STEPS.length - 1 ? "begin the discovery" : "continue"}
+          {step === STEPS.length - 1 ? "find my audience" : "continue"}
           <span aria-hidden>→</span>
         </Button>
       </div>
@@ -222,9 +231,7 @@ function Group({
 }) {
   return (
     <div>
-      <div className="text-[11px] uppercase tracking-[0.24em] text-taupe-dark mb-2">
-        {label}
-      </div>
+      <div className="text-sm font-serif italic text-ink mb-2">{label}</div>
       {children}
     </div>
   );

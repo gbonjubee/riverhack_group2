@@ -17,9 +17,9 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "the marketing ritual",
+  title: "Smelling Pretty — calm campaign briefs",
   description:
-    "A slow, considered way to plan a marketing activation — with audience research, storyline coherence, and legal review built in.",
+    "Smelling Pretty turns a campaign idea into an auditable brief — audience, channels, compliance, and the story to tell — in minutes.",
 };
 
 export default function RootLayout({

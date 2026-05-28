@@ -60,14 +60,14 @@ export function Brief({
       <div>
         <header className="mb-6">
           <div className="text-[11px] uppercase tracking-[0.32em] text-gold">
-            the brief
+            your brief
           </div>
           <h2 className="font-serif text-3xl lg:text-4xl mt-1 text-ink leading-tight">
-            <span className="italic">composing</span>…
+            <span className="italic">putting it together</span>…
           </h2>
         </header>
         <div className="breathe font-serif italic text-taupe-dark">
-          the orchestrator is gathering the four envelopes.
+          a moment.
         </div>
       </div>
     );
@@ -78,7 +78,7 @@ export function Brief({
       <header className="mb-6 flex items-end justify-between">
         <div>
           <div className="text-[11px] uppercase tracking-[0.32em] text-gold">
-            the brief
+            your brief
           </div>
           <h2 className="font-serif text-3xl lg:text-4xl mt-1 text-ink leading-tight">
             ready when <span className="italic">you are</span>.
@@ -94,7 +94,7 @@ export function Brief({
         className="max-w-3xl bg-bg-soft border border-taupe-line rounded-md p-6 lg:p-8 max-h-[58vh] overflow-y-auto"
       >
         <div className="text-[10px] uppercase tracking-[0.32em] text-gold mb-2">
-          activation brief — № {brief.request_id.slice(-6)}
+          campaign brief — № {brief.request_id.slice(-6)}
         </div>
         <Markdown text={brief.markdown} />
 
@@ -129,7 +129,7 @@ export function Brief({
             download audit.json
           </Button>
           <Button variant="quiet" onClick={onRestart} size="lg">
-            ↺ start a new ritual
+            ↺ start over
           </Button>
         </div>
       </motion.article>

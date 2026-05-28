@@ -26,11 +26,18 @@ export type CallAgentOptions = {
   model?: string;
 };
 
+// Default model per agent role — Haiku for fast/cheap rule following,
+// stronger models when the output is the user-facing artifact.
+export const DEFAULT_MODELS = {
+  fast: "claude-haiku-4-5-20251001",
+  storyline: "claude-opus-4-7", // senior-strategist prose needs the strongest model
+} as const;
+
 export async function callAgent({
   systemPrompt,
   userMessage,
-  maxTokens = 2000,
-  model = "claude-haiku-4-5-20251001",
+  maxTokens = 3000,
+  model = DEFAULT_MODELS.fast,
 }: CallAgentOptions): Promise<string> {
   const client = getClient();
   const resp = await client.messages.create({

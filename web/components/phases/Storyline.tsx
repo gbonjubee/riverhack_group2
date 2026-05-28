@@ -70,10 +70,10 @@ export function Storyline({
       <div>
         <header className="mb-6">
           <div className="text-[11px] uppercase tracking-[0.32em] text-gold">
-            storyline
+            your storyline
           </div>
           <h2 className="font-serif text-3xl lg:text-4xl mt-1 text-ink leading-tight">
-            the strategist is <span className="italic">writing</span>…
+            writing the <span className="italic">case for it</span>…
           </h2>
         </header>
         <div className="breathe font-serif italic text-taupe-dark">
@@ -87,7 +87,7 @@ export function Storyline({
     <div>
       <header className="mb-5">
         <div className="text-[11px] uppercase tracking-[0.32em] text-gold">
-          storyline
+          your storyline
         </div>
         <h2 className="font-serif text-3xl lg:text-4xl mt-1 text-ink leading-tight">
           {out.title.toLowerCase()}.
@@ -104,7 +104,7 @@ export function Storyline({
         className="max-w-3xl bg-bg-soft border border-taupe-line rounded-md p-6 lg:p-8 max-h-[58vh] overflow-y-auto"
       >
         <div className="text-[10px] uppercase tracking-[0.32em] text-gold mb-2">
-          strategic memo — № {out.request_id.slice(-6)}
+          the case for the brief — № {out.request_id.slice(-6)}
         </div>
         <StorylineMarkdown text={out.markdown} />
 
@@ -132,7 +132,7 @@ export function Storyline({
             download storyline.html
           </Button>
           <Button variant="quiet" onClick={onRestart} size="lg">
-            ↺ start a new ritual
+            ↺ start over
           </Button>
         </div>
       </motion.article>

@@ -29,10 +29,10 @@ export function Discovery({ concept, onComplete }: Props) {
     <div>
       <header className="mb-6">
         <div className="text-[11px] uppercase tracking-[0.32em] text-gold">
-          discovery
+          looking up your audience
         </div>
         <h2 className="font-serif text-3xl lg:text-4xl mt-1 text-ink leading-tight">
-          studying the <span className="italic">dataset</span>.
+          counting who&apos;s <span className="italic">ready to hear from you</span>.
         </h2>
       </header>
 
@@ -44,12 +44,12 @@ export function Discovery({ concept, onComplete }: Props) {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <Step text="opening the customer activation file" done />
-            <Step text="reading consent flags & channel preferences" />
-            <Step text="matching segment definition to attributes" pending />
+            <Step text="opening your customer file" done />
+            <Step text="checking who's opted in" />
+            <Step text="filtering by your audience and country" pending />
           </motion.div>
           <p className="mt-12 font-serif italic text-taupe-dark breathe">
-            a moment, while we look.
+            one moment.
           </p>
         </div>
       )}
@@ -115,9 +115,9 @@ function AudienceCard({ audience }: { audience: AudienceProfile }) {
       <div className="flex items-baseline justify-between">
         <div>
           <div className="text-[10px] uppercase tracking-[0.32em] text-gold">
-            segment
+            your audience
           </div>
-          <h3 className="font-serif text-3xl mt-1 italic">
+          <h3 className="font-serif text-2xl lg:text-3xl mt-1 italic leading-tight">
             {audience.segment_name}
           </h3>
         </div>
@@ -127,16 +127,16 @@ function AudienceCard({ audience }: { audience: AudienceProfile }) {
       <div className="mt-6 grid md:grid-cols-2 gap-6">
         <div>
           <div className="text-[10px] uppercase tracking-[0.32em] text-taupe-dark mb-3">
-            size estimate
+            ready to send to
           </div>
           <div className="font-serif text-4xl text-ink">
             {audience.size_estimate.toLocaleString()}
           </div>
-          <div className="text-xs text-taupe-dark mt-1">contacts</div>
+          <div className="text-xs text-taupe-dark mt-1">people</div>
         </div>
         <div>
           <div className="text-[10px] uppercase tracking-[0.32em] text-taupe-dark mb-3">
-            key attributes
+            what we know about them
           </div>
           <ul className="space-y-2 font-serif text-base text-ink-soft">
             {audience.key_attributes.map((a) => (
@@ -152,7 +152,7 @@ function AudienceCard({ audience }: { audience: AudienceProfile }) {
       {audience.dataset_gaps.length > 0 && (
         <div className="mt-6 pt-5 border-t border-taupe-line">
           <div className="text-[10px] uppercase tracking-[0.32em] text-taupe-dark mb-3">
-            gaps in the data
+            things to keep in mind
           </div>
           <ul className="space-y-2 text-sm text-ink-soft italic font-serif">
             {audience.dataset_gaps.map((g) => (
@@ -163,8 +163,8 @@ function AudienceCard({ audience }: { audience: AudienceProfile }) {
       )}
 
       <div className="mt-5 pt-4 border-t border-taupe-line text-[10px] uppercase tracking-[0.28em] text-taupe-dark flex items-center justify-between">
-        <span>source: {env.source}</span>
-        <span>inputs: {env.inputs_hash}</span>
+        <span>computed from your customer data</span>
+        <span>ref · {env.inputs_hash}</span>
       </div>
     </article>
   );

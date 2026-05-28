@@ -73,55 +73,67 @@ export async function mockAudience(concept: CampaignConcept): Promise<AudiencePr
   const eligibleAfterRefresh = counts.eligible + dropFromExclusion("retention_expired");
   const headlineSize = counts.eligible > 0 ? counts.eligible : eligibleAfterRefresh;
 
+  // Plain-language label for the segment — UI shows this, the audit JSON
+  // keeps the technical name underneath.
+  const segmentLabel: Record<typeof segment, string> = {
+    "At-Risk": "lapsed buyers",
+    "Loyal": "loyal regulars",
+    "High-Value": "top spenders",
+    "New": "new arrivals",
+    "Occasional": "occasional buyers",
+  };
+  const friendlySegment = segmentLabel[segment];
+  const friendlyChannel = primaryChannel.charAt(0).toUpperCase() + primaryChannel.slice(1);
+
   const envelope: Envelope = {
     agent: "fallback-audience-researcher",
-    version: "0.3",
+    version: "0.4",
     verdict: "WARN",
     findings: [
       {
-        claim: `Mapped audience hint "${concept.audience_hint}" → CRM segment "${segment}".`,
+        claim: `Reading "${concept.audience_hint}" as ${friendlySegment} in your customer file.`,
         evidence:
-          "Inference from segment vocabulary in Data/1_Customers_CRM.csv (New, Loyal, Occasional, At-Risk, High-Value).",
+          "Your customer database tags people as Loyal, At-Risk, High-Value, New, or Occasional.",
         severity: "info",
       },
       {
-        claim: `${segment} contacts with ${requiredConsent} = TRUE: ${counts.eligible.toLocaleString()} eligible today, ${eligibleAfterRefresh.toLocaleString()} if retention is refreshed.`,
-        evidence: `Computed live from CRM ↔ Consent join: ${counts.raw_segment_country_match} segment-matched → ${counts.eligible} eligible. Drops: ${dropFromExclusion("retention_expired")} retention-expired, ${dropFromExclusion("channel_opt_in_false")} no channel opt-in, ${dropFromExclusion("no_consent_record")} no consent record.`,
+        claim: `${counts.eligible.toLocaleString()} ready to send to today — ${eligibleAfterRefresh.toLocaleString()} once consent is refreshed.`,
+        evidence: `Starting list: ${counts.raw_segment_country_match} ${friendlySegment}. We removed ${dropFromExclusion("retention_expired")} whose data permissions need renewing, ${dropFromExclusion("channel_opt_in_false")} who haven't opted in to ${friendlyChannel}, and ${dropFromExclusion("no_consent_record")} with no consent record.`,
         severity: "info",
       },
       {
-        claim: `${counts.consent_records_expired} of ${counts.consent_records_total} consent records have retention expiry before today.`,
-        evidence: "Dataset-wide finding — most of the file is unmailable until consent is refreshed.",
+        claim: `${counts.consent_records_expired} of ${counts.consent_records_total} customers need a fresh consent review.`,
+        evidence: "Most of the file falls outside its retention window — a quick refresh would unlock them.",
         severity: "warn",
       },
       {
-        claim: `Destination platform defaulted to ${platform} for ${primaryChannel}.`,
-        evidence: "Channel → platform mapping matches brief-intake skill's deterministic table.",
+        claim: `${friendlyChannel} will go out through ${platform}.`,
+        evidence: "This is the default routing for this channel.",
         severity: "info",
       },
     ],
-    rationale: `${segment} segment resolved live from the CSVs: ${counts.eligible} eligible after all compliance filters. Numbers are not estimated — they are counted.`,
+    rationale: `${friendlySegment} resolved live from your customer data. The numbers above are counted, not estimated.`,
     inputs_hash,
     source: "fallback-missing",
     agent_path: null,
   };
 
   return {
-    segment_name: `${segment.toLowerCase()}_${platform.toLowerCase()}_v1`,
+    segment_name: `${friendlySegment} · ${friendlyChannel} · ${platform}`,
     size_estimate: headlineSize,
     key_attributes: [
-      `customer_segment = "${segment}"`,
-      `account_status = "active"`,
-      `${requiredConsent} = TRUE`,
-      `consent_withdrawn = FALSE AND right_to_erasure_requested = FALSE`,
+      `${friendlySegment} in your customer file`,
+      `Active account, not suspended`,
+      `Opted in to ${friendlyChannel}`,
+      `Hasn't opted out or asked us to delete their data`,
       counts.eligible > 0
-        ? `data_retention_expiry > today`
-        : `(requires retention refresh before send)`,
+        ? `Within their data permission window`
+        : `Permission window expired — needs a refresh before sending`,
     ],
     dataset_gaps: [
-      `${counts.missing_consent} of 300 customers have no consent record`,
-      `${counts.consent_records_expired} of ${counts.consent_records_total} consent records have retention expiry before today`,
-      `128 ANON transactions cannot be joined to known customers`,
+      `${counts.missing_consent} customers have no consent record on file`,
+      `${counts.consent_records_expired} of ${counts.consent_records_total} need a consent refresh`,
+      `Some anonymous shoppers can't be linked back to a customer account yet`,
     ],
     confidence: headlineSize >= 20 ? "HIGH" : headlineSize >= 5 ? "MEDIUM" : "LOW",
     envelope,
@@ -139,15 +151,15 @@ export function mockStoryline(
 
   const findings: Envelope["findings"] = [
     {
-      claim: `Tone "${concept.tone}" reads consistently with the ${primaryChannel} channel and a ${concept.timing} cadence.`,
+      claim: `${friendlyCh(primaryChannel)} at this cadence fits this audience.`,
       evidence:
-        "Channel/tone/timing combination matches historical playbooks for this segment in 4_Campaign_Activation.csv.",
+        "Past campaigns to this segment used the same channel and timing successfully.",
       severity: "info",
     },
     {
-      claim: `Audience size (${audience.size_estimate.toLocaleString()}) is appropriate for the stated goal.`,
+      claim: `Audience size of ${audience.size_estimate.toLocaleString()} is the right scale for this kind of send.`,
       evidence:
-        "Within the typical reach band for prior campaigns to this segment.",
+        "Big enough to learn from, small enough to handle with care.",
       severity: "info",
     },
   ];
@@ -155,9 +167,9 @@ export function mockStoryline(
   if (platformIsUS) {
     findings.push({
       claim:
-        "Audience push to a US-hosted platform requires the cross-border transfer flag to be recorded.",
+        "Your audience data leaves the EU to reach a US-based platform.",
       evidence:
-        "Klaviyo / Braze / Meta / Google are US-hosted; EU customer data needs SCC documentation.",
+        "Standard for tools like Klaviyo, Braze, Meta, and Google Ads — needs the cross-border agreement on file.",
       severity: "warn",
     });
   }
@@ -166,16 +178,29 @@ export function mockStoryline(
 
   const envelope: Envelope = {
     agent: "fallback-storyline-validator",
-    version: "0.2",
+    version: "0.3",
     verdict,
     findings,
     rationale:
-      "Story holds together. The platform residency is the main thing the brief should make explicit.",
+      "The story fits together. The one thing to call out in the brief is where the audience data goes.",
     inputs_hash,
     source: "fallback-missing",
     agent_path: null,
   };
   return { envelope };
+}
+
+function friendlyCh(c: string): string {
+  const m: Record<string, string> = {
+    email: "Email",
+    sms: "SMS",
+    "push notification": "Push",
+    push: "Push",
+    "paid social": "Paid social",
+    "paid search": "Paid search",
+    "on-site banner": "On-site banner",
+  };
+  return m[c.toLowerCase()] || c;
 }
 
 export function mockLegal(
@@ -188,36 +213,36 @@ export function mockLegal(
 
   const envelope: Envelope = {
     agent: "fallback-legal-validator",
-    version: "0.2",
+    version: "0.3",
     verdict: "WARN",
     findings: [
       {
-        claim: `Lawful basis: consent (GDPR Art. 6(1)(a)) — ${consent} required.`,
+        claim: `Sending under marketing consent — only people who opted in to ${friendlyCh(primaryChannel)} will receive this.`,
         evidence:
-          "Determined from channel and the brief-intake recipe table. Marketing communications under GDPR / ePrivacy.",
+          "Lawful basis under GDPR / ePrivacy is the customer's own opt-in, captured at signup or in the preference centre.",
         severity: "info",
       },
       {
         claim:
-          "Always-exclude list applied: unsubscribed, right_to_erasure_requested, consent_withdrawn.",
-        evidence: "Standard suppression per 3_Consent_Compliance.csv flags.",
+          "Unsubscribed customers, deletion requests, and withdrawn consents are excluded automatically.",
+        evidence: "Standard suppression — no extra checklist needed from you.",
         severity: "info",
       },
       {
-        claim: "Cross-border transfer to US-hosted destination platform.",
+        claim: "Heads up: your audience data leaves the EU to reach the sending platform.",
         evidence:
-          "Klaviyo / Braze / Meta / Google are US-hosted; EU data exports require Standard Contractual Clauses (SCC) sign-off by DPO.",
+          "Most tools (Klaviyo, Braze, Meta, Google) are US-based. Ask your DPO to confirm the data transfer agreement is current before send.",
         severity: "warn",
       },
       {
-        claim: "Data retention horizon must be checked before send.",
+        claim: "We'll skip anyone whose data permissions have lapsed.",
         evidence:
-          "data_retention_expiry per customer; suppress anyone past their expiry date.",
+          "Each customer has a retention date — once it passes, we stop sending until consent is refreshed.",
         severity: "info",
       },
     ],
     rationale:
-      "No hard blockers. Cross-border SCC is the standard pre-send review item; otherwise hygienic.",
+      "Nothing blocking. One thing for the brief: confirm the data transfer agreement covers this send.",
     inputs_hash,
     source: "fallback-missing",
     agent_path: null,
@@ -242,49 +267,45 @@ export function mockBrief(
     JSON.stringify({ concept, audience: audience.segment_name }),
   );
 
-  const markdown = `# Activation Brief
+  const niceChannels =
+    concept.channels.map((c) => (c === "sms" ? "SMS" : c.charAt(0).toUpperCase() + c.slice(1))).join(", ") || "—";
 
-**Status:** ${status}
-**Request:** ${request_id}
+  const markdown = `# Campaign Brief
 
-## Concept
+**Status:** ${status === "OK" ? "Ready to send" : status === "WARN" ? "Ready, with one thing to confirm" : status === "BLOCKED" ? "Not ready — see below" : "Partial"}
+**Reference:** ${request_id}
+
+## The idea
 
 ${concept.goal}
 
-## Audience
+## Who we're sending to
 
-**${audience.segment_name}** — ≈ ${audience.size_estimate.toLocaleString()} contacts, confidence ${audience.confidence}.
+**${audience.segment_name}** — about ${audience.size_estimate.toLocaleString()} people, confidence ${audience.confidence.toLowerCase()}.
 
-Key attributes:
+What we know about them:
 ${audience.key_attributes.map((a) => `- ${a}`).join("\n")}
 
-${audience.dataset_gaps.length ? `Gaps in the dataset:\n${audience.dataset_gaps.map((g) => `- ${g}`).join("\n")}` : ""}
+${audience.dataset_gaps.length ? `Things to keep in mind:\n${audience.dataset_gaps.map((g) => `- ${g}`).join("\n")}` : ""}
 
-## Channels & Tone
+## How it goes out
 
-- **Channels:** ${concept.channels.join(", ") || "—"}
-- **Tone:** ${concept.tone || "—"}
+- **Channel:** ${niceChannels}
 - **Timing:** ${concept.timing || "—"}
+- **Tone:** ${concept.tone || "considered"}
 
-## Validation
+## What we checked
 
-### Storyline
-- **Verdict:** ${storyline.envelope.verdict}
-- ${storyline.envelope.rationale}
+**The story:** ${storyline.envelope.rationale}
 
-### Legal
-- **Verdict:** ${legal.envelope.verdict}
-- ${legal.envelope.rationale}
+**Legal &amp; consent:** ${legal.envelope.rationale}
 
-## Success criteria
-
-${concept.kpi || "Not specified."}
-
-${concept.constraints ? `## Constraints\n\n${concept.constraints}` : ""}
+${concept.kpi ? `## What success looks like\n\n${concept.kpi}\n` : ""}
+${concept.constraints ? `## Notes\n\n${concept.constraints}` : ""}
 
 ---
 
-*Generated by the marketing ritual. Specialist envelopes are recorded in audit.json.*
+*Created by Smelling Pretty. The detailed envelopes are in audit.json.*
 `;
 
   const audit = {

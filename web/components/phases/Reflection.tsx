@@ -38,10 +38,10 @@ export function Reflection({ concept, audience, onComplete }: Props) {
     <div>
       <header className="mb-6">
         <div className="text-[11px] uppercase tracking-[0.32em] text-gold">
-          reflection
+          the check
         </div>
         <h2 className="font-serif text-3xl lg:text-4xl mt-1 text-ink leading-tight">
-          we read it <span className="italic">back to ourselves</span>.
+          two quick <span className="italic">checks</span>.
         </h2>
       </header>
 
@@ -51,13 +51,13 @@ export function Reflection({ concept, audience, onComplete }: Props) {
 
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
         <ValidatorTile
-          title="storyline"
-          subtitle="does the idea, audience, and shape hold together?"
+          title="the story"
+          subtitle="does the idea, audience, and timing fit?"
           result={storyline}
         />
         <ValidatorTile
-          title="legal"
-          subtitle="lawful basis, consent, and pre-send hygiene"
+          title="consent & legal"
+          subtitle="are we allowed to send, and to whom?"
           result={legal}
         />
       </div>
@@ -98,7 +98,7 @@ function ValidatorTile({
         </div>
         <div className="mt-10 flex items-center gap-3 breathe">
           <span className="block w-2 h-2 rounded-full bg-gold" aria-hidden />
-          <span className="text-sm text-ink-soft">listening…</span>
+          <span className="text-sm text-ink-soft">checking…</span>
         </div>
       </article>
     );
@@ -142,8 +142,8 @@ function ValidatorTile({
       </ul>
 
       <div className="mt-8 pt-4 border-t border-taupe-line text-[10px] uppercase tracking-[0.28em] text-taupe-dark flex items-center justify-between">
-        <span>source: {env.source}</span>
-        <span>{env.inputs_hash}</span>
+        <span>auto-checked</span>
+        <span>ref · {env.inputs_hash}</span>
       </div>
     </motion.article>
   );

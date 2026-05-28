@@ -1,3 +1,4 @@
+import { callAgent, DEFAULT_MODELS } from "./anthropic";
 import type {
   AudienceProfile,
   CampaignConcept,
@@ -26,25 +27,46 @@ function titleFor(concept: CampaignConcept): string {
     .join(" ");
 }
 
-function tensionFor(concept: CampaignConcept, audience: AudienceProfile): string {
-  // Try to surface the productive tension at the heart of the campaign.
-  const segLabel = audience.envelope.findings
-    .find((f) => f.claim.startsWith("Mapped audience"))
-    ?.claim.match(/segment "([^"]+)"/)?.[1] || "this segment";
-  return `${segLabel} customers haven't heard from us at the right moment — and the moment is now.`;
+function extractSegmentLabel(audience: AudienceProfile): string {
+  // Pull the friendly label out of the audience envelope. Tries the new
+  // ("Reading X as lapsed buyers") shape first, falls back to the older
+  // ("CRM segment 'Y'") shape if the route still emits it.
+  for (const f of audience.envelope.findings) {
+    let m = f.claim.match(/as ([\w\s-]+?) in your customer file/i);
+    if (m) return m[1].trim();
+    m = f.claim.match(/segment "([^"]+)"/);
+    if (m) return m[1].toLowerCase();
+  }
+  return "these customers";
+}
+
+function tensionFor(_concept: CampaignConcept, audience: AudienceProfile): string {
+  const segLabel = extractSegmentLabel(audience);
+  return `Your ${segLabel} haven't heard from you at the right moment — and the moment is now.`;
 }
 
 function moment(concept: CampaignConcept): string {
-  const t = concept.timing.toLowerCase();
-  if (t.includes("week")) return "The window is tight: this week.";
-  if (t.includes("month")) return "We have a month, which is enough if we move now.";
-  if (t.includes("quarter"))
-    return "A full quarter to land it properly — no excuse to rush.";
-  return "Timing is open, but momentum decays. The sooner the better.";
+  const t = (concept.timing || "").toLowerCase();
+  if (t.includes("week")) return "The window is tight — this week.";
+  if (t.includes("month")) return "We have a month. Enough room to do this well.";
+  if (t.includes("quarter")) return "A full quarter to land it properly.";
+  return "Timing is open, but sooner is better than later.";
 }
 
 function bullets(items: string[]): string {
   return items.map((s) => `- ${s}`).join("\n");
+}
+
+// Bold the first phrase up to the first period or em-dash — used for the
+// bullet leads in the argument/story-beats sections (e.g. "The arrival."
+// becomes "<strong>The arrival.</strong>"). Receives already-HTML-escaped
+// text so we can wrap with <strong> safely.
+function boldFirstPhrase(escaped: string): string {
+  // No 's' flag — the bullet text is single-line; `.` matches everything
+  // we need without dotall semantics.
+  const m = escaped.match(/^([^\n]+?[.—])\s+([^\n]+)$/);
+  if (!m) return escaped;
+  return `<strong>${m[1]}</strong> ${m[2]}`;
 }
 
 function htmlEscape(s: string): string {
@@ -72,10 +94,8 @@ export function generateStoryline(
   const tension = tensionFor(concept, audience);
   const request_id = brief.request_id;
   const primary = concept.channels[0] || "email";
-  const segLabel =
-    audience.envelope.findings
-      .find((f) => f.claim.startsWith("Mapped audience"))
-      ?.claim.match(/segment "([^"]+)"/)?.[1] || "the chosen segment";
+  const segLabel = extractSegmentLabel(audience);
+  const primaryNice = primary === "sms" ? "SMS" : primary.charAt(0).toUpperCase() + primary.slice(1);
 
   // ---- Markdown ----------------------------------------------------------
   const md = `# ${title}
@@ -84,62 +104,60 @@ export function generateStoryline(
 
 ---
 
-## The customer we're reaching
+## Who we're reaching
 
-${audience.size_estimate.toLocaleString()} people, mapped to the **${segLabel}** segment. They opted in. They're active. The numbers are honest:
+${audience.size_estimate.toLocaleString()} of your **${segLabel}**. They opted in. Their accounts are active. The numbers are real:
 
 ${bullets(audience.key_attributes)}
 
-It is worth saying what is *not* there. ${audience.dataset_gaps.map((g) => g.replace(/—/g, "-")).join(". ")}. We are working with what we know, not what we wish we knew.
+What's *not* yet there: ${audience.dataset_gaps.map((g) => g.replace(/—/g, "-")).join(". ")}. Worth knowing, not a blocker.
 
 ## The moment
 
-${concept.timing ? moment(concept) : "Timing was not specified — recommend locking it before we go further."} ${concept.kpi ? `What we are trying to move: **${concept.kpi}**.` : ""}
+${concept.timing ? moment(concept) : "Timing isn't set yet — lock it before we go further."} ${concept.kpi ? `Success: **${concept.kpi}**.` : ""}
 
-## The argument
+## Why this earns the slot
 
-Why this campaign earns its budget, in three lines:
+- **It speaks to people we have**, not the audience we wish we had. ${audience.size_estimate.toLocaleString()} contacts is enough to learn from and small enough to handle carefully.
+- **The channel fits the audience.** ${primaryNice} is how ${segLabel} already hear from us — we're showing up where they already are.
+- **The compliance is clean.** ${legal.envelope.rationale}
 
-- **It speaks to the segment we have, not the segment we wish we had.** ${audience.size_estimate.toLocaleString()} contacts is enough volume to learn from, small enough to handle with care.
-- **The channel matches the audience's posture.** ${primary} for ${segLabel} is the channel they already accept — we are not asking them to change behaviour, we are showing up where they already are.
-- **The compliance corners are squared.** ${legal.envelope.rationale} The brief reads as auditable, not just exciting.
+## How the story lands
 
-## How the story moves
+The customer feels three beats:
 
-Three beats the customer experiences:
+1. **The arrival.** A ${concept.tone || "considered"} ${primaryNice} that doesn't shout — it lands like a note from someone who remembers them.
+2. **The recognition.** The message references something they'd recognise about themselves. Not a discount. A reason.
+3. **The invitation.** One clear next step. No second CTA. No urgency theatre.
 
-1. **The arrival.** A ${concept.tone || "considered"} ${primary} that does not announce itself — it lands like a note from someone who remembers.
-2. **The recognition.** The body of the message references something the customer would recognise about themselves. Not a discount. A reason.
-3. **The invitation.** One clear next step. No second CTA. No urgency theatre. If they're ready, they move. If they're not, we have not burned the relationship.
+## Channel and voice
 
-## The channel and the tone
+${primaryNice} via the default platform. Tone is **${concept.tone || "considered"}** — short sentences, real words, nothing that reads like it came from a committee.
 
-${primary} delivered via the platform mapped in the intake. The tone is **${concept.tone || "to be confirmed"}** — meaning short sentences, real words, nothing that reads like it was written by a committee.
+## What's been checked for you
 
-## What we have checked
-
-${storyline.envelope.verdict === "OK" ? "Storyline coherent." : "Storyline noted with warnings — see findings."} ${legal.envelope.verdict === "OK" ? "Legal clear." : "Legal flags raised, none blocking."}
+${storyline.envelope.verdict === "OK" ? "Story holds together." : "Story is sound, with one thing to call out."} ${legal.envelope.verdict === "OK" ? "Legal is clear." : "Legal noted, nothing blocking."}
 
 ${storyline.envelope.findings
     .filter((f) => f.severity !== "info")
     .map((f) => `- ${f.claim}`)
-    .join("\n") || "- No storyline warnings."}
+    .join("\n") || "- No story warnings."}
 ${legal.envelope.findings
   .filter((f) => f.severity !== "info")
   .map((f) => `- ${f.claim}`)
   .join("\n") || ""}
 
-## The ask
+## What we need from you
 
-Read the brief. Sign it. ${
-    legal.envelope.findings.some((f) => f.claim.toLowerCase().includes("scc"))
-      ? "Confirm the cross-border SCC is in place before send. "
+Read the brief. Sign off. ${
+    legal.envelope.findings.some((f) => f.claim.toLowerCase().includes("data transfer") || f.claim.toLowerCase().includes("leaves the eu"))
+      ? "Confirm the EU data-transfer agreement is on file before send. "
       : ""
-  }We are ready to schedule the moment the approver lands their signature.
+  }We're ready to schedule the moment you approve.
 
 ---
 
-*Composed by the marketing storyline skill — ${request_id}.*
+*Composed by Smelling Pretty — ${request_id}.*
 `;
 
   // ---- HTML scrollytelling ----------------------------------------------
@@ -165,23 +183,224 @@ Read the brief. Sign it. ${
   };
 }
 
+// LLM-driven variant: keeps the HTML template (layout is solved already)
+// but asks Claude to write the prose sections in the senior-strategist
+// voice from the SKILL.md. Falls back to the template generator on any
+// failure so the demo can never crash.
+type StorylineSections = {
+  title: string;
+  tension: string;
+  customer_paragraphs: string[];
+  moment_paragraphs: string[];
+  argument_bullets: string[];
+  story_beats: string[];
+  channel_paragraph: string;
+  checks_paragraphs: string[];
+  ask_paragraph: string;
+};
+
+export async function generateStorylineWithLLM(
+  systemPrompt: string,
+  concept: CampaignConcept,
+  audience: AudienceProfile,
+  storyline: ValidationResult,
+  legal: ValidationResult,
+  brief: FinalBrief,
+): Promise<StorylineOutput | null> {
+  const inputs = {
+    concept,
+    audience: {
+      segment_name: audience.segment_name,
+      size_estimate: audience.size_estimate,
+      key_attributes: audience.key_attributes,
+      dataset_gaps: audience.dataset_gaps,
+      confidence: audience.confidence,
+    },
+    storyline_validator: {
+      verdict: storyline.envelope.verdict,
+      findings: storyline.envelope.findings,
+      rationale: storyline.envelope.rationale,
+    },
+    legal_validator: {
+      verdict: legal.envelope.verdict,
+      findings: legal.envelope.findings,
+      rationale: legal.envelope.rationale,
+    },
+  };
+
+  const userMessage = `Write the storyline for this activation. Inputs:
+
+\`\`\`json
+${JSON.stringify(inputs, null, 2)}
+\`\`\`
+
+Return ONLY a JSON object — no commentary, no markdown fence — matching this exact shape:
+
+{
+  "title": "string, short declarative, derived from the goal",
+  "tension": "one-line tension — what the customer feels and why we are speaking up",
+  "customer_paragraphs": ["1-2 paragraphs about who we're reaching, using real numbers from inputs"],
+  "moment_paragraphs": ["1 paragraph on why now"],
+  "argument_bullets": ["3 bullets — each starts with a bold lead phrase, anchored to a finding or number"],
+  "story_beats": ["3 beats the customer experiences: arrival, recognition, invitation"],
+  "channel_paragraph": "1 paragraph on channel + platform + voice",
+  "checks_paragraphs": ["1-2 short paragraphs restating storyline + legal verdicts"],
+  "ask_paragraph": "2 sentences max — what we need next"
+}
+
+Voice rules from your system prompt apply strictly: plain, confident, lightly Dutch, evidence-led, no urgency theatre.`;
+
+  let raw: string;
+  try {
+    raw = await callAgent({
+      systemPrompt,
+      userMessage,
+      model: DEFAULT_MODELS.storyline,
+      maxTokens: 4000,
+    });
+  } catch {
+    return null;
+  }
+
+  // Pull the first {…} JSON block from Claude's response.
+  const match = raw.match(/\{[\s\S]*\}/);
+  if (!match) return null;
+  let sections: StorylineSections;
+  try {
+    sections = JSON.parse(match[0]) as StorylineSections;
+  } catch {
+    return null;
+  }
+
+  // Quick shape check
+  if (!sections.title || !sections.tension || !Array.isArray(sections.argument_bullets)) {
+    return null;
+  }
+
+  // Stitch into markdown + HTML using the same templating shell as the
+  // deterministic generator. The template only handles layout — all the
+  // prose is from the model.
+  const md = composeMarkdownFromSections(sections, brief.request_id);
+  const html = composeHtmlFromSections(sections, audience, storyline, legal, brief.request_id);
+
+  return {
+    title: sections.title,
+    tension: sections.tension,
+    markdown: md,
+    html,
+    request_id: brief.request_id,
+    source: "agent",
+  };
+}
+
+function composeMarkdownFromSections(s: StorylineSections, request_id: string): string {
+  return `# ${s.title}
+
+*${s.tension}*
+
+---
+
+## The customer we're reaching
+
+${s.customer_paragraphs.join("\n\n")}
+
+## The moment
+
+${s.moment_paragraphs.join("\n\n")}
+
+## The argument
+
+${s.argument_bullets.map((b) => `- ${b}`).join("\n")}
+
+## How the story moves
+
+${s.story_beats.map((b, i) => `${i + 1}. ${b}`).join("\n")}
+
+## The channel and the tone
+
+${s.channel_paragraph}
+
+## What we have checked
+
+${s.checks_paragraphs.join("\n\n")}
+
+## The ask
+
+${s.ask_paragraph}
+
+---
+
+*Composed by the marketing storyline skill — ${request_id}.*
+`;
+}
+
+function composeHtmlFromSections(
+  s: StorylineSections,
+  audience: AudienceProfile,
+  storyline: ValidationResult,
+  legal: ValidationResult,
+  request_id: string,
+): string {
+  const status: "OK" | "WARN" | "BLOCKED" =
+    legal.envelope.verdict === "BLOCK"
+      ? "BLOCKED"
+      : storyline.envelope.verdict === "WARN" || legal.envelope.verdict === "WARN"
+        ? "WARN"
+        : "OK";
+
+  return renderScrollytelling({
+    title: s.title,
+    tension: s.tension,
+    audience,
+    storyline,
+    legal,
+    request_id,
+    // Override the deterministic prose with the LLM-written sections.
+    overrides: {
+      customer_paragraphs: s.customer_paragraphs,
+      moment_paragraphs: s.moment_paragraphs,
+      argument_bullets: s.argument_bullets,
+      story_beats: s.story_beats,
+      channel_paragraph: s.channel_paragraph,
+      checks_paragraphs: s.checks_paragraphs,
+      ask_paragraph: s.ask_paragraph,
+      status,
+    },
+  });
+}
+
+type RenderOverrides = {
+  customer_paragraphs?: string[];
+  moment_paragraphs?: string[];
+  argument_bullets?: string[];
+  story_beats?: string[];
+  channel_paragraph?: string;
+  checks_paragraphs?: string[];
+  ask_paragraph?: string;
+  status?: "OK" | "WARN" | "BLOCKED";
+};
+
 function renderScrollytelling(opts: {
   title: string;
   tension: string;
-  concept: CampaignConcept;
+  concept?: CampaignConcept;
   audience: AudienceProfile;
   storyline: ValidationResult;
   legal: ValidationResult;
   request_id: string;
-  primary: string;
-  segLabel: string;
+  primary?: string;
+  segLabel?: string;
+  overrides?: RenderOverrides;
 }): string {
-  const { title, tension, concept, audience, storyline, legal, request_id, primary, segLabel } = opts;
+  const { title, tension, concept, audience, storyline, legal, request_id, primary, segLabel, overrides } = opts;
   const e = htmlEscape;
-  const status = legal.envelope.verdict === "BLOCK" ? "BLOCKED" :
+  const ov = overrides ?? {};
+  const status = ov.status ?? (
+    legal.envelope.verdict === "BLOCK" ? "BLOCKED" :
     storyline.envelope.verdict === "WARN" || legal.envelope.verdict === "WARN"
       ? "WARN"
-      : "OK";
+      : "OK"
+  );
 
   return `<!doctype html>
 <html lang="en">
@@ -468,7 +687,7 @@ function renderScrollytelling(opts: {
 <section class="hero">
   <div class="hero-meta">
     <div>
-      <div class="wm">atelier · marketing storyline</div>
+      <div class="wm">Smelling Pretty · the storyline</div>
       <div class="hero-edition">edition № ${e(request_id.slice(-4))}</div>
     </div>
     <span class="pill ${status === "OK" ? "ok" : status === "BLOCKED" ? "block" : "warn"}">status — ${status.toLowerCase()}</span>
@@ -484,32 +703,32 @@ function renderScrollytelling(opts: {
   <div class="panel reveal">
     <div class="kicker">the customer we're reaching</div>
     <div class="stat">${audience.size_estimate.toLocaleString()}</div>
-    <div class="stat-label">${e(segLabel.toLowerCase())} contacts</div>
+    <div class="stat-label">${e((segLabel || "your audience").toLowerCase())} contacts</div>
     <div class="stat-sub">confidence: ${audience.confidence.toLowerCase()}</div>
   </div>
   <div class="prose reveal">
-    <h2>${audience.size_estimate.toLocaleString()} people who already said yes.</h2>
+    ${ov.customer_paragraphs
+      ? ov.customer_paragraphs.map((p) => `<p>${e(p)}</p>`).join("")
+      : `<h2>${audience.size_estimate.toLocaleString()} people who already said yes.</h2>
     <p>They opted in. They're active. The numbers are honest.</p>
-    <ul>
-      ${audience.key_attributes
-        .map((a) => `<li><span></span><span>${e(a)}</span></li>`)
-        .join("")}
-    </ul>
-    <p>It is worth saying what is <em>not</em> there. ${e(audience.dataset_gaps.join(". "))}. We are working with what we know, not what we wish we knew.</p>
+    <ul>${audience.key_attributes.map((a) => `<li><span></span><span>${e(a)}</span></li>`).join("")}</ul>
+    <p>It is worth saying what is <em>not</em> there. ${e(audience.dataset_gaps.join(". "))}. We are working with what we know, not what we wish we knew.</p>`}
   </div>
 </section>
 
 <section class="beat">
   <div class="panel reveal">
     <div class="kicker">the moment</div>
-    <div class="stat">${e(concept.timing || "—")}</div>
+    <div class="stat">${e(concept?.timing || "—")}</div>
     <div class="stat-label">the window</div>
-    <div class="stat-sub">${e(concept.kpi || "no metric set")}</div>
+    <div class="stat-sub">${e(concept?.kpi || "no metric set")}</div>
   </div>
   <div class="prose reveal">
-    <h2>${e(moment(concept))}</h2>
-    <p>${concept.kpi ? `What we are trying to move: <strong>${e(concept.kpi)}</strong>.` : "A KPI has not been set yet — recommend locking one before launch."}</p>
-    <p>Momentum decays in marketing the way silence decays in a conversation. Send when the segment is most likely to be listening, not when it is convenient for us.</p>
+    ${ov.moment_paragraphs
+      ? ov.moment_paragraphs.map((p) => `<p>${e(p)}</p>`).join("")
+      : `<h2>${e(concept ? moment(concept) : "Timing matters.")}</h2>
+    <p>${concept?.kpi ? `What we are trying to move: <strong>${e(concept.kpi)}</strong>.` : "A KPI has not been set yet — recommend locking one before launch."}</p>
+    <p>Momentum decays in marketing the way silence decays in a conversation. Send when the segment is most likely to be listening, not when it is convenient for us.</p>`}
   </div>
 </section>
 
@@ -521,12 +740,14 @@ function renderScrollytelling(opts: {
     <div class="stat-sub">No more, no less.</div>
   </div>
   <div class="prose reveal">
-    <h2>Why this earns its space.</h2>
+    ${ov.argument_bullets
+      ? `<ul>${ov.argument_bullets.map((b) => `<li><span></span><span>${boldFirstPhrase(e(b))}</span></li>`).join("")}</ul>`
+      : `<h2>Why this earns its space.</h2>
     <ul>
       <li><span></span><span><strong>It speaks to the segment we have</strong>, not the one we wish we had. ${audience.size_estimate.toLocaleString()} contacts is enough volume to learn from, small enough to handle with care.</span></li>
-      <li><span></span><span><strong>The channel matches the audience's posture.</strong> ${e(primary)} for ${e(segLabel)} is the channel they already accept.</span></li>
+      <li><span></span><span><strong>The channel matches the audience's posture.</strong> ${e(primary || "this channel")} for ${e(segLabel || "this segment")} is the channel they already accept.</span></li>
       <li><span></span><span><strong>The compliance corners are squared.</strong> ${e(legal.envelope.rationale)}</span></li>
-    </ul>
+    </ul>`}
   </div>
 </section>
 
@@ -538,14 +759,28 @@ function renderScrollytelling(opts: {
     <div class="stat-sub">Arrival → Recognition → Invitation</div>
   </div>
   <div class="prose reveal">
-    <h2>Three beats. No theatre.</h2>
+    ${ov.story_beats
+      ? `<ul>${ov.story_beats.map((b) => `<li><span></span><span>${boldFirstPhrase(e(b))}</span></li>`).join("")}</ul>`
+      : `<h2>Three beats. No theatre.</h2>
     <ul>
-      <li><span></span><span><strong>The arrival.</strong> A ${e(concept.tone || "considered")} ${e(primary)} that does not announce itself — it lands like a note from someone who remembers.</span></li>
+      <li><span></span><span><strong>The arrival.</strong> A ${e(concept?.tone || "considered")} ${e(primary || "message")} that does not announce itself — it lands like a note from someone who remembers.</span></li>
       <li><span></span><span><strong>The recognition.</strong> The body references something the customer would recognise about themselves. Not a discount. A reason.</span></li>
       <li><span></span><span><strong>The invitation.</strong> One clear next step. No second CTA. No urgency theatre.</span></li>
-    </ul>
+    </ul>`}
   </div>
 </section>
+
+${ov.channel_paragraph ? `<section class="beat">
+  <div class="panel reveal">
+    <div class="kicker">the channel</div>
+    <div class="stat">${e((primary || concept?.channels?.[0] || "—").toString())}</div>
+    <div class="stat-label">how the story travels</div>
+    <div class="stat-sub">${e(concept?.tone || "considered")} tone</div>
+  </div>
+  <div class="prose reveal">
+    <p>${e(ov.channel_paragraph)}</p>
+  </div>
+</section>` : ""}
 
 <section class="beat">
   <div class="panel reveal">
@@ -555,9 +790,11 @@ function renderScrollytelling(opts: {
     <div class="stat-sub">Auditable. Defensible. Not exciting.</div>
   </div>
   <div class="prose reveal">
-    <h2>The corners are square.</h2>
+    ${ov.checks_paragraphs
+      ? ov.checks_paragraphs.map((p) => `<p>${e(p)}</p>`).join("")
+      : `<h2>The corners are square.</h2>
     <p>${e(storyline.envelope.rationale)}</p>
-    <p>${e(legal.envelope.rationale)}</p>
+    <p>${e(legal.envelope.rationale)}</p>`}
     ${[
       ...storyline.envelope.findings.filter((f) => f.severity !== "info"),
       ...legal.envelope.findings.filter((f) => f.severity !== "info"),
@@ -575,12 +812,12 @@ function renderScrollytelling(opts: {
 <section class="ask">
   <div class="kicker reveal">the ask</div>
   <h2 class="reveal">Read it. Sign it.<br/><em>Then we move.</em></h2>
-  <p class="reveal">We have built a brief that is honest about who we are talking to, why it matters now, and what we have already checked. Approval, then send.</p>
+  <p class="reveal">${ov.ask_paragraph ? e(ov.ask_paragraph) : "We have built a brief that is honest about who we are talking to, why it matters now, and what we have already checked. Approval, then send."}</p>
   <span class="next reveal">next — approver sign-off</span>
 </section>
 
 <footer>
-  <span>atelier · ${e(request_id)}</span>
+  <span>Smelling Pretty · ${e(request_id)}</span>
   <span>composed ${new Date().toISOString().slice(0, 10)}</span>
   <span>without the rush</span>
 </footer>

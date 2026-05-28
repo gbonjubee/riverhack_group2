@@ -43,7 +43,7 @@ export default function RitualPage() {
         </Link>
         <nav className="flex items-center gap-8 text-[11px] uppercase tracking-[0.28em] text-taupe-dark">
           <Link href="/" className="hover:text-ink">
-            ← leave the ritual
+            ← back
           </Link>
         </nav>
       </header>

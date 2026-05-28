@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { resolveAgent } from "@/lib/agents";
+import { resolveAgent, readAgentPrompt } from "@/lib/agents";
 import { hasApiKey } from "@/lib/anthropic";
-import { generateStoryline } from "@/lib/storyline";
+import { generateStoryline, generateStorylineWithLLM } from "@/lib/storyline";
 import type {
   AudienceProfile,
   CampaignConcept,
@@ -18,18 +18,35 @@ export async function POST(req: Request) {
     brief: FinalBrief;
   };
 
-  // Resolve the skill so /health can show it's wired up — the deterministic
-  // template generator is the MVP floor either way.
   const resolved = await resolveAgent("marketing-storyline");
   const useReal = process.env.USE_REAL_AGENTS === "true" && hasApiKey();
 
-  const out = generateStoryline(concept, audience, storyline, legal, brief);
+  // Deterministic template is the safety floor — never let the demo crash.
+  const fallback = generateStoryline(concept, audience, storyline, legal, brief);
 
-  // When real dispatch is enabled and the skill file exists, this is where
-  // we'd send SKILL.md + inputs to Claude and parse the response back into
-  // markdown + HTML. For now the template generator is canonical.
-  out.source =
-    resolved.found && useReal ? "fallback-after-error" : "fallback-missing";
+  if (resolved.found && useReal) {
+    try {
+      const system = await readAgentPrompt(resolved.path!);
+      const real = await generateStorylineWithLLM(
+        system,
+        concept,
+        audience,
+        storyline,
+        legal,
+        brief,
+      );
+      if (real) {
+        real.source = "agent";
+        return NextResponse.json(real);
+      }
+      fallback.source = "fallback-after-error";
+      return NextResponse.json(fallback);
+    } catch {
+      fallback.source = "fallback-after-error";
+      return NextResponse.json(fallback);
+    }
+  }
 
-  return NextResponse.json(out);
+  fallback.source = "fallback-missing";
+  return NextResponse.json(fallback);
 }

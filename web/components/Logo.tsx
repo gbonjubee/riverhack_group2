@@ -1,21 +1,18 @@
-import { AGENT_NAME, HOUSE_NAME } from "@/lib/brand";
+import { AGENT_NAME } from "@/lib/brand";
 
 type Props = {
   size?: "sm" | "md";
 };
 
 export function Logo({ size = "md" }: Props) {
-  const heightClass = size === "sm" ? "text-[11px]" : "text-xs";
+  const wordmark = size === "sm" ? "text-sm" : "text-base";
   return (
-    <div className="flex items-baseline gap-3 select-none">
-      <span
-        className={`${heightClass} uppercase tracking-[0.32em] text-taupe-dark`}
-      >
-        {HOUSE_NAME}
-      </span>
-      <span className="h-3 w-px bg-taupe-line" aria-hidden />
-      <span className="font-serif italic text-base text-ink-soft">
+    <div className="flex items-baseline gap-2 select-none">
+      <span className={`${wordmark} font-serif italic tracking-tight text-ink`}>
         {AGENT_NAME}
+      </span>
+      <span className="text-[10px] uppercase tracking-[0.28em] text-taupe-dark">
+        · for marketing
       </span>
     </div>
   );
