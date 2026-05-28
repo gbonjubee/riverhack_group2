@@ -74,6 +74,18 @@ Additional rules (apply deterministically, do not ask):
 
 Reason for these rules: in earlier intake runs we wasted clarification slots on channel-platform and consent confirmations that have a single right answer. Those slots are better spent on audience and purpose ambiguity.
 
+## Account status: include inactive, exclude suspended
+
+For any reach campaign, set `slots.audience.filters.account_status = ["active", "inactive"]` by default. **Consent is the gate for marketing contact — not the CRM's `account_status` flag.** A customer marked `inactive` who still has valid consent and an unexpired retention window has explicitly said yes to being reached; excluding them double-counts the same signal we already filter on through consent.
+
+`suspended` stays excluded by default. Suspension implies a business or compliance reason beyond consent (fraud, complaint, hard block), so consent alone is not sufficient to overrule it.
+
+Add `exclude_suspended_accounts` to `compliance_flags_to_check_downstream` (instead of the older `exclude_inactive_and_suspended_accounts`) so the downstream check is accurate to the new policy.
+
+Only override the default (`["active"]` only) if the request explicitly says "currently active customers", "recently active", or describes a campaign tied to active-account state (e.g. a transactional message). In that case, record the override in `assumptions`.
+
+**Why this matters:** for win-back / re-engagement campaigns this single change roughly doubles the mailable audience for already-narrow segments. Excluding "inactive" was a pre-consent-system habit; with consent recorded explicitly, we don't need it.
+
 ## How to ask — the principles
 Read these as hard rules. They are how the team has decided this intake should feel.
 
@@ -129,7 +141,7 @@ Populate `compliance_flags_to_check_downstream` based on what you already know �
 - **Always:** `<channel>_consent_required` (e.g. `sms_consent_required`), `retention_window_active`, `jurisdiction_<COUNTRY>_<REGIME>`.
 - **Cross-border:** if any default destination_platform from the table is US-hosted (Klaviyo, Braze, Meta Ads Manager, Google Ads, Salesforce Marketing Cloud) and any geo country is in the EU/UK, add `cross_border_transfer_us_scc_required`.
 - **Profiling:** if recipe includes `profiling_score`, add `profiling_consent_required`.
-- **Suppression:** always include `exclude_unsubscribed_and_erasure_and_withdrawn`.
+- **Suppression:** always include `exclude_unsubscribed_and_erasure_and_withdrawn` and `exclude_suspended_accounts`.
 
 These are recorded for the downstream compliance step to enforce. The intake's job is to declare them, not to confirm them with the user.
 

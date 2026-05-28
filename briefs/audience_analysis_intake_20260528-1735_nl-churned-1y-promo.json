@@ -1,0 +1,564 @@
+{
+  "analysis_id": "audience_analysis_intake_20260528-1735_nl-churned-1y-promo",
+  "created_at": "2026-05-28T17:40:00+02:00",
+  "source_brief": "briefs/intake_20260528-1735_nl-churned-1y-promo.json",
+  "intake_id": "intake_20260528-1735_nl-churned-1y-promo",
+  "normalized_brief": {
+    "channels": [
+      "Email",
+      "SMS",
+      "Push Notification",
+      "In-App Banner",
+      "Display Retargeting",
+      "Paid Social - Meta",
+      "Paid Social - Google"
+    ],
+    "target_segments": [
+      "At-Risk"
+    ],
+    "target_countries": [
+      "NL"
+    ],
+    "lifetime_value_eur_min": null,
+    "last_order_before": "2025-11-28",
+    "last_order_after": "2025-05-28",
+    "account_status_allowed": [
+      "active"
+    ],
+    "additional_suppressions": [
+      "contacted_in_last_7_days"
+    ],
+    "prior_brief_reference": null,
+    "platforms_per_channel": {
+      "Email": "Klaviyo",
+      "SMS": "Klaviyo",
+      "Push Notification": "Braze",
+      "In-App Banner": "Braze",
+      "Display Retargeting": "Google Ads",
+      "Paid Social - Meta": "Meta Ads Manager",
+      "Paid Social - Google": "Google Ads"
+    }
+  },
+  "proposals": [
+    {
+      "channel": "Email",
+      "audience_size": 0,
+      "raw_segment_country_match_size": 24,
+      "segment_breakdown": {},
+      "country_breakdown": {},
+      "exclusion_buckets": [
+        {
+          "reason": "account_inactive_or_suspended",
+          "count": 59
+        },
+        {
+          "reason": "no_consent_record",
+          "count": 30
+        },
+        {
+          "reason": "right_to_erasure_requested",
+          "count": 5
+        },
+        {
+          "reason": "consent_withdrawn",
+          "count": 12
+        },
+        {
+          "reason": "retention_expired",
+          "count": 139
+        },
+        {
+          "reason": "channel_opt_in_false",
+          "count": 17
+        },
+        {
+          "reason": "recently_contacted",
+          "count": 0
+        },
+        {
+          "reason": "prior_campaign_exclusion",
+          "count": 0
+        },
+        {
+          "reason": "segment_mismatch",
+          "count": 31
+        },
+        {
+          "reason": "country_mismatch",
+          "count": 6
+        },
+        {
+          "reason": "ltv_below_threshold",
+          "count": 0
+        },
+        {
+          "reason": "last_order_after_cutoff",
+          "count": 1
+        },
+        {
+          "reason": "category_mismatch",
+          "count": 0
+        }
+      ],
+      "suggested_data_fields": [
+        "email, profiling_score, segment",
+        "email, purchase_history, category_affinity"
+      ],
+      "suggested_destinations": [
+        "Klaviyo",
+        "Braze"
+      ],
+      "sample_customer_ids": [],
+      "rationale": "0 customers remain eligible for Email after the priority-ordered filter chain. Top drops: 59 account inactive or suspended, 30 no consent record, 5 right to erasure requested, 12 consent withdrawn. Primary destination: Klaviyo."
+    },
+    {
+      "channel": "SMS",
+      "audience_size": 0,
+      "raw_segment_country_match_size": 24,
+      "segment_breakdown": {},
+      "country_breakdown": {},
+      "exclusion_buckets": [
+        {
+          "reason": "account_inactive_or_suspended",
+          "count": 59
+        },
+        {
+          "reason": "no_consent_record",
+          "count": 30
+        },
+        {
+          "reason": "right_to_erasure_requested",
+          "count": 5
+        },
+        {
+          "reason": "consent_withdrawn",
+          "count": 12
+        },
+        {
+          "reason": "retention_expired",
+          "count": 139
+        },
+        {
+          "reason": "channel_opt_in_false",
+          "count": 32
+        },
+        {
+          "reason": "recently_contacted",
+          "count": 0
+        },
+        {
+          "reason": "prior_campaign_exclusion",
+          "count": 0
+        },
+        {
+          "reason": "segment_mismatch",
+          "count": 20
+        },
+        {
+          "reason": "country_mismatch",
+          "count": 2
+        },
+        {
+          "reason": "ltv_below_threshold",
+          "count": 0
+        },
+        {
+          "reason": "last_order_after_cutoff",
+          "count": 1
+        },
+        {
+          "reason": "category_mismatch",
+          "count": 0
+        }
+      ],
+      "suggested_data_fields": [
+        "email, segment, ltv",
+        "email, sms, segment, ltv, last_order_date"
+      ],
+      "suggested_destinations": [
+        "Klaviyo",
+        "Google Ads"
+      ],
+      "sample_customer_ids": [],
+      "rationale": "0 customers remain eligible for SMS after the priority-ordered filter chain. Top drops: 59 account inactive or suspended, 30 no consent record, 5 right to erasure requested, 12 consent withdrawn. Primary destination: Klaviyo."
+    },
+    {
+      "channel": "Push Notification",
+      "audience_size": 0,
+      "raw_segment_country_match_size": 24,
+      "segment_breakdown": {},
+      "country_breakdown": {},
+      "exclusion_buckets": [
+        {
+          "reason": "account_inactive_or_suspended",
+          "count": 59
+        },
+        {
+          "reason": "no_consent_record",
+          "count": 30
+        },
+        {
+          "reason": "right_to_erasure_requested",
+          "count": 5
+        },
+        {
+          "reason": "consent_withdrawn",
+          "count": 12
+        },
+        {
+          "reason": "retention_expired",
+          "count": 139
+        },
+        {
+          "reason": "channel_opt_in_false",
+          "count": 21
+        },
+        {
+          "reason": "recently_contacted",
+          "count": 0
+        },
+        {
+          "reason": "prior_campaign_exclusion",
+          "count": 0
+        },
+        {
+          "reason": "segment_mismatch",
+          "count": 27
+        },
+        {
+          "reason": "country_mismatch",
+          "count": 6
+        },
+        {
+          "reason": "ltv_below_threshold",
+          "count": 0
+        },
+        {
+          "reason": "last_order_after_cutoff",
+          "count": 1
+        },
+        {
+          "reason": "category_mismatch",
+          "count": 0
+        }
+      ],
+      "suggested_data_fields": [
+        "email, sms, segment, ltv, last_order_date",
+        "email, segment"
+      ],
+      "suggested_destinations": [
+        "Braze",
+        "Internal"
+      ],
+      "sample_customer_ids": [],
+      "rationale": "0 customers remain eligible for Push Notification after the priority-ordered filter chain. Top drops: 59 account inactive or suspended, 30 no consent record, 5 right to erasure requested, 12 consent withdrawn. Primary destination: Braze."
+    },
+    {
+      "channel": "In-App Banner",
+      "audience_size": 0,
+      "raw_segment_country_match_size": 24,
+      "segment_breakdown": {},
+      "country_breakdown": {},
+      "exclusion_buckets": [
+        {
+          "reason": "account_inactive_or_suspended",
+          "count": 59
+        },
+        {
+          "reason": "no_consent_record",
+          "count": 30
+        },
+        {
+          "reason": "right_to_erasure_requested",
+          "count": 5
+        },
+        {
+          "reason": "consent_withdrawn",
+          "count": 12
+        },
+        {
+          "reason": "retention_expired",
+          "count": 139
+        },
+        {
+          "reason": "channel_opt_in_false",
+          "count": 21
+        },
+        {
+          "reason": "recently_contacted",
+          "count": 0
+        },
+        {
+          "reason": "prior_campaign_exclusion",
+          "count": 0
+        },
+        {
+          "reason": "segment_mismatch",
+          "count": 27
+        },
+        {
+          "reason": "country_mismatch",
+          "count": 6
+        },
+        {
+          "reason": "ltv_below_threshold",
+          "count": 0
+        },
+        {
+          "reason": "last_order_after_cutoff",
+          "count": 1
+        },
+        {
+          "reason": "category_mismatch",
+          "count": 0
+        }
+      ],
+      "suggested_data_fields": [
+        "email, sms, segment, ltv, last_order_date",
+        "email, profiling_score, segment"
+      ],
+      "suggested_destinations": [
+        "Braze",
+        "Klaviyo"
+      ],
+      "sample_customer_ids": [],
+      "rationale": "0 customers remain eligible for In-App Banner after the priority-ordered filter chain. Top drops: 59 account inactive or suspended, 30 no consent record, 5 right to erasure requested, 12 consent withdrawn. Primary destination: Braze."
+    },
+    {
+      "channel": "Display Retargeting",
+      "audience_size": 0,
+      "raw_segment_country_match_size": 24,
+      "segment_breakdown": {},
+      "country_breakdown": {},
+      "exclusion_buckets": [
+        {
+          "reason": "account_inactive_or_suspended",
+          "count": 59
+        },
+        {
+          "reason": "no_consent_record",
+          "count": 30
+        },
+        {
+          "reason": "right_to_erasure_requested",
+          "count": 5
+        },
+        {
+          "reason": "consent_withdrawn",
+          "count": 12
+        },
+        {
+          "reason": "retention_expired",
+          "count": 139
+        },
+        {
+          "reason": "channel_opt_in_false",
+          "count": 32
+        },
+        {
+          "reason": "recently_contacted",
+          "count": 0
+        },
+        {
+          "reason": "prior_campaign_exclusion",
+          "count": 0
+        },
+        {
+          "reason": "segment_mismatch",
+          "count": 20
+        },
+        {
+          "reason": "country_mismatch",
+          "count": 3
+        },
+        {
+          "reason": "ltv_below_threshold",
+          "count": 0
+        },
+        {
+          "reason": "last_order_after_cutoff",
+          "count": 0
+        },
+        {
+          "reason": "category_mismatch",
+          "count": 0
+        }
+      ],
+      "suggested_data_fields": [
+        "email, sms, segment, ltv, last_order_date",
+        "email, segment, ltv"
+      ],
+      "suggested_destinations": [
+        "Google Ads",
+        "Klaviyo",
+        "Braze"
+      ],
+      "sample_customer_ids": [],
+      "rationale": "0 customers remain eligible for Display Retargeting after the priority-ordered filter chain. Top drops: 59 account inactive or suspended, 30 no consent record, 5 right to erasure requested, 12 consent withdrawn. Primary destination: Google Ads."
+    },
+    {
+      "channel": "Paid Social - Meta",
+      "audience_size": 0,
+      "raw_segment_country_match_size": 24,
+      "segment_breakdown": {},
+      "country_breakdown": {},
+      "exclusion_buckets": [
+        {
+          "reason": "account_inactive_or_suspended",
+          "count": 59
+        },
+        {
+          "reason": "no_consent_record",
+          "count": 30
+        },
+        {
+          "reason": "right_to_erasure_requested",
+          "count": 5
+        },
+        {
+          "reason": "consent_withdrawn",
+          "count": 12
+        },
+        {
+          "reason": "retention_expired",
+          "count": 139
+        },
+        {
+          "reason": "channel_opt_in_false",
+          "count": 32
+        },
+        {
+          "reason": "recently_contacted",
+          "count": 0
+        },
+        {
+          "reason": "prior_campaign_exclusion",
+          "count": 0
+        },
+        {
+          "reason": "segment_mismatch",
+          "count": 20
+        },
+        {
+          "reason": "country_mismatch",
+          "count": 3
+        },
+        {
+          "reason": "ltv_below_threshold",
+          "count": 0
+        },
+        {
+          "reason": "last_order_after_cutoff",
+          "count": 0
+        },
+        {
+          "reason": "category_mismatch",
+          "count": 0
+        }
+      ],
+      "suggested_data_fields": [
+        "email, sms, segment, ltv, last_order_date",
+        "device_id, browsing_behaviour"
+      ],
+      "suggested_destinations": [
+        "Meta Ads Manager",
+        "Internal"
+      ],
+      "sample_customer_ids": [],
+      "rationale": "0 customers remain eligible for Paid Social - Meta after the priority-ordered filter chain. Top drops: 59 account inactive or suspended, 30 no consent record, 5 right to erasure requested, 12 consent withdrawn. Primary destination: Meta Ads Manager."
+    },
+    {
+      "channel": "Paid Social - Google",
+      "audience_size": 0,
+      "raw_segment_country_match_size": 24,
+      "segment_breakdown": {},
+      "country_breakdown": {},
+      "exclusion_buckets": [
+        {
+          "reason": "account_inactive_or_suspended",
+          "count": 59
+        },
+        {
+          "reason": "no_consent_record",
+          "count": 30
+        },
+        {
+          "reason": "right_to_erasure_requested",
+          "count": 5
+        },
+        {
+          "reason": "consent_withdrawn",
+          "count": 12
+        },
+        {
+          "reason": "retention_expired",
+          "count": 139
+        },
+        {
+          "reason": "channel_opt_in_false",
+          "count": 32
+        },
+        {
+          "reason": "recently_contacted",
+          "count": 0
+        },
+        {
+          "reason": "prior_campaign_exclusion",
+          "count": 0
+        },
+        {
+          "reason": "segment_mismatch",
+          "count": 20
+        },
+        {
+          "reason": "country_mismatch",
+          "count": 3
+        },
+        {
+          "reason": "ltv_below_threshold",
+          "count": 0
+        },
+        {
+          "reason": "last_order_after_cutoff",
+          "count": 0
+        },
+        {
+          "reason": "category_mismatch",
+          "count": 0
+        }
+      ],
+      "suggested_data_fields": [
+        "device_id, browsing_behaviour",
+        "email, purchase_history, category_affinity"
+      ],
+      "suggested_destinations": [
+        "Google Ads",
+        "Klaviyo"
+      ],
+      "sample_customer_ids": [],
+      "rationale": "0 customers remain eligible for Paid Social - Google after the priority-ordered filter chain. Top drops: 59 account inactive or suspended, 30 no consent record, 5 right to erasure requested, 12 consent withdrawn. Primary destination: Google Ads."
+    }
+  ],
+  "connecting_note": "This brief targets 7 channels. Each customer is filtered to the channels they've opted into, so a customer may appear in more than one proposal. The presenter step should de-duplicate before send.",
+  "headline_compliance_callouts": [
+    "Raw segment+country match 24 -> up to 0 eligible per channel after compliance.",
+    "Dataset-wide: 189 of 265 consent records have retention expiry on or before today \u2014 most of the file is unmailable until refreshed.",
+    "4 customers in this segment+market have no consent record on file (of 35 project-wide). They are excluded by default.",
+    "Cross-border transfer to Braze, Google Ads, Klaviyo, Meta Ads Manager: SCC sign-off required for EU customer data (jurisdictions: GDPR/ePrivacy)."
+  ],
+  "compliance_flags_to_check_downstream": [
+    "email_consent_required",
+    "sms_consent_required",
+    "push_notification_consent_required",
+    "paid_social_consent_required",
+    "retention_window_active",
+    "jurisdiction_NL_GDPR",
+    "cross_border_transfer_us_scc_required",
+    "exclude_unsubscribed_and_erasure_and_withdrawn",
+    "exclude_inactive_and_suspended_accounts"
+  ],
+  "limitations": [
+    "Intake provided 'last_order_after' (2025-05-28), an extension to the audience-finder spec. Applied here to honor the 6-12 month window.",
+    "Intake used slots.channel.primary='all' with slots.channel.channels[]. Audience-finder spec reads only [primary]+[fallback]; this run uses the channels[] array as a compatible extension."
+  ]
+}

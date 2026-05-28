@@ -1,0 +1,104 @@
+{
+  "intake_id": "intake_20260528-1735_nl-churned-1y-promo",
+  "created_at": "2026-05-28T17:35:00+02:00",
+  "created_by": "gbonjubolaamuda@gmail.com",
+  "status": "ready",
+  "original_request": "create a promotion for inactive customers that churned in the last 1year",
+  "recipe_match": {
+    "name": "re-engagement",
+    "fields": ["email", "sms", "segment", "ltv", "last_order_date"],
+    "confidence": "high"
+  },
+  "slots": {
+    "audience": {
+      "segment": ["At-Risk"],
+      "filters": {
+        "country": ["NL"],
+        "lifetime_value_eur_min": null,
+        "last_order_before": "2025-11-28",
+        "last_order_after": "2025-05-28",
+        "account_status": ["active"]
+      },
+      "estimated_size": null
+    },
+    "channel": {
+      "primary": "all",
+      "destination_platform": "per-channel-default",
+      "channels": [
+        "Email",
+        "SMS",
+        "Push Notification",
+        "In-App Banner",
+        "Display Retargeting",
+        "Paid Social - Meta",
+        "Paid Social - Google"
+      ],
+      "destination_platforms_per_channel": {
+        "Email": "Klaviyo",
+        "SMS": "Klaviyo",
+        "Push Notification": "Braze",
+        "In-App Banner": "Braze",
+        "Display Retargeting": "Google Ads",
+        "Paid Social - Meta": "Meta Ads Manager",
+        "Paid Social - Google": "Google Ads"
+      },
+      "fallback": null
+    },
+    "geo": {
+      "countries": ["NL"],
+      "languages": ["nl-NL"],
+      "jurisdictions": ["GDPR"]
+    },
+    "timing": {
+      "send_window_start": "2026-06-01T09:00:00+02:00",
+      "send_window_end": "2026-06-01T20:00:00+02:00",
+      "frequency_cap": "1 send per customer per channel per 7 days",
+      "lead_time_required_hours": 4
+    },
+    "campaign_purpose": {
+      "label": "Direct marketing — promotional",
+      "lawful_basis": "consent",
+      "required_consents": [
+        "email_marketing_opt_in",
+        "sms_opt_in",
+        "push_notification_opt_in",
+        "paid_social_opt_in"
+      ],
+      "profiling_used": false
+    }
+  },
+  "optional_slots": {
+    "budget_or_size_cap": null,
+    "suppression_lists": {
+      "always_exclude": ["unsubscribed", "right_to_erasure_requested", "consent_withdrawn"],
+      "additionally": ["contacted_in_last_7_days"]
+    },
+    "success_metric": null,
+    "approver": null,
+    "prior_brief_reference": null
+  },
+  "compliance_flags_to_check_downstream": [
+    "email_consent_required",
+    "sms_consent_required",
+    "push_notification_consent_required",
+    "paid_social_consent_required",
+    "retention_window_active",
+    "jurisdiction_NL_GDPR",
+    "cross_border_transfer_us_scc_required",
+    "exclude_unsubscribed_and_erasure_and_withdrawn",
+    "exclude_inactive_and_suspended_accounts"
+  ],
+  "assumptions": [
+    "Mapped 'inactive customers that churned in the last 1 year' to the At-Risk customer_segment with last_order_date between 2025-05-28 (12 months ago) and 2025-11-28 (6 months ago).",
+    "No channel was named in the request, so the brief targets all available channels; the compliance step will filter each customer to the channels they've opted into.",
+    "No send date was specified, so defaulted to the start of next business week (2026-06-01), 09:00-20:00 local time.",
+    "Restricted to account_status = active — read 'inactive' in the request as a behavioral descriptor (haven't bought), not the CRM's inactive/suspended flags.",
+    "Default frequency_cap: 1 send per customer per channel per 7 days; additionally suppress anyone contacted in the last 7 days."
+  ],
+  "open_questions": [
+    "The audience filter uses both a 'last_order_after' and 'last_order_before' bound. The current audience-finder schema only reads 'last_order_before'; the lower bound may not be applied unless that skill is updated.",
+    "Confirm the start-of-next-week send date (2026-06-01) works — happy to shift to a specific date if there's a campaign calendar.",
+    "Confirm DPO sign-off is in place for EU→US data transfer to Klaviyo, Braze, Meta Ads Manager and Google Ads for NL audiences."
+  ],
+  "human_summary": "Win-back promotion for customers in the Netherlands whose last order was between 6 and 12 months ago. Sends Monday 2026-06-01 across all channels; each customer reached only on the channels they've agreed to. Unsubscribed, erasure-requested, withdrawn-consent, inactive and suspended accounts are excluded. Three items to confirm: the lower-bound audience filter is honored downstream, the send date, and the EU→US data-transfer sign-off."
+}

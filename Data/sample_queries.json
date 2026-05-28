@@ -1,0 +1,89 @@
+{
+  "description": "Plain-language sample queries for /brief-intake that have been pre-validated to produce non-zero audience results from the dummy Rituals dataset. Each query is what a marketer would type; the brief-intake skill will clarify and write a JSON intake artifact, which audience-finder then turns into a per-channel audience analysis.",
+  "policy_baseline": {
+    "today": "2026-05-28",
+    "account_status_allowed_default": ["active", "inactive"],
+    "always_excluded": ["suspended accounts", "right_to_erasure_requested", "consent_withdrawn", "data_retention_expiry <= today", "no consent record"],
+    "channel_default_when_not_named": "all channels (Email, SMS, Push Notification, In-App Banner, Display Retargeting, Paid Social - Meta, Paid Social - Google)"
+  },
+  "queries": [
+    {
+      "id": "q1_new_arrival_loyal_nl_de_be",
+      "text": "Promote our new spring fragrance line to loyal customers in NL, DE and BE",
+      "intent": "Drive trial of a new product line to engaged repeat customers across the core EU markets.",
+      "expected_recipe": "new-arrival",
+      "expected_audience_filters": {
+        "segment": ["Loyal"],
+        "countries": ["NL", "DE", "BE"]
+      },
+      "expected_mailable_pool": 16,
+      "expected_email_subset": 11,
+      "demo_notes": "Strongest narrative pick. Multi-country (shows scale), on-brand for Rituals (fragrance), large enough pool to feel real, triggers cross-border SCC callout because Klaviyo / Braze / Meta Ads Manager are US-hosted. Recipe match maps cleanly to the historical new-arrival playbook."
+    },
+    {
+      "id": "q2_welcome_new_de",
+      "text": "Send a welcome offer to our new customers in Germany",
+      "intent": "First-purchase follow-up to nudge a second order.",
+      "expected_recipe": "value-tier push",
+      "expected_audience_filters": {
+        "segment": ["New"],
+        "countries": ["DE"]
+      },
+      "expected_mailable_pool": 10,
+      "expected_email_subset": 7,
+      "demo_notes": "Single-market, single-segment, tight story. Biggest single segment x country cell in the mailable file. Good if you want a focused demo without too many numbers on screen."
+    },
+    {
+      "id": "q3_vip_preview_high_value_nl",
+      "text": "Send a Black Friday VIP preview to our high-value customers in the Netherlands",
+      "intent": "Boutique-feel early access for top-tier customers ahead of the public Black Friday push.",
+      "expected_recipe": "value-tier push",
+      "expected_audience_filters": {
+        "segment": ["High-Value"],
+        "countries": ["NL"]
+      },
+      "expected_mailable_pool": 5,
+      "expected_email_subset": 4,
+      "demo_notes": "Small but premium-feeling audience. Cleanest demo if the audience wants to see concrete customer IDs without being overwhelmed. Black Friday framing is timely and self-explanatory."
+    },
+    {
+      "id": "q4_personalised_cross_sell_loyal_nl",
+      "text": "Send personalised product recommendations to our loyal customers in NL based on their purchase history",
+      "intent": "1:1 personalised cross-sell using each customer's order history.",
+      "expected_recipe": "personalized",
+      "expected_audience_filters": {
+        "segment": ["Loyal"],
+        "countries": ["NL"]
+      },
+      "expected_mailable_pool": 4,
+      "expected_email_subset": 3,
+      "demo_notes": "Best query for showing compliance smarts. Triggers profiling_consent — the agent will explain that personalisation needs an extra opt-in beyond marketing consent, and only customers who have both opt-ins make the cut. Demonstrates that the system understands the difference between 'we can email you' and 'we can email you a tailored message'."
+    },
+    {
+      "id": "q5_winback_at_risk_core_eu",
+      "text": "Re-engage our at-risk customers in NL, DE and BE with a comeback offer",
+      "intent": "Win-back campaign for customers flagged at-risk of churn.",
+      "expected_recipe": "re-engagement",
+      "expected_audience_filters": {
+        "segment": ["At-Risk"],
+        "countries": ["NL", "DE", "BE"]
+      },
+      "expected_mailable_pool": 11,
+      "expected_email_subset": 7,
+      "demo_notes": "Great query to show the 'include inactive with consent' policy in action — several mailable At-Risk customers are CRM-inactive but still consented, and they would have been silently dropped under the old default. A tighter 'lapsed 6 to 12 months ago' window yields 0 in the dummy data, so keep the framing broad (rely on the At-Risk segment tag rather than a specific last_order date window)."
+    }
+  ],
+  "demo_pick": "q1_new_arrival_loyal_nl_de_be",
+  "anti_demos": [
+    {
+      "id": "anti_lapsed_luxury_de_sms_only",
+      "text": "Re-engage lapsed luxury customers in DE via SMS for Black Friday",
+      "why_skip": "Useful for showing the OLD failure mode (0 eligible due to retention + SMS opt-in drop), but a noisy story on stage. Keep available as a 'before/after' if you want to demo the inactive-with-consent policy fix explicitly."
+    },
+    {
+      "id": "anti_churned_last_year_nl",
+      "text": "Create a promotion for inactive customers that churned in the last 1 year",
+      "why_skip": "The dummy data has no At-Risk customers with last_order_date in the 6-12 month window, so the audience-finder returns 0 across every channel. Same caveat as above — keep for the 'why this is hard' part of the talk, not the headline demo."
+    }
+  ]
+}
