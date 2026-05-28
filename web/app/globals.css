@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5efe6;
+  --bg-soft: #fdfbf7;
+  --bg-warm: #ece3d5;
+  --ink: #1a1410;
+  --ink-soft: #2d2520;
+  --taupe: #b5a89b;
+  --taupe-dark: #6b5e54;
+  --taupe-line: #d9cfc1;
+  --gold: #b4944d;
+  --gold-light: #c9ac68;
+  --gold-soft: #ead7a8;
+  --rose: #c8a596;
+  --sage: #8a9080;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-bg-warm: var(--bg-warm);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-taupe: var(--taupe);
+  --color-taupe-dark: var(--taupe-dark);
+  --color-taupe-line: var(--taupe-line);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-soft: var(--gold-soft);
+  --color-rose: var(--rose);
+  --color-sage: var(--sage);
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--gold-soft);
+  color: var(--ink);
+}
+
+/* subtle hairline divider used across the editorial layout */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--taupe-line) 20%,
+    var(--taupe-line) 80%,
+    transparent
+  );
+}
+
+/* gentle vertical breathing for loading states */
+@keyframes breathe {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.breathe { animation: breathe 2.6s ease-in-out infinite; }
+
+/* slow ambient pulse for the rail dots */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(180, 148, 77, 0); }
+  50% { box-shadow: 0 0 0 6px rgba(180, 148, 77, 0.10); }
+}
+.glow { animation: glow 3.2s ease-in-out infinite; }
