@@ -191,169 +191,275 @@ function renderScrollytelling(opts: {
 <title>${e(title)} — storyline</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
     --bg:#f5efe6;
     --bg-soft:#fdfbf7;
+    --bg-warm:#ece3d5;
     --ink:#1a1410;
     --ink-soft:#2d2520;
     --taupe-dark:#6b5e54;
     --taupe-line:#d9cfc1;
     --gold:#b4944d;
+    --gold-light:#c9ac68;
     --rose:#c8a596;
     --sage:#8a9080;
     --serif:'Cormorant Garamond', ui-serif, Georgia, serif;
     --sans:'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   html, body { background: var(--bg); color: var(--ink); }
-  body { font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body { font-family: var(--sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
   ::selection { background: rgba(180,148,77,0.25); color: var(--ink); }
 
-  .wm { font-family: var(--sans); font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--taupe-dark); }
+  .wm { font-family: var(--sans); font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--taupe-dark); font-weight: 500; }
 
+  /* ---------- HERO ---------- */
   .hero {
     min-height: 100vh;
     display: flex; flex-direction: column; justify-content: space-between;
-    padding: 4rem clamp(2rem, 6vw, 6rem);
+    padding: 4rem clamp(2.5rem, 7vw, 7rem);
     background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+    position: relative;
   }
+  .hero::before {
+    content: ""; position: absolute; inset: auto auto 0 0; width: 1px; height: 12vh;
+    background: linear-gradient(to bottom, transparent, var(--taupe-dark));
+    left: clamp(2.5rem, 7vw, 7rem);
+  }
+  .hero-meta { display: flex; justify-content: space-between; align-items: baseline; }
+  .hero-edition { font-family: var(--serif); font-style: italic; font-size: 1.35rem; color: var(--taupe-dark); margin-top: 2.5rem; }
   .hero h1 {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: clamp(3rem, 8vw, 7.5rem);
-    line-height: 0.95;
-    max-width: 14ch;
+    font-size: clamp(3.5rem, 8.5vw, 8rem);
+    line-height: 0.97;
+    letter-spacing: -0.01em;
+    max-width: 16ch;
     color: var(--ink);
     margin-top: auto;
   }
   .hero .tension {
     font-family: var(--serif);
     font-style: italic;
-    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+    line-height: 1.35;
     color: var(--taupe-dark);
-    max-width: 40ch;
+    max-width: 38ch;
     margin-top: 2rem;
   }
-  .hero-meta { display: flex; justify-content: space-between; align-items: baseline; }
   .scroll-cue {
     font-family: var(--sans);
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: 500;
     letter-spacing: 0.32em;
     text-transform: uppercase;
     color: var(--taupe-dark);
-    margin-top: 3rem;
-    display: inline-flex; align-items: center; gap: 0.75rem;
+    margin-top: 3.5rem;
+    display: inline-flex; align-items: center; gap: 1rem;
   }
-  .scroll-cue::before { content: ""; display: block; width: 32px; height: 1px; background: var(--taupe-dark); }
+  .scroll-cue::before { content: ""; display: block; width: 48px; height: 1px; background: var(--taupe-dark); }
 
+  /* ---------- BEAT SECTIONS ---------- */
   section.beat {
     display: grid;
-    grid-template-columns: minmax(300px, 1fr) minmax(380px, 1.4fr);
-    gap: clamp(2rem, 5vw, 6rem);
-    padding: clamp(4rem, 10vh, 10rem) clamp(2rem, 6vw, 6rem);
+    grid-template-columns: minmax(320px, 1fr) minmax(440px, 1.6fr);
+    gap: clamp(3rem, 6vw, 7rem);
+    padding: clamp(5rem, 12vh, 11rem) clamp(2.5rem, 7vw, 7rem);
     min-height: 100vh;
     align-items: start;
     border-top: 1px solid var(--taupe-line);
     position: relative;
   }
+  section.beat:nth-child(odd) { background: var(--bg-soft); }
   section.beat .panel {
-    position: sticky; top: 6rem;
+    position: sticky; top: 7rem;
     align-self: start;
   }
   section.beat .panel .kicker {
-    font-family: var(--sans); font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: inline-flex; align-items: center; gap: 0.75rem;
+  }
+  section.beat .panel .kicker::before {
+    content: ""; display: inline-block; width: 24px; height: 1px; background: var(--gold);
   }
   section.beat .panel .stat {
     font-family: var(--serif);
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    line-height: 1;
+    font-weight: 500;
+    font-size: clamp(4rem, 8vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
     color: var(--ink);
   }
   section.beat .panel .stat-label {
-    font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--taupe-dark); margin-top: 0.75rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+    color: var(--taupe-dark);
+    margin-top: 1rem;
+    line-height: 1.3;
   }
   section.beat .panel .stat-sub {
-    font-family: var(--sans); font-size: 0.8rem; color: var(--taupe-dark); margin-top: 1.5rem; line-height: 1.5;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--taupe-dark);
+    margin-top: 2rem;
+    line-height: 1.65;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--taupe-line);
+    max-width: 28ch;
   }
-  section.beat .prose {
-    max-width: 56ch;
-  }
+
+  section.beat .prose { max-width: 58ch; }
   section.beat .prose h2 {
     font-family: var(--serif);
     font-weight: 500;
     font-style: italic;
-    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-size: clamp(2.5rem, 4.5vw, 3.75rem);
     line-height: 1.05;
+    letter-spacing: -0.01em;
     color: var(--ink);
-    margin-bottom: 2rem;
+    margin-bottom: 2.25rem;
   }
   section.beat .prose p {
     font-family: var(--serif);
-    font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+    font-size: clamp(1.4rem, 1.8vw, 1.7rem);
     color: var(--ink-soft);
     line-height: 1.5;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
+  section.beat .prose p em {
+    font-style: italic;
+    color: var(--ink);
+  }
+  section.beat .prose p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* lists styled as editorial bullets */
   section.beat .prose ul {
-    list-style: none; margin-top: 1.5rem;
+    list-style: none;
+    margin-top: 2rem;
   }
   section.beat .prose li {
-    font-family: var(--sans);
-    font-size: 1rem;
+    font-family: var(--serif);
+    font-size: clamp(1.25rem, 1.55vw, 1.5rem);
     color: var(--ink-soft);
-    padding: 1rem 0;
+    line-height: 1.5;
+    padding: 1.5rem 0;
     border-bottom: 1px solid var(--taupe-line);
-    display: grid; grid-template-columns: 24px 1fr; gap: 1rem; align-items: baseline;
+    display: grid; grid-template-columns: 32px 1fr; gap: 1.25rem; align-items: baseline;
   }
+  section.beat .prose li:first-child { padding-top: 0; }
+  section.beat .prose li:last-child { border-bottom: none; }
   section.beat .prose li::before {
-    content: ""; display: block; width: 16px; height: 1px; background: var(--gold); transform: translateY(-4px);
+    content: ""; display: block; width: 20px; height: 1px; background: var(--gold);
+    transform: translateY(-6px);
   }
-  section.beat .prose li strong { color: var(--ink); font-weight: 500; }
+  section.beat .prose li strong {
+    color: var(--ink);
+    font-weight: 600;
+    font-style: normal;
+  }
 
   /* fade-up reveal */
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.9s ease-out, transform 0.9s ease-out; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 1s ease-out, transform 1s ease-out; }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
-  /* the ask: dramatic final frame */
+  /* ---------- THE ASK ---------- */
   .ask {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-    padding: clamp(4rem, 10vh, 10rem) clamp(2rem, 6vw, 6rem);
+    padding: clamp(5rem, 12vh, 11rem) clamp(2.5rem, 7vw, 7rem);
     background: var(--ink);
     color: var(--bg);
+    position: relative;
+  }
+  .ask::before {
+    content: ""; position: absolute; top: 0; left: clamp(2.5rem, 7vw, 7rem);
+    width: 80px; height: 1px; background: var(--gold);
+    margin-top: 4rem;
+  }
+  .ask .kicker {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 500;
+    margin-bottom: 2.5rem;
   }
   .ask h2 {
-    font-family: var(--serif); font-weight: 500; font-size: clamp(3rem, 7vw, 6rem); line-height: 1; max-width: 18ch;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(3.5rem, 7.5vw, 6.5rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    max-width: 18ch;
   }
+  .ask h2 em { font-style: italic; color: var(--rose); }
   .ask p {
-    font-family: var(--serif); font-style: italic; font-size: clamp(1.25rem, 2vw, 1.75rem); color: var(--rose); max-width: 50ch; margin-top: 2rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    line-height: 1.45;
+    color: var(--bg-warm);
+    max-width: 50ch;
+    margin-top: 2.5rem;
   }
   .ask .next {
-    margin-top: 4rem; font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.28em; font-size: 11px; color: var(--bg);
-    border: 1px solid var(--bg); padding: 1rem 2rem; border-radius: 999px;
+    margin-top: 4rem;
+    font-family: var(--sans);
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--bg);
+    border: 1px solid var(--gold-light);
+    padding: 1.25rem 2.25rem;
+    border-radius: 999px;
   }
 
   footer {
-    padding: 3rem clamp(2rem, 6vw, 6rem);
-    font-family: var(--sans); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--taupe-dark);
+    padding: 3rem clamp(2.5rem, 7vw, 7rem);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
     display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
-    background: var(--bg); border-top: 1px solid var(--taupe-line);
+    background: var(--bg);
+    border-top: 1px solid var(--taupe-line);
   }
 
   .pill {
-    display: inline-flex; align-items: center; height: 26px; padding: 0 12px;
+    display: inline-flex; align-items: center; height: 30px; padding: 0 16px;
     border-radius: 999px; border: 1px solid currentColor;
-    font-family: var(--sans); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
   }
   .pill.ok { color: var(--sage); }
   .pill.warn { color: var(--gold); }
   .pill.block { color: var(--rose); }
 
-  @media (max-width: 800px) {
-    section.beat { grid-template-columns: 1fr; }
+  @media (max-width: 900px) {
+    section.beat { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
     section.beat .panel { position: static; }
+    .hero { padding: 3rem 1.5rem; }
+    .ask { padding: 5rem 1.5rem; }
   }
 </style>
 </head>
@@ -361,13 +467,16 @@ function renderScrollytelling(opts: {
 
 <section class="hero">
   <div class="hero-meta">
-    <div class="wm">atelier · marketing storyline</div>
+    <div>
+      <div class="wm">atelier · marketing storyline</div>
+      <div class="hero-edition">edition № ${e(request_id.slice(-4))}</div>
+    </div>
     <span class="pill ${status === "OK" ? "ok" : status === "BLOCKED" ? "block" : "warn"}">status — ${status.toLowerCase()}</span>
   </div>
   <div>
     <h1 class="reveal">${e(title)}</h1>
     <p class="tension reveal">${e(tension)}</p>
-    <div class="scroll-cue">scroll, slowly</div>
+    <div class="scroll-cue reveal">scroll, slowly</div>
   </div>
 </section>
 
@@ -464,9 +573,10 @@ function renderScrollytelling(opts: {
 </section>
 
 <section class="ask">
-  <h2 class="reveal">Read it. Sign it.<br/>Then we move.</h2>
+  <div class="kicker reveal">the ask</div>
+  <h2 class="reveal">Read it. Sign it.<br/><em>Then we move.</em></h2>
   <p class="reveal">We have built a brief that is honest about who we are talking to, why it matters now, and what we have already checked. Approval, then send.</p>
-  <span class="next reveal">next: approver sign-off</span>
+  <span class="next reveal">next — approver sign-off</span>
 </section>
 
 <footer>

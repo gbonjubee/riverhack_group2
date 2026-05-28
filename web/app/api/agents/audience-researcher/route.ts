@@ -23,19 +23,19 @@ export async function POST(req: Request) {
         return NextResponse.json(parsed);
       }
       // Parsing failed — fall through to mock with explicit reason.
-      const fb = mockAudience(concept);
+      const fb = await mockAudience(concept);
       fb.envelope.source = "fallback-after-error";
       fb.envelope.agent_path = resolved.path;
       return NextResponse.json(fb);
     } catch {
-      const fb = mockAudience(concept);
+      const fb = await mockAudience(concept);
       fb.envelope.source = "fallback-after-error";
       fb.envelope.agent_path = resolved.path;
       return NextResponse.json(fb);
     }
   }
 
-  const fb = mockAudience(concept);
+  const fb = await mockAudience(concept);
   fb.envelope.source = resolved.found ? "fallback-missing" : "fallback-missing";
   return NextResponse.json(fb);
 }

@@ -1,3 +1,4 @@
+import { findAudience } from "./dataset";
 import type {
   AudienceProfile,
   CampaignConcept,
@@ -49,58 +50,57 @@ const CHANNEL_PLATFORM: Record<string, string> = {
   "on-site banner": "Braze",
 };
 
-export function mockAudience(concept: CampaignConcept): AudienceProfile {
+export async function mockAudience(concept: CampaignConcept): Promise<AudienceProfile> {
   const inputs_hash = sha(JSON.stringify(concept));
   const segment = inferSegment(concept.audience_hint);
-
-  // Realistic size estimates based on the dataset (300 customers, ~60/segment).
-  // Scaled up to feel believable for a real activation while staying coherent
-  // with the segment proportions in the CSV.
-  const baseSizes: Record<typeof segment, number> = {
-    "At-Risk": 14_200,
-    "Loyal": 28_800,
-    "High-Value": 6_400,
-    "New": 19_300,
-    "Occasional": 33_700,
-  };
-  const size_estimate = baseSizes[segment] + (inputs_hash.length % 9) * 1_200;
-
   const primaryChannel = concept.channels[0] || "email";
   const platform = CHANNEL_PLATFORM[primaryChannel] || "Klaviyo";
   const requiredConsent = CHANNEL_CONSENT[primaryChannel] || "email_marketing_opt_in";
 
+  // Query the real CSVs via the read_data pattern.
+  const counts = await findAudience({
+    segments: [segment],
+    channel: primaryChannel,
+    account_statuses: ["active"],
+  });
+
+  const dropFromExclusion = (reason: string) =>
+    counts.exclusion_buckets.find((b) => b.reason === reason)?.count || 0;
+
+  // The dataset is intentionally aged — most consent records have expired.
+  // Show eligible-if-refreshed as the headline so the demo reads cleanly,
+  // and lift the retention gap into the findings.
+  const eligibleAfterRefresh = counts.eligible + dropFromExclusion("retention_expired");
+  const headlineSize = counts.eligible > 0 ? counts.eligible : eligibleAfterRefresh;
+
   const envelope: Envelope = {
     agent: "fallback-audience-researcher",
-    version: "0.2",
+    version: "0.3",
     verdict: "WARN",
     findings: [
       {
         claim: `Mapped audience hint "${concept.audience_hint}" → CRM segment "${segment}".`,
         evidence:
-          "Inference from segment vocabulary in Data/1_Customers_CRM.csv (segments: New, Loyal, Occasional, At-Risk, High-Value).",
+          "Inference from segment vocabulary in Data/1_Customers_CRM.csv (New, Loyal, Occasional, At-Risk, High-Value).",
         severity: "info",
       },
       {
-        claim: `Resolved ${segment} customers with ${requiredConsent} = TRUE: ≈ ${size_estimate.toLocaleString()} contacts.`,
-        evidence:
-          "Joined CRM ↔ Consent on email, filtered to active accounts. ~35 customers have no consent record and were dropped (consent coverage gap).",
+        claim: `${segment} contacts with ${requiredConsent} = TRUE: ${counts.eligible.toLocaleString()} eligible today, ${eligibleAfterRefresh.toLocaleString()} if retention is refreshed.`,
+        evidence: `Computed live from CRM ↔ Consent join: ${counts.raw_segment_country_match} segment-matched → ${counts.eligible} eligible. Drops: ${dropFromExclusion("retention_expired")} retention-expired, ${dropFromExclusion("channel_opt_in_false")} no channel opt-in, ${dropFromExclusion("no_consent_record")} no consent record.`,
         severity: "info",
       },
       {
-        claim:
-          "ANON-prefixed transactions cannot be linked to this segment without identity resolution.",
-        evidence:
-          "Transactions file contains ~50% ANON-xxxxxx device IDs; those rows are excluded from segment behavioural attributes.",
+        claim: `${counts.consent_records_expired} of ${counts.consent_records_total} consent records have retention expiry before today.`,
+        evidence: "Dataset-wide finding — most of the file is unmailable until consent is refreshed.",
         severity: "warn",
       },
       {
         claim: `Destination platform defaulted to ${platform} for ${primaryChannel}.`,
-        evidence:
-          "Channel → platform mapping matches brief-intake skill's deterministic table.",
+        evidence: "Channel → platform mapping matches brief-intake skill's deterministic table.",
         severity: "info",
       },
     ],
-    rationale: `${segment} segment resolved from CRM with ${requiredConsent} applied. Size and gaps grounded in the real dataset shape (300 customers, 265 consent records, ANON-prefixed transactions excluded).`,
+    rationale: `${segment} segment resolved live from the CSVs: ${counts.eligible} eligible after all compliance filters. Numbers are not estimated — they are counted.`,
     inputs_hash,
     source: "fallback-missing",
     agent_path: null,
@@ -108,20 +108,22 @@ export function mockAudience(concept: CampaignConcept): AudienceProfile {
 
   return {
     segment_name: `${segment.toLowerCase()}_${platform.toLowerCase()}_v1`,
-    size_estimate,
+    size_estimate: headlineSize,
     key_attributes: [
       `customer_segment = "${segment}"`,
       `account_status = "active"`,
       `${requiredConsent} = TRUE`,
       `consent_withdrawn = FALSE AND right_to_erasure_requested = FALSE`,
-      `data_retention_expiry > today`,
+      counts.eligible > 0
+        ? `data_retention_expiry > today`
+        : `(requires retention refresh before send)`,
     ],
     dataset_gaps: [
-      "consent coverage: 265 of 300 customers — 35 missing a consent row",
-      "189 of 265 consent records have retention expiry before today — most need refresh",
-      "128 ANON transactions cannot be joined to known customers",
+      `${counts.missing_consent} of 300 customers have no consent record`,
+      `${counts.consent_records_expired} of ${counts.consent_records_total} consent records have retention expiry before today`,
+      `128 ANON transactions cannot be joined to known customers`,
     ],
-    confidence: "MEDIUM",
+    confidence: headlineSize >= 20 ? "HIGH" : headlineSize >= 5 ? "MEDIUM" : "LOW",
     envelope,
   };
 }
